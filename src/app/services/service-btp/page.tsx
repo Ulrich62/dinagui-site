@@ -1,0 +1,59 @@
+import ServicePageLayout from "@/components/ServicePageLayout";
+
+const services = [
+  {
+    title: "Finition",
+    description:
+      "Depuis sa création, DINAGUI SARL s'est forgé une solide réputation en tant qu'expert dans les travaux de construction et de finition des bâtiments. Grâce à notre vaste expertise, nous sommes en mesure de gérer tous les aspects des travaux de finition et d'offrir des solutions sur mesure pour chaque projet.",
+  },
+  {
+    title: "Reprise d'œuvre",
+    description:
+      "Notre entreprise se spécialise dans la transformation d'espaces bruts en environnements fonctionnels, esthétiques et adaptés aux besoins spécifiques de nos clients. Nous mettons en œuvre des techniques de pointe et des matériaux de haute qualité pour garantir des résultats exceptionnels.",
+  },
+  {
+    title: "Rénovation",
+    description:
+      "Avec notre engagement envers l'excellence et la satisfaction de nos clients, nous transformons votre vision en réalité. Notre large proposition de création d'espaces fonctionnels, de la conception à la planification, le choix du mobilier, l'optimisation de l'espace, l'éclairage.",
+  },
+  {
+    title: "Études et expertises",
+    description:
+      "Nous accompagnons les maîtres d'ouvrage, promoteurs et entreprises dans la conception technique, la validation des plans et le contrôle de qualité des ouvrages, pour garantir des réalisations solides, conformes et durables.",
+  },
+  {
+    title: "Construction",
+    description:
+      "Notre équipe expérimentée vous accompagne de la conception à la réalisation, en garantissant une qualité supérieure à chaque étape du processus.",
+  },
+];
+
+const otherServices = [
+  { name: "Gestion immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.avif" },
+  { name: "Placement de personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.avif" },
+  { name: "Service de gardiennage & de conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.avif" },
+  { name: "Service de nettoyage", href: "/services/service-de-nettoyage" },
+  { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement" },
+  { name: "Logistique et transport", href: "/services/logistique-et-transport" },
+  { name: "Commerce général", href: "/services/commerce-general" },
+  { name: "Consulting", href: "/services/consulting" },
+  { name: "Transit et douane", href: "/services/transit-et-douane" },
+];
+
+export default function ServiceBTPPage() {
+  return (
+    <ServicePageLayout
+      heroTitle="INGÉNIEUR BTP"
+      introTitle="Votre partenaire de confiance en BTP"
+      introText="DINAGUI SARL est votre partenaire de confiance pour l'exécution de projets de construction et d'aménagement en macro-lots, en tout corps d'état ou en clé en main. Notre maîtrise s'avère la satisfaction de nos clients. Nous travaillons en étroite collaboration avec vous tout au long du processus, en vous fournissant des conseils d'experts, des devis BTP et des solutions de matériaux pour vous aider à visualiser le résultat final. Un service complet et intégré pour la construction, les intérieurs, le BTP et des solutions de matériaux pour la réalisation de vos projets, en garantissant qualité, sécurité et respect des délais."
+      introImage="/images/services/btp-workers.avif"
+      introCtaText="Contactez-nous"
+      sectionTitle="Nos domaines d'expertise en BTP"
+      services={services}
+      otherServices={otherServices}
+      ctaTitle="Lancez votre projet de construction avec nos spécialistes"
+      ctaText="Parlons de votre projet maintenant"
+      backgroundImage="/images/services/btp-hero.avif"
+    />
+  );
+}

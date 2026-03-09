@@ -1,0 +1,223 @@
+import Image from "next/image";
+import Link from "next/link";
+import PageHero from "./PageHero";
+
+interface ServiceItem {
+  title: string;
+  description: string;
+}
+
+interface OtherService {
+  name: string;
+  href: string;
+  image?: string;
+}
+
+interface ServicePageLayoutProps {
+  heroTitle: string;
+  heroSubtitle?: string;
+  introTitle: string;
+  introText: string;
+  introImage?: string;
+  introCtaText?: string;
+  introCtaLink?: string;
+  sectionTitle?: string;
+  services: ServiceItem[];
+  otherServices: OtherService[];
+  ctaTitle?: string;
+  ctaText?: string;
+  columns?: 2 | 3;
+  backgroundImage?: string;
+  children?: React.ReactNode;
+}
+
+export default function ServicePageLayout({
+  heroTitle,
+  introTitle,
+  introText,
+  introImage,
+  introCtaText = "Contactez-nous",
+  introCtaLink = "/contact",
+  sectionTitle,
+  services,
+  otherServices,
+  ctaTitle = "Contactez-nous pour en savoir plus",
+  ctaText = "Parlons de votre projet maintenant",
+  columns = 3,
+  backgroundImage,
+  children,
+}: ServicePageLayoutProps) {
+  const gridCols =
+    columns === 2
+      ? "grid-cols-1 md:grid-cols-2"
+      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+
+  return (
+    <>
+      <PageHero
+        title={heroTitle}
+        backgroundImage={backgroundImage}
+        bordered
+      />
+
+      {/* Intro Section — image + texte */}
+      <section className="py-16 px-6 max-w-[1340px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {introImage && (
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src={introImage}
+                alt={introTitle}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Coin décoratif orange */}
+              <div className="absolute top-0 right-0 w-16 h-16">
+                <div className="absolute top-0 right-0 w-0 h-0 border-t-[60px] border-t-[#F88732] border-l-[60px] border-l-transparent" />
+              </div>
+            </div>
+          )}
+          <div className={!introImage ? "lg:col-span-2 text-center max-w-3xl mx-auto" : ""}>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] mb-6 font-[Roboto_Condensed] uppercase">
+              {introTitle}
+            </h2>
+            <p className="text-[#6b7280] leading-relaxed font-[Roboto] mb-8">
+              {introText}
+            </p>
+            <Link
+              href={introCtaLink}
+              className="inline-block border-2 border-[#1f2d3d] text-[#1f2d3d] font-semibold px-8 py-3 hover:bg-[#1f2d3d] hover:text-white transition-colors duration-300 font-[Roboto] text-sm uppercase tracking-wide"
+            >
+              {introCtaText}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Cards Grid */}
+      {services.length > 0 && (
+        <section className="pb-16 px-6 max-w-[1340px] mx-auto">
+          {sectionTitle && (
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] text-center mb-12 font-[Roboto_Condensed] uppercase">
+              {sectionTitle}
+            </h2>
+          )}
+          <div className={`grid ${gridCols} gap-8`}>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-lg p-7 hover:shadow-lg hover:border-[#F88732]/30 transition-all duration-300 group"
+              >
+                {/* Icône numérotée */}
+                <div className="w-10 h-10 rounded bg-[#F88732]/10 flex items-center justify-center mb-5 group-hover:bg-[#F88732]/20 transition-colors">
+                  <span className="text-[#F88732] font-bold text-sm font-[Roboto_Condensed]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-[#1f2d3d] mb-3 font-[Roboto_Condensed] uppercase">
+                  {service.title}
+                </h3>
+                <p className="text-[#6b7280] text-sm leading-relaxed font-[Roboto]">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Optional extra content */}
+      {children}
+
+      {/* CTA Banner orange */}
+      <section className="bg-[#F88732] py-14">
+        <div className="max-w-[900px] mx-auto text-center px-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-[Roboto_Condensed] uppercase">
+            {ctaTitle}
+          </h3>
+          <p className="text-white/85 mb-8 font-[Roboto]">
+            Bénéficiez de l&apos;expertise de nos professionnels, ingénieurs et artisans pour concrétiser vos projets de construction du concept à la réalisation.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-white text-[#F88732] font-semibold py-3 px-10 rounded hover:bg-gray-100 transition-colors duration-300 font-[Roboto]"
+          >
+            {ctaText}
+          </Link>
+        </div>
+      </section>
+
+      {/* Section "Donnez vie à vos projets" */}
+      <section className="py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative min-h-[400px]">
+            <Image
+              src={backgroundImage || "/images/parallax-bg.avif"}
+              alt="Projets DINAGUI"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="bg-[#1f2d3d] flex items-center px-10 md:px-16 py-16">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-[Roboto_Condensed] uppercase leading-tight">
+                Donnez vie à vos projets dès aujourd&apos;hui
+              </h3>
+              <p className="text-white/75 leading-relaxed font-[Roboto] mb-8">
+                Avec l&apos;expertise de nos architectes, ingénieurs et artisans expérimentés, nous bâtissons des ouvrages solides, esthétiques et durables. Ne laissez pas vos idées sur papier, transformez-les en réalité avec DINAGUI SARL.
+              </p>
+              <div className="w-16 h-1 bg-[#F88732]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Autres Services avec images */}
+      <section className="py-16 px-6 max-w-[1340px] mx-auto">
+        <h2 className="text-3xl font-bold text-[#1f2d3d] text-center mb-12 font-[Roboto_Condensed] uppercase">
+          Autres services
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {otherServices.map((service, index) => (
+            <Link
+              key={index}
+              href={service.href}
+              className="group block"
+            >
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                <Image
+                  src={service.image || "/images/parallax-bg.avif"}
+                  alt={service.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+              <h4 className="text-center text-[#1f2d3d] font-bold text-sm font-[Roboto_Condensed] uppercase group-hover:text-[#F88732] transition-colors">
+                {service.name}
+              </h4>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Bottom CTA bar */}
+      <section className="bg-[#F88732] py-8">
+        <div className="max-w-[1340px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <h3 className="text-xl font-bold text-white font-[Roboto_Condensed] uppercase">
+            Votre projet, notre expertise. Construisons ensemble
+          </h3>
+          <Link
+            href="/contact"
+            className="inline-block border-2 border-white text-white font-semibold py-3 px-8 rounded hover:bg-white hover:text-[#F88732] transition-colors duration-300 font-[Roboto] text-sm whitespace-nowrap"
+          >
+            Contactez-nous maintenant
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
