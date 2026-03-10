@@ -55,7 +55,11 @@ export default function ServiceDeNettoyagePage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Offrez à vos espaces la propreté qu'ils méritent"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Des espaces propres et sains grâce à nos équipes formées et nos équipements professionnels."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Des espaces impeccables au quotidien"
+      darkSectionText="Notre équipe de nettoyage intervient avec professionnalisme pour garantir la propreté et l'hygiène de vos locaux. Faites confiance à DINAGUI SARL."
+      bottomBarText="Propreté garantie, sérénité assurée"
       introImage="/images/services/nettoyage.jpg"
       backgroundImage="/images/services/nettoyage.jpg"
     >

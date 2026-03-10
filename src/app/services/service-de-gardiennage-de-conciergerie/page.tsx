@@ -61,7 +61,11 @@ export default function GardiennageConciergiePage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Sécurisez vos espaces avec nos professionnels"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Protégez vos locaux et vos biens avec nos solutions de gardiennage et de conciergerie professionnelles."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Votre sécurité, notre engagement"
+      darkSectionText="Nos agents de sécurité formés et expérimentés assurent la protection de vos espaces 24h/24. Confiez votre tranquillité à DINAGUI SARL."
+      bottomBarText="Votre tranquillité, notre priorité"
       backgroundImage="/images/services/gardiennage.jpg"
     >
       {/* Values Section */}

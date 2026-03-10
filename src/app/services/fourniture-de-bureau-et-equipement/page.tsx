@@ -50,7 +50,11 @@ export default function FournitureDeBureauPage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Équipez vos bureaux avec nos solutions"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Équipez vos espaces de travail avec du mobilier et des fournitures de qualité, livrés et installés par nos soins."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Optimisez vos espaces professionnels"
+      darkSectionText="Nous fournissons et installons des équipements de bureau modernes et ergonomiques pour améliorer le confort et la productivité de vos équipes. Faites confiance à DINAGUI SARL."
+      bottomBarText="Vos bureaux, notre expertise. Équipons ensemble"
       introImage="/images/services/fourniture-bureau.jpg"
       backgroundImage="/images/services/fourniture-bureau.jpg"
     />

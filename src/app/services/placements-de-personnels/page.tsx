@@ -42,7 +42,11 @@ export default function PlacementDePersonnelsPage() {
       otherServices={otherServices}
       columns={3}
       ctaTitle="Trouvez les talents dont vous avez besoin"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Trouvez les talents dont vous avez besoin grâce à notre expertise en recrutement et placement de personnel qualifié."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Des talents adaptés à vos besoins"
+      darkSectionText="Nous sélectionnons, formons et mettons à votre disposition des professionnels qualifiés pour répondre à vos exigences. Gagnez en efficacité avec DINAGUI SARL."
+      bottomBarText="Vos besoins en personnel, notre spécialité"
       backgroundImage="/images/services/placement-personnel.jpg"
     />
   );

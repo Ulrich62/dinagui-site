@@ -55,7 +55,11 @@ export default function CommerceGeneralPage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Faites confiance à DINAGUI pour vos besoins commerciaux"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Produits de qualité, service fiable et prix compétitifs pour répondre à tous vos besoins quotidiens et professionnels."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Tout ce dont vous avez besoin, en un seul endroit"
+      darkSectionText="DINAGUI SARL vous propose une large gamme de produits et services pour les particuliers, entreprises et institutions. Qualité, disponibilité et service client sont notre engagement."
+      bottomBarText="Vos besoins, notre engagement. Servons ensemble"
       introImage="/images/services/commerce-general.jpg"
       backgroundImage="/images/services/commerce-general.jpg"
     />

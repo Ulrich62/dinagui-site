@@ -55,7 +55,11 @@ export default function TransitDouanePage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Simplifiez vos opérations douanières avec DINAGUI"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Simplifiez vos opérations d'import-export avec notre expertise en transit et dédouanement."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Vos marchandises entre de bonnes mains"
+      darkSectionText="Nous gérons l'ensemble de vos formalités douanières et opérations de transit pour un acheminement rapide, sécurisé et conforme. Faites confiance à DINAGUI SARL."
+      bottomBarText="Vos opérations douanières, notre expertise"
       introImage="/images/services/transit-douane.jpg"
       backgroundImage="/images/services/transit-douane.jpg"
     />

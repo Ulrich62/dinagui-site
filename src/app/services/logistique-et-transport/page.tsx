@@ -60,7 +60,11 @@ export default function LogistiqueTransportPage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Optimisez votre chaîne logistique avec DINAGUI"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Des solutions logistiques fiables et sécurisées pour accompagner vos opérations partout en Guinée et dans la sous-région."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Une logistique à la hauteur de vos ambitions"
+      darkSectionText="Notre flotte et nos équipes expérimentées assurent le transport et la livraison de vos marchandises en toute sécurité. Faites confiance à DINAGUI SARL."
+      bottomBarText="Vos marchandises, notre responsabilité"
       introImage="/images/services/logistique-transport.jpg"
       backgroundImage="/images/services/logistique-transport.jpg"
     />

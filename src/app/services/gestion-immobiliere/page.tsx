@@ -72,7 +72,11 @@ export default function GestionImmobilierePage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="VOTRE IMMOBILIER, NOTRE PRIORITÉ !"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Confiez-nous la gestion de vos biens immobiliers et profitez d'un suivi rigoureux, transparent et rentable."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Valorisez votre patrimoine immobilier"
+      darkSectionText="Notre équipe de gestionnaires expérimentés prend en charge l'ensemble de vos opérations immobilières pour maximiser la rentabilité de vos investissements. Faites confiance à DINAGUI SARL."
+      bottomBarText="Votre patrimoine, notre priorité"
       backgroundImage="/images/services/gestion-immobiliere.jpg"
     />
   );

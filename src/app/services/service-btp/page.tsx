@@ -52,7 +52,11 @@ export default function ServiceBTPPage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Lancez votre projet de construction avec nos spécialistes"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Bénéficiez de l'expertise de nos architectes, ingénieurs et artisans pour concrétiser vos projets de construction, du concept à la réalisation."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Donnez vie à vos projets dès aujourd'hui"
+      darkSectionText="Avec l'expertise de nos architectes, ingénieurs et artisans expérimentés, nous bâtissons des ouvrages solides, esthétiques et durables. Ne laissez pas vos idées sur papier, transformez-les en réalité avec DINAGUI SARL."
+      bottomBarText="Votre projet, notre expertise. Construisons ensemble"
       backgroundImage="/images/services/btp-hero.jpg"
     />
   );

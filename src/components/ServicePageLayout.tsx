@@ -27,6 +27,10 @@ interface ServicePageLayoutProps {
   otherServices: OtherService[];
   ctaTitle?: string;
   ctaText?: string;
+  ctaButtonText?: string;
+  darkSectionTitle?: string;
+  darkSectionText?: string;
+  bottomBarText?: string;
   columns?: 2 | 3;
   backgroundImage?: string;
   children?: React.ReactNode;
@@ -43,7 +47,11 @@ export default function ServicePageLayout({
   services,
   otherServices,
   ctaTitle = "Contactez-nous pour en savoir plus",
-  ctaText = "Parlons de votre projet maintenant",
+  ctaText = "Bénéficiez de l'expertise de nos professionnels pour concrétiser vos projets.",
+  ctaButtonText = "Parlons de votre projet maintenant",
+  darkSectionTitle = "Donnez vie à vos projets dès aujourd'hui",
+  darkSectionText = "Avec l'expertise de nos professionnels expérimentés, nous vous accompagnons dans la réalisation de vos projets. Ne laissez pas vos idées sur papier, transformez-les en réalité avec DINAGUI SARL.",
+  bottomBarText = "Votre projet, notre expertise. Construisons ensemble",
   columns = 3,
   backgroundImage,
   children,
@@ -154,13 +162,13 @@ export default function ServicePageLayout({
             {ctaTitle}
           </h3>
           <p className="text-white/85 mb-8 font-[Roboto]">
-            Bénéficiez de l&apos;expertise de nos professionnels, ingénieurs et artisans pour concrétiser vos projets de construction du concept à la réalisation.
+            {ctaText}
           </p>
           <Link
             href="/contact"
             className="inline-block bg-white text-[#F88732] font-semibold py-3 px-10 rounded hover:bg-gray-100 transition-all duration-300 font-[Roboto] hover:shadow-lg"
           >
-            {ctaText}
+            {ctaButtonText}
           </Link>
         </div>
       </section>
@@ -180,10 +188,10 @@ export default function ServicePageLayout({
           <div className="bg-[#1f2d3d] flex items-center px-10 md:px-16 py-16">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-[Roboto_Condensed] uppercase leading-tight">
-                Donnez vie à vos projets dès aujourd&apos;hui
+                {darkSectionTitle}
               </h3>
               <p className="text-white/75 leading-relaxed font-[Roboto] mb-8">
-                Avec l&apos;expertise de nos architectes, ingénieurs et artisans expérimentés, nous bâtissons des ouvrages solides, esthétiques et durables. Ne laissez pas vos idées sur papier, transformez-les en réalité avec DINAGUI SARL.
+                {darkSectionText}
               </p>
               <div className="w-16 h-1 bg-[#F88732] mb-8" />
               <Link
@@ -236,7 +244,7 @@ export default function ServicePageLayout({
       <section className="bg-[#F88732] py-8">
         <div className="max-w-[1340px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <h3 className="text-xl font-bold text-white font-[Roboto_Condensed] uppercase">
-            Votre projet, notre expertise. Construisons ensemble
+            {bottomBarText}
           </h3>
           <Link
             href="/contact"

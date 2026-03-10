@@ -56,7 +56,11 @@ export default function ConsultingPage() {
       services={services}
       otherServices={otherServices}
       ctaTitle="Transformez vos ambitions en résultats concrets"
-      ctaText="Parlons de votre projet maintenant"
+      ctaText="Bénéficiez de conseils stratégiques et d'un accompagnement sur mesure pour développer votre entreprise."
+      ctaButtonText="Parlons de votre projet maintenant"
+      darkSectionTitle="Transformez vos ambitions en résultats"
+      darkSectionText="Nos consultants expérimentés vous accompagnent dans votre développement stratégique, organisationnel et digital. Faites confiance à DINAGUI SARL."
+      bottomBarText="Vos ambitions, notre accompagnement"
       introImage="/images/services/consulting.jpg"
       backgroundImage="/images/services/consulting.jpg"
     >
