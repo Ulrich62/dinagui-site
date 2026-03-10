@@ -91,7 +91,7 @@ export default function ProjectsSection() {
             >
               <div className="bg-white rounded-lg p-4 shadow-2xl max-w-[450px]">
                 <Image
-                  src="/images/apartments/f3-plan.jpg"
+                  src="/images/apartments/f3-a1-plan.jpg"
                   alt="Plan appartement F3"
                   width={450}
                   height={350}
