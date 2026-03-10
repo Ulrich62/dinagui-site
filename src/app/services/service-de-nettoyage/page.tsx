@@ -4,32 +4,32 @@ const services = [
   {
     title: "Nettoyage résidentiel",
     description:
-      "Entretien complet de maisons, appartements et résidences : nettoyage des sols, vitres, sanitaires, cuisines et espaces de vie.",
+      "Nous assurons l'entretien complet de vos espaces de vie, pour un environnement sain, agréable et accueillant, grâce à des agents qualifiés, des produits adaptés et un suivi rigoureux. Villas, appartements, immeubles collectifs.",
   },
   {
     title: "Nettoyage de bureaux",
     description:
-      "Propreté irréprochable de vos espaces professionnels : bureaux, salles de réunion, espaces communs et sanitaires d'entreprise.",
+      "Nous assurons l'entretien complet de vos espaces de travail pour offrir à vos collaborateurs et visiteurs un environnement propre, sain et accueillant, tout en valorisant l'image de votre entreprise.",
   },
   {
-    title: "Nettoyage post-chantier",
+    title: "Nettoyage après chantier",
     description:
-      "Remise en état complète après travaux de construction ou de rénovation : dépoussiérage, nettoyage des surfaces, évacuation des déchets.",
+      "Nous intervenons après vos travaux de construction ou de rénovation pour rendre vos locaux propres, sains et prêts à l'usage, grâce à une équipe formée, un matériel adapté et des méthodes efficaces.",
   },
   {
-    title: "Désinfection & dératisation",
+    title: "Désinfection & désinsectisation",
     description:
-      "Traitement professionnel contre les nuisibles et désinfection des locaux selon les normes sanitaires en vigueur.",
+      "Nous éliminons efficacement les micro-organismes pathogènes et les nuisibles pour garantir un environnement sain, sûr et agréable, que ce soit dans les habitations, bureaux, commerces ou sites industriels.",
   },
   {
     title: "Entretien d'espaces verts",
     description:
-      "Tonte, taille, élagage, désherbage et aménagement paysager pour maintenir vos espaces extérieurs impeccables toute l'année.",
+      "Tonte, taille, ramassage, arrosage. Nous assurons l'entretien de vos espaces verts pour maintenir un cadre extérieur agréable et bien entretenu toute l'année.",
   },
   {
-    title: "Fourniture de produits d'entretien",
+    title: "Fourniture de produits",
     description:
-      "Approvisionnement en produits de nettoyage professionnels, consommables sanitaires et équipements d'entretien de qualité.",
+      "Nous fournissons une gamme complète de produits d'entretien et de nettoyage, sélectionnés pour leur efficacité, leur sécurité et leur respect de l'environnement, afin de garantir des résultats professionnels.",
   },
 ];
 
@@ -49,8 +49,8 @@ export default function ServiceDeNettoyagePage() {
   return (
     <ServicePageLayout
       heroTitle="SERVICE DE NETTOYAGE"
-      introTitle="Service de nettoyage professionnel"
-      introText="DINAGUI SARL vous garantit des espaces propres, sains et agréables grâce à nos équipes de nettoyage professionnelles. Nous intervenons dans les secteurs résidentiel, commercial et industriel avec des méthodes éprouvées et des produits respectueux de l'environnement."
+      introTitle="Propreté garantie, sérénité assurée"
+      introText="Nous offrons aux particuliers, entreprises, institutions et chantiers un service de nettoyage rapide, efficace et respectueux des normes d'hygiène, avec du personnel formé et des équipements adaptés."
       sectionTitle="Nos prestations de nettoyage"
       services={services}
       otherServices={otherServices}

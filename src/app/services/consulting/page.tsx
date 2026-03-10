@@ -4,32 +4,32 @@ const services = [
   {
     title: "Stratégie & Organisation",
     description:
-      "Élaboration de plans stratégiques, restructuration organisationnelle, optimisation des processus et accompagnement au changement pour renforcer votre compétitivité.",
+      "Nous accompagnons les dirigeants et équipes dans la définition de leur vision, la structuration de leur organisation et la mise en œuvre de stratégies performantes, adaptées aux réalités du marché guinéen et international. Diagnostic, plan d'action, structuration interne.",
   },
   {
     title: "Gestion des Ressources Humaines",
     description:
-      "Audit RH, mise en place de politiques de recrutement, plans de formation, gestion des talents et développement des compétences de vos équipes.",
+      "Nous accompagnons les organisations dans la gestion stratégique et opérationnelle de leurs ressources humaines, afin de renforcer la performance, la motivation et la conformité sociale. Recrutement, formation, évaluation, politique RH.",
   },
   {
     title: "Finance & Comptabilité",
     description:
-      "Conseil financier, mise en place de systèmes comptables, analyse de rentabilité, montage financier de projets et optimisation de la gestion de trésorerie.",
+      "Nous accompagnons les organisations dans la gestion financière et comptable, en assurant la conformité réglementaire, la fiabilité des données et l'optimisation des performances économiques. Élaboration de budgets, optimisation fiscale, audit.",
   },
   {
     title: "Marketing & Communication",
     description:
-      "Stratégie de marque, plans de communication, marketing digital, études de marché et positionnement pour accroître votre visibilité et votre impact.",
+      "Nous élaborons des stratégies de positionnement, de branding et de campagnes digitales pour accroître votre visibilité, renforcer votre image de marque et atteindre vos objectifs commerciaux sur le marché guinéen et international.",
   },
   {
     title: "Digitalisation & IT",
     description:
-      "Transformation numérique de votre entreprise : choix de solutions technologiques, déploiement d'outils digitaux, formation et accompagnement au changement.",
+      "Nous accompagnons les organisations dans leur transformation digitale, en intégrant des solutions technologiques sur mesure pour optimiser leurs processus, améliorer leur productivité et renforcer leur compétitivité.",
   },
   {
     title: "Développement de projets",
     description:
-      "Accompagnement de bout en bout dans le montage et le pilotage de vos projets : études de faisabilité, business plans, recherche de financements et suivi opérationnel.",
+      "Études de faisabilité, montage de projets, recherche de financement. Nous accompagnons les porteurs de projets de l'idée à la réalisation, avec une méthodologie éprouvée et un réseau de partenaires solide.",
   },
 ];
 
@@ -51,8 +51,8 @@ export default function ConsultingPage() {
       heroTitle="CONSULTING"
       heroSubtitle="Des solutions concrètes pour vos ambitions"
       introTitle="Conseil et accompagnement stratégique"
-      introText="DINAGUI SARL met à votre disposition une équipe de consultants expérimentés pour accompagner votre entreprise dans ses défis stratégiques et opérationnels. Notre approche pragmatique et personnalisée garantit des résultats concrets et mesurables."
-      sectionTitle="Nos domaines de conseil"
+      introText="Nous accompagnons les entreprises, institutions et porteurs de projets dans leur développement, leur structuration et leur performance, à travers des prestations de conseil sur mesure et des services opérationnels."
+      sectionTitle="Nos domaines d'expertise"
       services={services}
       otherServices={otherServices}
       ctaTitle="Transformez vos ambitions en résultats concrets"

@@ -4,42 +4,37 @@ const services = [
   {
     title: "Transport de marchandises",
     description:
-      "Acheminement sécurisé de vos marchandises sur l'ensemble du territoire guinéen et à l'international. Flotte de véhicules adaptés à tous types de cargaisons.",
+      "Nous assurons le transport de vos marchandises sur tout le territoire national et dans la sous-région, avec des solutions adaptées à chaque type de cargaison, pour garantir un acheminement sûr, ponctuel et conforme à vos exigences.",
   },
   {
-    title: "Transport de personnel",
+    title: "Transport du personnel",
     description:
-      "Mise à disposition de véhicules avec chauffeur pour le transport de vos équipes : navettes, déplacements professionnels et transferts.",
+      "Nous assurons le déplacement quotidien de vos équipes avec des véhicules adaptés, des chauffeurs expérimentés et une organisation optimisée, pour garantir ponctualité, sécurité et confort.",
   },
   {
     title: "Location d'engins lourds",
     description:
-      "Location de grues, pelleteuses, bulldozers, camions-bennes et autres engins de chantier avec opérateurs qualifiés.",
-  },
-  {
-    title: "Livraisons urbaines",
-    description:
-      "Service de livraison rapide en milieu urbain pour vos colis, documents et marchandises avec suivi en temps réel.",
+      "Nous mettons à votre disposition une flotte d'engins lourds modernes et entretenus, avec ou sans chauffeur, pour répondre à vos besoins en travaux publics, construction, manutention ou exploitation minière.",
   },
   {
     title: "Logistique événementielle",
     description:
-      "Organisation du transport et de la logistique pour vos événements : montage, démontage, acheminement de matériel et gestion des flux.",
+      "Gestion du matériel, montage/démontage, transport pour salons et conférences. Organisation complète de la logistique pour vos événements professionnels et institutionnels.",
   },
   {
     title: "Import-export",
     description:
-      "Accompagnement dans vos opérations d'importation et d'exportation : fret maritime, aérien et terrestre avec gestion documentaire complète.",
+      "Nous facilitons vos opérations d'importation et d'exportation avec des solutions logistiques complètes, conformes aux normes douanières et adaptées aux réalités du marché guinéen et sous-régional.",
+  },
+  {
+    title: "Livraisons urbaines",
+    description:
+      "Nous assurons la livraison rapide et sécurisée de vos colis, documents et marchandises au sein des zones urbaines, grâce à une organisation optimisée et des moyens adaptés au dernier kilomètre.",
   },
   {
     title: "Gestion d'entrepôts",
     description:
-      "Stockage sécurisé de vos marchandises dans nos entrepôts : réception, inventaire, préparation de commandes et expédition.",
-  },
-  {
-    title: "Autres services logistiques",
-    description:
-      "Solutions logistiques sur mesure : déménagement, manutention, conditionnement et tout service lié à la chaîne d'approvisionnement.",
+      "Nous assurons la gestion complète de vos entrepôts et espaces de stockage, pour optimiser vos flux logistiques, sécuriser vos marchandises et réduire vos coûts opérationnels.",
   },
 ];
 
@@ -59,9 +54,9 @@ export default function LogistiqueTransportPage() {
   return (
     <ServicePageLayout
       heroTitle="SOLUTIONS DE LOGISTIQUE & TRANSPORT FIABLES"
-      introTitle="Solutions logistiques et transport"
-      introText="DINAGUI SARL propose des solutions complètes de logistique et de transport pour accompagner vos activités commerciales et industrielles. Notre flotte de véhicules et notre expertise logistique garantissent la fiabilité et la ponctualité de chaque opération."
-      sectionTitle="Nos services logistiques"
+      introTitle="Nous bougeons pour vous, partout en Guinée et dans la sous-région"
+      introText="DINAGUI SARL vous propose des solutions de logistique et de transport sur mesure, fiables et sécurisées, pour accompagner les entreprises, les chantiers, les institutions et les particuliers dans leurs opérations quotidiennes ou stratégiques."
+      sectionTitle="Nos domaines d'expertise"
       services={services}
       otherServices={otherServices}
       ctaTitle="Optimisez votre chaîne logistique avec DINAGUI"

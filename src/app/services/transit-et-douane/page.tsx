@@ -2,34 +2,34 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const services = [
   {
-    title: "Dédouanement de marchandises",
+    title: "Transit maritime, terrestre et aérien",
     description:
-      "Prise en charge complète des formalités douanières pour l'importation et l'exportation de vos marchandises, avec rapidité et conformité réglementaire.",
+      "Nous assurons la gestion complète de vos opérations de transit, qu'elles soient maritimes, terrestres ou aériennes, avec un suivi rigoureux, une conformité douanière garantie et une optimisation des délais et coûts.",
   },
   {
-    title: "Transit maritime",
+    title: "Dédouanement",
     description:
-      "Organisation et suivi du transport maritime de vos marchandises : conteneurs complets ou groupage, du port d'origine au port de destination.",
+      "Nous prenons en charge l'ensemble des formalités douanières pour vos marchandises, afin de garantir un passage fluide aux frontières et une mise en circulation rapide, tout en respectant les réglementations en vigueur.",
   },
   {
-    title: "Transit aérien",
+    title: "Commissionnaire agréé en douane",
     description:
-      "Gestion du fret aérien pour vos envois urgents ou de valeur : réservation, documentation, suivi et livraison porte à porte.",
+      "Représentation officielle auprès des services douaniers. Nous prenons en charge l'ensemble des formalités douanières pour vos marchandises, avec une expertise reconnue et un réseau solide.",
   },
   {
-    title: "Conseil réglementaire",
+    title: "Transport & livraison",
     description:
-      "Accompagnement sur les réglementations douanières guinéennes et internationales : classification tarifaire, régimes douaniers et optimisation fiscale.",
+      "Nous assurons le transport et la livraison de vos marchandises, depuis les ports, aéroports et frontières jusqu'à leur destination finale, avec un suivi rigoureux et une parfaite maîtrise des procédures douanières.",
   },
   {
-    title: "Gestion documentaire",
+    title: "Assistance documentaire",
     description:
-      "Préparation et traitement de l'ensemble des documents requis : déclarations en douane, certificats d'origine, licences d'importation et factures.",
+      "Nous vous accompagnons dans la préparation, la vérification et la gestion de tous les documents nécessaires à vos opérations douanières et de transit : factures, certificats, bordereaux, licences d'import/export.",
   },
   {
-    title: "Entreposage sous douane",
+    title: "Suivi en temps réel",
     description:
-      "Stockage temporaire de vos marchandises en zone sous douane avec gestion administrative et sécurisation de vos biens.",
+      "Notifications, tracking GPS, rapports d'étape. Nous garantissons la traçabilité complète de vos marchandises à chaque étape du processus de transit et de dédouanement.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function TransitDouanePage() {
     <ServicePageLayout
       heroTitle="TRANSIT ET DOUANE"
       introTitle="Transit et opérations douanières"
-      introText="DINAGUI SARL facilite vos opérations de transit et de dédouanement grâce à notre connaissance approfondie des procédures douanières guinéennes et internationales. Nous assurons un traitement rapide et conforme de vos marchandises à chaque étape."
+      introText="Nous accompagnons les importateurs, exportateurs et entreprises dans toutes les opérations de transit, de dédouanement et de logistique, en garantissant la conformité, la rapidité et la sécurité. Nous gérons pour vous l'ensemble des formalités douanières et des opérations de transit, afin de garantir un acheminement rapide, sécurisé et conforme de vos marchandises, en import comme en export."
       sectionTitle="Nos services de transit"
       services={services}
       otherServices={otherServices}

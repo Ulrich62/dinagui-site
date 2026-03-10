@@ -41,7 +41,7 @@ export default function BlogPage() {
                       par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
                     </span>
                     <span>|</span>
-                    <span>octobre 1, 2025</span>
+                    <span>DINAGUI SARL</span>
                   </div>
 
                   <h2 className="text-xl font-bold text-[#1f2d3d] mb-3 leading-snug font-[Roboto_Condensed]">

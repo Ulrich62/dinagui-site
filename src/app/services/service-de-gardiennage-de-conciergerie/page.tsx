@@ -4,37 +4,37 @@ const services = [
   {
     title: "Gardiennage statique",
     description:
-      "Présence permanente d'agents de sécurité qualifiés sur vos sites : contrôle des accès, surveillance des entrées et sorties, gestion des visiteurs.",
+      "Nous assurons une présence humaine permanente sur vos sites sensibles (résidences, bureaux, chantiers, entrepôts), avec des agents formés à la surveillance, au contrôle d'accès et à la gestion des incidents.",
+  },
+  {
+    title: "Gardiennage résidentiel",
+    description:
+      "Nous assurons la surveillance continue des résidences privées, immeubles collectifs et villas, avec des agents dissuasifs, discrets et formés, pour garantir la sécurité des biens et des occupants, de jour comme de nuit.",
   },
   {
     title: "Sécurité d'entreprise",
     description:
-      "Protection complète de vos locaux professionnels : bureaux, entrepôts, usines. Mise en place de protocoles de sécurité adaptés à votre activité.",
+      "Nous protégeons vos locaux, vos équipes et vos actifs grâce à une présence humaine qualifiée, des procédures rigoureuses et un suivi permanent, afin de garantir la continuité de vos activités en toute sérénité.",
   },
   {
-    title: "Protection résidentielle",
+    title: "Rondes de sécurité",
     description:
-      "Sécurisation de résidences privées, villas et immeubles : gardiennage, contrôle d'accès et veille sécuritaire 24h/24.",
-  },
-  {
-    title: "Prévention incendie",
-    description:
-      "Agents formés à la prévention et à la lutte contre les incendies. Vérification des équipements, plans d'évacuation et interventions d'urgence.",
+      "Nos agents effectuent des rondes régulières et planifiées sur les sites confiés, de jour comme de nuit, afin de prévenir les intrusions, détecter les anomalies et garantir une présence dissuasive.",
   },
   {
     title: "Sécurité événementielle",
     description:
-      "Dispositifs de sécurité sur mesure pour vos événements : conférences, cérémonies, festivals. Gestion des flux, contrôle des accès et intervention rapide.",
+      "Nous assurons la sécurité complète de vos événements culturels, sportifs, institutionnels ou privés, en combinant présence humaine qualifiée, contrôle d'accès rigoureux et gestion proactive des risques.",
   },
   {
-    title: "Installation de systèmes de sécurité",
+    title: "Protection incendie",
     description:
-      "Mise en place de caméras de vidéosurveillance, alarmes, détecteurs de mouvement et systèmes de contrôle d'accès électroniques.",
+      "Nous assurons la prévention et la gestion des risques incendie sur vos sites, grâce à des agents formés, des procédures rigoureuses et un suivi permanent, pour protéger vos biens et vos occupants.",
   },
   {
-    title: "Rondes de surveillance",
+    title: "Installation de systèmes",
     description:
-      "Patrouilles régulières diurnes et nocturnes pour assurer une couverture sécuritaire continue de vos installations et prévenir toute intrusion.",
+      "Mise en place de caméras de vidéosurveillance, alarmes et systèmes de contrôle d'accès électroniques pour renforcer la sécurité de vos installations.",
   },
 ];
 
@@ -54,8 +54,8 @@ export default function GardiennageConciergiePage() {
   return (
     <ServicePageLayout
       heroTitle="SERVICE DE GARDIENNAGE & CONCIERGERIE"
-      introTitle="Sécurité et conciergerie professionnelle"
-      introText="DINAGUI SARL assure la protection de vos biens, de vos locaux et de vos personnes grâce à des agents de sécurité formés et expérimentés. Nous proposons des solutions de gardiennage et de conciergerie adaptées à tous types d'environnements."
+      introTitle="Votre tranquillité, notre priorité"
+      introText="Nous assurons la protection des sites avec un service de sécurité privée et de conciergerie, haut de gamme, fiable, discret et efficace, des biens et des personnes par une présence humaine qualifiée, des rondes régulières et une coordination rigoureuse, adaptée aux besoins des entreprises, résidences, chantiers et institutions."
       introImage="/images/services/gardiennage.jpg"
       sectionTitle="Nos prestations de gardiennage"
       services={services}

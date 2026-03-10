@@ -2,34 +2,34 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const services = [
   {
-    title: "Approvisionnement en gros",
+    title: "Équipements de bureau",
     description:
-      "Fourniture en gros de produits alimentaires, matériaux de construction, équipements industriels et biens de consommation courante.",
+      "Nous fournissons et installons des équipements de bureau modernes et fiables, conçus pour optimiser la productivité, le confort et l'image professionnelle de nos clients. Fournitures, mobilier, informatique, imprimantes.",
   },
   {
-    title: "Distribution",
+    title: "Produits d'entretien",
     description:
-      "Réseau de distribution fiable pour acheminer vos produits vers les points de vente, entreprises et institutions à travers la Guinée.",
+      "Nous proposons une gamme complète de produits de nettoyage et d'entretien professionnels : détergents, balais, gants, désinfectants et équipements adaptés aux besoins des entreprises et des particuliers.",
   },
   {
-    title: "Négoce international",
+    title: "Accessoires électroniques",
     description:
-      "Importation et exportation de marchandises variées avec gestion complète des formalités commerciales et douanières.",
+      "Nous proposons une large gamme d'accessoires électroniques modernes et fiables, conçus pour améliorer l'utilisation de vos appareils, prolonger leur durée de vie et optimiser votre confort technologique.",
   },
   {
-    title: "Produits de consommation",
+    title: "Articles scolaires",
     description:
-      "Large gamme de produits de consommation courante : alimentaire, hygiène, entretien, fournitures diverses pour particuliers et professionnels.",
+      "Nous proposons une gamme complète d'articles scolaires de qualité, adaptés à tous les niveaux d'enseignement, pour accompagner les élèves tout au long de leur parcours éducatif. Cahiers, stylos, sacs, calculatrices.",
   },
   {
-    title: "Matériaux de construction",
+    title: "Produits alimentaires",
     description:
-      "Vente de matériaux de construction : ciment, fer, bois, quincaillerie, revêtements et tous matériaux nécessaires à vos chantiers.",
+      "Nous proposons une large gamme de produits alimentaires, frais, secs ou transformés, sélectionnés pour leur qualité, leur sécurité et leur conformité aux normes, afin de répondre aux besoins des ménages, commerces et institutions.",
   },
   {
-    title: "Conseil commercial",
+    title: "Vêtements & textiles",
     description:
-      "Accompagnement dans vos projets commerciaux : étude de marché, sourcing de produits, négociation fournisseurs et optimisation des coûts.",
+      "Nous proposons une large gamme de vêtements et textiles, alliant qualité, confort et tendance, pour répondre aux besoins quotidiens, professionnels et événementiels de nos clients. Tenues professionnelles, uniformes, linge de maison.",
   },
 ];
 
@@ -49,9 +49,9 @@ export default function CommerceGeneralPage() {
   return (
     <ServicePageLayout
       heroTitle="COMMERCE GÉNÉRAL"
-      introTitle="Commerce général et distribution"
-      introText="DINAGUI SARL intervient dans le commerce général en proposant une large gamme de produits et services commerciaux. De l'approvisionnement à la distribution, nous accompagnons entreprises et institutions dans leurs besoins en biens et marchandises de qualité."
-      sectionTitle="Nos activités commerciales"
+      introTitle="Tout ce dont vous avez besoin, en un seul endroit"
+      introText="DINAGUI est une entreprise polyvalente qui combine vente de produits divers et services professionnels, pour répondre aux besoins des particuliers, des entreprises et des institutions dans un environnement urbain dynamique."
+      sectionTitle="Nos catégories de produits et services"
       services={services}
       otherServices={otherServices}
       ctaTitle="Faites confiance à DINAGUI pour vos besoins commerciaux"

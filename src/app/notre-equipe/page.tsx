@@ -24,12 +24,12 @@ const teamMembers = [
     role: "Gestionnaire Administratif",
   },
   {
-    name: "Zeinab Souma",
+    name: "Zeinab Soumah",
     role: "Secrétaire",
   },
   {
     name: "Aboubacar Yatara",
-    role: "Gestionnaire de Site Adjointe",
+    role: "Gestionnaire de Site Adjoint",
   },
 ];
 
@@ -75,6 +75,7 @@ export default function NotreEquipePage() {
                       src="/images/team/portrait-team.png"
                       alt={member.name}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Hover overlay with name/role */}

@@ -4,32 +4,27 @@ const services = [
   {
     title: "Fournitures de bureau",
     description:
-      "Papeterie, classeurs, stylos, cartouches d'encre, papier d'impression et tout le nécessaire pour le fonctionnement quotidien de vos bureaux.",
+      "Nous mettons à votre disposition une gamme complète de fournitures de bureau de qualité, sélectionnées pour leur efficacité et leur durabilité. Stylos, papiers, classeurs, enveloppes, cartouches, accessoires informatiques.",
   },
   {
     title: "Mobilier de bureau",
     description:
-      "Bureaux, chaises ergonomiques, armoires de rangement, tables de réunion et aménagement complet de vos espaces de travail.",
+      "Nous proposons un choix complet de mobilier de bureau ergonomique et durable, conçu pour optimiser le confort et la productivité des équipes. Bureaux, fauteuils ergonomiques, armoires, tables de réunion, comptoirs.",
   },
   {
     title: "Équipements informatiques",
     description:
-      "Ordinateurs, imprimantes, scanners, vidéoprojecteurs et accessoires informatiques pour équiper vos équipes.",
+      "Nous fournissons et installons des solutions informatiques complètes, adaptées à vos besoins professionnels ou personnels, pour garantir performance, sécurité et productivité. Imprimantes, scanners, onduleurs, accessoires multimédias.",
   },
   {
-    title: "Consommables et accessoires",
+    title: "Décoration & confort",
     description:
-      "Toners, cartouches, câbles, supports et tous les consommables nécessaires au bon fonctionnement de vos équipements.",
+      "Nous aménageons et décorons vos espaces professionnels pour allier esthétique, confort et fonctionnalité, afin de créer un environnement motivant, accueillant et propice à la performance. Plantes artificielles, luminaires, stores, tapis.",
   },
   {
-    title: "Équipements spécialisés",
+    title: "Mobilier d'accueil",
     description:
-      "Matériel technique et équipements spécialisés selon votre secteur d'activité : médical, industriel, éducatif.",
-  },
-  {
-    title: "Service de livraison",
-    description:
-      "Livraison rapide et fiable de vos commandes directement dans vos locaux, avec possibilité d'approvisionnement régulier.",
+      "Nous concevons et fournissons des solutions de mobilier d'accueil qui allient design, confort et fonctionnalité, pour offrir à vos visiteurs une expérience positive dès leur arrivée. Canapés, chaises visiteurs, présentoirs.",
   },
 ];
 
@@ -49,8 +44,8 @@ export default function FournitureDeBureauPage() {
   return (
     <ServicePageLayout
       heroTitle="FOURNITURE DE BUREAU ET ÉQUIPEMENT"
-      introTitle="Fourniture de bureau et équipement"
-      introText="DINAGUI SARL fournit aux entreprises et institutions tout le matériel de bureau et les équipements nécessaires à leur bon fonctionnement. De la papeterie aux équipements informatiques, nous vous proposons des produits de qualité à des prix compétitifs avec un service de livraison fiable."
+      introTitle="Optimisez vos espaces, inspirez vos équipes"
+      introText="Fournir aux entreprises, institutions et particuliers des équipements de bureau et du mobilier fonctionnel et esthétique, tout en assurant la livraison, l'installation et le service après-vente."
       sectionTitle="Nos gammes de produits"
       services={services}
       otherServices={otherServices}

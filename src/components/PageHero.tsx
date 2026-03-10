@@ -22,8 +22,9 @@ export default function PageHero({
     <section className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center overflow-hidden">
       <Image
         src={backgroundImage}
-        alt=""
+        alt={title}
         fill
+        sizes="100vw"
         className="object-cover"
         priority
       />

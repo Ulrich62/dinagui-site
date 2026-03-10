@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 interface StatItem {
   value: number;
@@ -68,15 +69,14 @@ export default function StatsSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <section
-      className="relative py-24 px-6"
-      style={{
-        backgroundImage: "url('/images/parallax-bg.jpg')",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="relative py-24 px-6 overflow-hidden">
+      <Image
+        src="/images/parallax-bg.jpg"
+        alt="Arrière-plan statistiques"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-[#1a2332]/90" />
 
       <div

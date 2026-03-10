@@ -2,19 +2,19 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const services = [
   {
-    title: "Offre structurée",
+    title: "Structurer votre offre",
     description:
-      "Mise à disposition de personnel qualifié dans les domaines du BTP (ouvriers, techniciens, ingénieurs), de la Sécurité (agents de surveillance, gardiens), du Nettoyage (agents d'entretien, techniciens de surface), de la Logistique (manutentionnaires, chauffeurs) et de l'Administration (secrétaires, comptables, assistants).",
+      "Nous mettons à disposition du personnel qualifié et encadré pour les secteurs du BTP, de la sécurité, du nettoyage, de la logistique et de l'administration. Chaque mission est encadrée par un processus rigoureux, garantissant efficacité, conformité et satisfaction client.",
   },
   {
-    title: "Profils sur mesure",
+    title: "Créer des fiches de poste",
     description:
-      "Nous sélectionnons des profils adaptés à vos besoins spécifiques. Chaque candidat est évalué sur ses compétences techniques, son expérience et son savoir-être pour garantir une intégration réussie au sein de votre équipe.",
+      "Nous garantissons des profils fiables, une gestion transparente et un encadrement terrain adapté à chaque mission. Notre objectif : professionnaliser le travail temporaire en Guinée.",
   },
   {
-    title: "Suivi rigoureux",
+    title: "Suivi des missions",
     description:
-      "Un accompagnement continu après le placement : évaluations régulières, gestion des remplacements, formation complémentaire si nécessaire. Nous restons votre interlocuteur unique tout au long de la mission.",
+      "Assurer la traçabilité des affectations et des rotations avec suivi de présence, de performance et des incidents, tout en produisant des rapports clairs pour les clients et le pilotage interne afin d'optimiser la gestion RH et anticiper les besoins.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function PlacementDePersonnelsPage() {
     <ServicePageLayout
       heroTitle="PLACEMENT DE PERSONNELS"
       introTitle="Placement de personnels qualifiés"
-      introText="DINAGUI SARL vous fournit une main-d'œuvre qualifiée et fiable, adaptée à vos exigences opérationnelles. Notre processus de recrutement rigoureux garantit des profils compétents, motivés et immédiatement opérationnels pour renforcer vos équipes."
+      introText="Nous mettons à disposition des entreprises, chantiers, institutions et particuliers en besoins en main-d'œuvre qualifiés, fiables et opérationnels, des candidats compétents pour des missions ponctuelles ou longues durées, tout en assurant la gestion administrative, le suivi terrain et la formation continue."
       introImage="/images/services/placement-personnel.jpg"
       sectionTitle="Nos solutions de placement"
       services={services}

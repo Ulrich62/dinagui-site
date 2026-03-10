@@ -25,14 +25,14 @@ export default function ProjectsSection() {
         <SectionTitle title="Nos projets immobiliers" />
       </div>
 
-      <div
-        className="relative py-20 px-6"
-        style={{
-          backgroundImage: "url('/images/apartments/f3-appartement.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="relative py-20 px-6 overflow-hidden">
+        <Image
+          src="/images/apartments/f3-appartement.jpg"
+          alt="Projet appartement F3"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-[#1a2332]/92" />
 
         <div className="relative z-10 max-w-[1340px] mx-auto">
@@ -95,6 +95,7 @@ export default function ProjectsSection() {
                   alt="Plan appartement F3"
                   width={450}
                   height={350}
+                  sizes="(max-width: 1024px) 100vw, 450px"
                   className="rounded object-contain"
                 />
               </div>

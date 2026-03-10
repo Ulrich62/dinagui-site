@@ -2,54 +2,49 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const services = [
   {
-    title: "Mise en location rapide",
+    title: "Mise en location rapide et ciblée",
     description:
-      "Recherche de locataires fiables, diffusion d'annonces ciblées et organisation des visites pour une mise en location efficace de vos biens.",
+      "Nous assurons une mise en location rapide et ciblée de vos biens, grâce à une stratégie de diffusion efficace, une sélection rigoureuse des locataires et une parfaite connaissance du marché immobilier local.",
   },
   {
     title: "Rédaction de contrats de bail",
     description:
-      "Élaboration de contrats de bail conformes à la législation en vigueur, protégeant les intérêts du propriétaire et du locataire.",
+      "Nous rédigeons des contrats de bail clairs, équilibrés et conformes à la législation guinéenne, afin de sécuriser les relations entre propriétaires et locataires tout en garantissant leurs droits et obligations.",
   },
   {
-    title: "Gestion des relations locataires",
+    title: "Encaissement des loyers et suivi des paiements",
     description:
-      "Prise en charge complète de la communication avec les locataires, gestion des requêtes, réclamations et résolution des litiges.",
+      "Nous garantissons un encaissement sécurisé des loyers et un suivi rigoureux des paiements, avec des rapports mensuels clairs, des relances automatisées et une transparence totale pour les propriétaires.",
   },
   {
-    title: "Encaissement des loyers",
+    title: "Gestion des relations avec les locataires",
     description:
-      "Suivi rigoureux des paiements, relances en cas de retard et versement ponctuel des revenus locatifs aux propriétaires.",
+      "Nous veillons à une gestion proactive et équilibrée des relations avec les locataires, en respectant les engagements contractuels, en résolvant rapidement les litiges et en favorisant une communication fluide au quotidien.",
   },
   {
-    title: "Harmonisation et valorisation",
+    title: "Gestion des immeubles collectifs",
     description:
-      "Conseils et travaux d'amélioration pour optimiser la valeur de vos biens immobiliers et maximiser leur rentabilité.",
+      "Nous assurons l'administration complète des immeubles collectifs, incluant la gestion des parties communes, le suivi des prestataires, la tenue des assemblées de copropriétaires et la transparence des charges.",
   },
   {
-    title: "Accompagnement vente/achat",
+    title: "Accompagnement à la vente ou à l'achat",
     description:
-      "Assistance complète dans vos transactions immobilières : évaluation, négociation, accompagnement juridique et administratif.",
+      "Nos clients bénéficient de notre assistance tout au long du processus de vente ou d'achat immobilier, de l'estimation à la signature, incluant la négociation, la vérification juridique et le conseil stratégique.",
   },
   {
-    title: "Gestion d'immeubles collectifs",
+    title: "Harmonisation et valorisation des biens",
     description:
-      "Administration globale de copropriétés et résidences : entretien des parties communes, gestion des charges et suivi technique.",
+      "Nous assurons la mise aux normes techniques et réglementaires de vos biens immobiliers, tout en les valorisant par des travaux ciblés, afin d'en optimiser la sécurité, le confort et l'attractivité.",
   },
   {
     title: "Assistance aux investisseurs",
     description:
-      "Conseil stratégique pour les investisseurs immobiliers : identification d'opportunités, analyse de rentabilité et montage de projets.",
+      "Nous accompagnons les investisseurs locaux et ceux de la diaspora dans toutes les étapes de leurs projets immobiliers : identification des opportunités, analyse de rentabilité, sécurisation juridique et suivi technique.",
   },
   {
-    title: "Gestion de portefeuille immobilier",
+    title: "Gestion personnalisée de votre portefeuille",
     description:
-      "Pilotage et optimisation de votre patrimoine immobilier avec des rapports détaillés et un suivi personnalisé de chaque bien.",
-  },
-  {
-    title: "Services supplémentaires",
-    description:
-      "États des lieux, diagnostics techniques, assurance loyers impayés et tout autre service pour sécuriser votre investissement.",
+      "Nous assurons un suivi personnalisé de chaque bien immobilier confié, avec des rapports réguliers, des indicateurs de performance locative et une gestion proactive des interventions.",
   },
 ];
 
@@ -71,7 +66,7 @@ export default function GestionImmobilierePage() {
       heroTitle="GESTION IMMOBILIÈRE"
       heroSubtitle="Un accompagnement complet et sur mesure"
       introTitle="Votre partenaire en gestion immobilière"
-      introText="DINAGUI SARL met à votre disposition une gamme complète de services de gestion immobilière, adaptée aux réalités du marché guinéen. Que vous soyez propriétaire, investisseur ou locataire, nous vous offrons un accompagnement personnalisé pour valoriser et sécuriser votre patrimoine immobilier."
+      introText="Nous proposons une gamme complète de services immobiliers adaptés aux réalités du marché. Notre objectif est de simplifier la vie des propriétaires, d'accompagner les investisseurs et offrir aux locataires des logements sûrs et bien gérés."
       introImage="/images/services/gestion-immobiliere.jpg"
       sectionTitle="Nos services de gestion immobilière"
       services={services}

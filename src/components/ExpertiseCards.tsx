@@ -49,13 +49,13 @@ export default function ExpertiseCards() {
             <div className="absolute top-0 left-0 right-0 h-1 bg-[#F88732] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F88732] transition-colors duration-300">
+              <div className="w-14 h-14 rounded-lg bg-[#F88732] flex items-center justify-center flex-shrink-0">
                 <Image
                   src={card.icon}
                   alt={card.title}
                   width={32}
                   height={32}
-                  className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                  className="object-contain invert"
                 />
               </div>
               <h3 className="text-[15px] font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase leading-tight">

@@ -39,7 +39,7 @@ export default function BlogDetailPage() {
                   par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
                 </span>
                 <span>|</span>
-                <span>octobre 1, 2025</span>
+                <span>DINAGUI SARL</span>
               </div>
 
               <div className="prose prose-lg max-w-none text-[#1f2d3d]">

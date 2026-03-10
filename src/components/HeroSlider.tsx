@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const slides = [
@@ -50,9 +51,17 @@ export default function HeroSlider() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${slides[current].image}')` }}
-        />
+          className="absolute inset-0"
+        >
+          <Image
+            src={slides[current].image}
+            alt={slides[current].title}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority={current === 0}
+          />
+        </motion.div>
       </AnimatePresence>
 
       {/* Gradient overlay */}

@@ -1,20 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 
 export default function CTASection() {
   return (
-    <section
-      className="relative py-28 px-6"
-      style={{
-        backgroundImage: "url('/images/apartments/f3-appartement.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <section className="relative py-28 px-6 overflow-hidden">
+      <Image
+        src="/images/apartments/f3-appartement.jpg"
+        alt="Investissez avec confiance"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-[#1a2332]/80" />
 
       <div className="relative z-10 max-w-[800px] mx-auto text-center">

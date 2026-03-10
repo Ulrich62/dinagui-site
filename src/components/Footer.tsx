@@ -28,10 +28,15 @@ export default function Footer() {
   return (
     <footer className="relative text-white">
       {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/parallax-bg.jpg')" }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/images/parallax-bg.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
       <div className="absolute inset-0 bg-[#111827]/95" />
 
       <div className="relative z-10 max-w-[1340px] mx-auto px-6 pt-16 pb-10">
