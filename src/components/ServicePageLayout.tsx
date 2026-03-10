@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi";
 import PageHero from "./PageHero";
 
 interface ServiceItem {
@@ -61,7 +62,7 @@ export default function ServicePageLayout({
       />
 
       {/* Intro Section — image + texte */}
-      <section className="py-16 px-6 max-w-[1340px] mx-auto">
+      <section className="py-20 px-6 max-w-[1340px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {introImage && (
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
@@ -79,6 +80,14 @@ export default function ServicePageLayout({
             </div>
           )}
           <div className={!introImage ? "lg:col-span-2 text-center max-w-3xl mx-auto" : ""}>
+            {/* Tag element */}
+            <div className={`flex items-center gap-3 mb-4 ${!introImage ? "justify-center" : ""}`}>
+              <div className="w-10 h-px bg-[#F88732]" />
+              <span className="text-[#F88732] font-medium text-sm tracking-[0.15em] uppercase font-[Roboto]">
+                À propos
+              </span>
+            </div>
+
             <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] mb-6 font-[Roboto_Condensed] uppercase">
               {introTitle}
             </h2>
@@ -97,7 +106,7 @@ export default function ServicePageLayout({
 
       {/* Service Cards Grid */}
       {services.length > 0 && (
-        <section className="pb-16 px-6 max-w-[1340px] mx-auto">
+        <section className="pb-20 px-6 max-w-[1340px] mx-auto">
           {sectionTitle && (
             <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] text-center mb-12 font-[Roboto_Condensed] uppercase">
               {sectionTitle}
@@ -107,8 +116,10 @@ export default function ServicePageLayout({
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg p-7 hover:shadow-lg hover:border-[#F88732]/30 transition-all duration-300 group"
+                className="bg-white border border-gray-200 rounded-lg p-7 hover:shadow-lg hover:border-[#F88732]/30 transition-all duration-300 group relative overflow-hidden"
               >
+                {/* Left orange accent bar on hover */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#F88732] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 {/* Icône numérotée */}
                 <div className="w-10 h-10 rounded bg-[#F88732]/10 flex items-center justify-center mb-5 group-hover:bg-[#F88732]/20 transition-colors">
                   <span className="text-[#F88732] font-bold text-sm font-[Roboto_Condensed]">
@@ -131,8 +142,14 @@ export default function ServicePageLayout({
       {children}
 
       {/* CTA Banner orange */}
-      <section className="bg-[#F88732] py-14">
+      <section className="bg-[#F88732] py-16">
         <div className="max-w-[900px] mx-auto text-center px-6">
+          {/* Decorative dot+lines element */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="w-2 h-2 rounded-full bg-white/60" />
+            <div className="w-12 h-px bg-white/60" />
+            <div className="w-2 h-2 rounded-full bg-white/60" />
+          </div>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-[Roboto_Condensed] uppercase">
             {ctaTitle}
           </h3>
@@ -141,7 +158,7 @@ export default function ServicePageLayout({
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#F88732] font-semibold py-3 px-10 rounded hover:bg-gray-100 transition-colors duration-300 font-[Roboto]"
+            className="inline-block bg-white text-[#F88732] font-semibold py-3 px-10 rounded hover:bg-gray-100 transition-all duration-300 font-[Roboto] hover:shadow-lg"
           >
             {ctaText}
           </Link>
@@ -168,14 +185,21 @@ export default function ServicePageLayout({
               <p className="text-white/75 leading-relaxed font-[Roboto] mb-8">
                 Avec l&apos;expertise de nos architectes, ingénieurs et artisans expérimentés, nous bâtissons des ouvrages solides, esthétiques et durables. Ne laissez pas vos idées sur papier, transformez-les en réalité avec DINAGUI SARL.
               </p>
-              <div className="w-16 h-1 bg-[#F88732]" />
+              <div className="w-16 h-1 bg-[#F88732] mb-8" />
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#F88732] hover:bg-[#e0752a] text-white font-semibold px-8 py-3.5 rounded transition-all duration-300 font-[Roboto] hover:shadow-lg hover:shadow-[#F88732]/25"
+              >
+                Contactez-nous
+                <FiArrowRight />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Autres Services avec images */}
-      <section className="py-16 px-6 max-w-[1340px] mx-auto">
+      <section className="py-20 px-6 max-w-[1340px] mx-auto">
         <h2 className="text-3xl font-bold text-[#1f2d3d] text-center mb-12 font-[Roboto_Condensed] uppercase">
           Autres services
         </h2>
@@ -187,13 +211,17 @@ export default function ServicePageLayout({
               className="group block"
             >
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-3">
-                <Image
-                  src={service.image || "/images/parallax-bg.avif"}
-                  alt={service.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                />
+                {service.image ? (
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#1f2d3d] to-[#F88732]/80" />
+                )}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               <h4 className="text-center text-[#1f2d3d] font-bold text-sm font-[Roboto_Condensed] uppercase group-hover:text-[#F88732] transition-colors">

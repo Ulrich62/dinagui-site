@@ -57,7 +57,7 @@ export default function ContactPage() {
     <>
       <PageHero title="Contactez-nous" />
 
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-[1100px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left - Contact Info */}
@@ -69,34 +69,34 @@ export default function ContactPage() {
                 Notre équipe est à votre écoute pour vous conseiller et vous accompagner à chaque étape de vos projets.
               </p>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-light flex items-center justify-center flex-shrink-0">
-                    <FiPhone className="text-orange text-xl" />
+                  <div className="w-12 h-12 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0">
+                    <FiPhone className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-dark mb-1">Téléphone</h4>
-                    <p className="text-gray">(+224) 613 50 04 04</p>
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">Téléphone</h4>
+                    <p className="text-[#6b7280] font-[Roboto]">(+224) 613 50 04 04</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-light flex items-center justify-center flex-shrink-0">
-                    <FiMail className="text-orange text-xl" />
+                  <div className="w-12 h-12 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0">
+                    <FiMail className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-dark mb-1">E-mail</h4>
-                    <p className="text-gray">dinagui.sarlu@gmail.com</p>
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">E-mail</h4>
+                    <p className="text-[#6b7280] font-[Roboto]">dinagui.sarlu@gmail.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-light flex items-center justify-center flex-shrink-0">
-                    <FiMapPin className="text-orange text-xl" />
+                  <div className="w-12 h-12 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0">
+                    <FiMapPin className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-dark mb-1">Adresse</h4>
-                    <p className="text-gray">
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">Adresse</h4>
+                    <p className="text-[#6b7280] font-[Roboto]">
                       Conakry / Kipé C/Ratoma Centre émetteur Cité Plaza
                       Platinium
                     </p>
@@ -120,18 +120,18 @@ export default function ContactPage() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="bg-beige rounded-2xl p-8 space-y-5"
+                  className="bg-[#faf5f0] rounded-2xl p-8 space-y-5"
                   noValidate
                 >
                   <h3 className="text-xl font-bold text-[#1f2d3d] text-center mb-4 font-[Roboto_Condensed] uppercase">
                     Formulaire de devis
                   </h3>
-                  <p className="text-sm font-bold text-[#1f2d3d] mb-2">Nom complet <span className="text-[#F88732]">*</span></p>
+                  <p className="text-sm font-bold text-[#1f2d3d] mb-2 font-[Roboto]">Nom complet <span className="text-[#F88732]">*</span></p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label
                         htmlFor="prenom"
-                        className="block text-sm font-medium text-dark mb-1"
+                        className="block text-sm font-medium text-[#1f2d3d] mb-1 font-[Roboto]"
                       >
                         Prénom
                       </label>
@@ -141,9 +141,9 @@ export default function ContactPage() {
                         name="prenom"
                         value={formData.prenom}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.prenom ? "border-red-400" : "border-gray-200"
-                        } bg-white focus:outline-none focus:ring-2 focus:ring-orange/40 transition`}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${
+                          errors.prenom ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                        } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                       />
                       {errors.prenom && (
                         <p className="text-red-500 text-xs mt-1">
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="nom"
-                        className="block text-sm font-medium text-dark mb-1"
+                        className="block text-sm font-medium text-[#1f2d3d] mb-1 font-[Roboto]"
                       >
                         Nom
                       </label>
@@ -164,9 +164,9 @@ export default function ContactPage() {
                         name="nom"
                         value={formData.nom}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.nom ? "border-red-400" : "border-gray-200"
-                        } bg-white focus:outline-none focus:ring-2 focus:ring-orange/40 transition`}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${
+                          errors.nom ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                        } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                       />
                       {errors.nom && (
                         <p className="text-red-500 text-xs mt-1">
@@ -179,7 +179,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-dark mb-1"
+                      className="block text-sm font-medium text-[#1f2d3d] mb-1 font-[Roboto]"
                     >
                       E-mail <span className="text-[#F88732]">*</span>
                     </label>
@@ -189,9 +189,9 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.email ? "border-red-400" : "border-gray-200"
-                      } bg-white focus:outline-none focus:ring-2 focus:ring-orange/40 transition`}
+                      className={`w-full px-4 py-3 rounded-lg border-2 ${
+                        errors.email ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                      } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-xs mt-1">
@@ -203,7 +203,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="telephone"
-                      className="block text-sm font-medium text-dark mb-1"
+                      className="block text-sm font-medium text-[#1f2d3d] mb-1 font-[Roboto]"
                     >
                       Téléphone <span className="text-[#F88732]">*</span>
                     </label>
@@ -213,9 +213,9 @@ export default function ContactPage() {
                       name="telephone"
                       value={formData.telephone}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.telephone ? "border-red-400" : "border-gray-200"
-                      } bg-white focus:outline-none focus:ring-2 focus:ring-orange/40 transition`}
+                      className={`w-full px-4 py-3 rounded-lg border-2 ${
+                        errors.telephone ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                      } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                     />
                     {errors.telephone && (
                       <p className="text-red-500 text-xs mt-1">
@@ -227,7 +227,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-dark mb-1"
+                      className="block text-sm font-medium text-[#1f2d3d] mb-1 font-[Roboto]"
                     >
                       Message
                     </label>
@@ -237,9 +237,9 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.message ? "border-red-400" : "border-gray-200"
-                      } bg-white focus:outline-none focus:ring-2 focus:ring-orange/40 transition resize-none`}
+                      className={`w-full px-4 py-3 rounded-lg border-2 ${
+                        errors.message ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                      } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200 resize-none`}
                     />
                     {errors.message && (
                       <p className="text-red-500 text-xs mt-1">
@@ -250,7 +250,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-orange text-white py-4 rounded-full text-lg font-medium hover:bg-orange-dark transition-colors"
+                    className="w-full bg-[#F88732] text-white py-4 rounded-lg text-lg font-medium hover:bg-[#e0752a] hover:shadow-lg hover:shadow-[#F88732]/25 transition-all duration-300 font-[Roboto]"
                   >
                     Envoyer
                   </button>
@@ -261,8 +261,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Google Maps */}
+      {/* Google Maps with separator */}
       <section className="w-full">
+        <div className="border-t-4 border-[#F88732]" />
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.2!2d-13.6!3d9.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMzMnMzYuMCJOIDEzwrAzNicwMC4wIlc!5e0!3m2!1sfr!2sgn!4v1696000000000"
           width="100%"
