@@ -2,163 +2,154 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
     image: "/images/apartments/f3-appartement.jpg",
+    subtitle: "Construction & Immobilier",
+    title: "DINAGUI SARL",
+    desc: "Votre partenaire de confiance pour des projets immobiliers durables et rentables.",
   },
   {
     image: "/images/services/btp-workers.avif",
+    subtitle: "Expertise BTP",
+    title: "BÂTIR L'AVENIR",
+    desc: "Des infrastructures modernes conçues avec rigueur, qualité et respect des délais.",
   },
   {
     image: "/images/services/gestion-immobiliere.avif",
+    subtitle: "Gestion immobilière",
+    title: "INVESTIR EN CONFIANCE",
+    desc: "Valorisez votre patrimoine avec un accompagnement stratégique sur mesure.",
   },
 ];
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [loaded, setLoaded] = useState(false);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % slides.length);
   }, []);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [next]);
 
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ height: "calc(100vh - 80px)" }}
+      style={{ height: "calc(100vh - 98px)" }}
     >
       {/* Background slides */}
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
-          initial={{ opacity: 0, scale: 1.08 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${slides[current].image}')` }}
         />
       </AnimatePresence>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
 
-      {/* Vertical line element (left side) */}
-      <div className="absolute left-20 top-1/2 z-10 hidden md:flex flex-col items-center gap-2" style={{ transform: "translateY(-50%)" }}>
-        <div className="w-px h-16 bg-white/80" />
-        <div className="w-0.5 h-10 bg-white" />
-        <div className="w-px h-16 bg-white/80" />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/85 via-[#1a2332]/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a2332]/60 via-transparent to-transparent" />
+
+      {/* Decorative vertical line */}
+      <div className="absolute left-12 lg:left-20 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col items-center gap-3">
+        <div className="w-px h-16 bg-white/30" />
+        <div className="w-1 h-1 rounded-full bg-[#F88732]" />
+        <div className="w-px h-16 bg-white/30" />
       </div>
 
-      {/* Left-aligned content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 max-w-[800px]">
-        {/* Subtitle */}
-        <div
-          className={`transform transition-all duration-1000 ease-out ${
-            loaded ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
-          }`}
-          style={{ transitionDelay: "300ms" }}
-        >
-          <p className="text-white font-bold text-sm md:text-base tracking-[0.2em] mb-4 uppercase">
-            Un choix sûr et durable
-          </p>
-        </div>
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16 lg:px-28 max-w-[850px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Tag */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center gap-3 mb-5"
+            >
+              <div className="w-10 h-px bg-[#F88732]" />
+              <span className="text-[#F88732] font-medium text-sm tracking-[0.15em] uppercase font-[Roboto]">
+                {slides[current].subtitle}
+              </span>
+            </motion.div>
 
-        {/* Title with border box */}
-        <div
-          className={`transform transition-all duration-1000 ease-out ${
-            loaded ? "scale-100 opacity-100" : "scale-90 opacity-0"
-          }`}
-          style={{ transitionDelay: "600ms" }}
-        >
-          <div className="bg-white/15 backdrop-blur-[2px] border-2 border-white/70 px-8 py-6 md:px-12 md:py-8 inline-block mb-6">
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.1em] font-[Roboto_Condensed]">
-              DINAGUI SARL
-            </h1>
-          </div>
-        </div>
+            {/* Title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="text-white text-4xl md:text-5xl lg:text-[64px] font-bold leading-[1.1] font-[Roboto_Condensed] uppercase mb-6"
+            >
+              {slides[current].title}
+            </motion.h1>
 
-        {/* Mosaic thumbnail grid */}
-        <div
-          className={`transform transition-all duration-1000 ease-out ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-          style={{ transitionDelay: "900ms" }}
-        >
-          <div className="grid grid-cols-[1fr_1fr] grid-rows-[1fr_1fr] gap-[3px] w-[280px] md:w-[360px] h-[180px] md:h-[220px] border-2 border-white/50 p-[3px]">
-            {/* Top-left: 2 small thumbnails side by side */}
-            <div className="grid grid-cols-2 gap-[3px]">
-              <button
-                onClick={() => setCurrent(0)}
-                className={`overflow-hidden transition-opacity ${
-                  0 === current ? "opacity-100" : "opacity-60"
-                }`}
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-white/80 text-base md:text-lg leading-relaxed max-w-[550px] mb-8 font-[Roboto]"
+            >
+              {slides[current].desc}
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link
+                href="/contact"
+                className="bg-[#F88732] hover:bg-[#e0752a] text-white font-semibold px-8 py-3.5 rounded transition-all duration-300 font-[Roboto] text-[15px] hover:shadow-lg hover:shadow-[#F88732]/25"
               >
-                <div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url('${slides[0].image}')` }}
-                />
-              </button>
-              <button
-                onClick={() => setCurrent(1)}
-                className={`overflow-hidden transition-opacity ${
-                  1 === current ? "opacity-100" : "opacity-60"
-                }`}
+                Demandez un devis
+              </Link>
+              <Link
+                href="/a-propos"
+                className="border border-white/40 hover:border-white text-white font-medium px-8 py-3.5 rounded transition-all duration-300 font-[Roboto] text-[15px] hover:bg-white/10"
               >
-                <div
-                  className="w-full h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url('${slides[1].image}')` }}
-                />
-              </button>
-            </div>
-            {/* Top-right: larger thumbnail */}
-            <button
-              onClick={() => setCurrent(2)}
-              className={`overflow-hidden transition-opacity ${
-                2 === current ? "opacity-100" : "opacity-60"
-              }`}
-            >
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url('${slides[2].image}')` }}
-              />
-            </button>
-            {/* Bottom-left: larger thumbnail */}
-            <button
-              onClick={() => setCurrent(1)}
-              className={`overflow-hidden transition-opacity ${
-                1 === current ? "opacity-100" : "opacity-60"
-              }`}
-            >
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url('${slides[1].image}')` }}
-              />
-            </button>
-            {/* Bottom-right: larger thumbnail */}
-            <button
-              onClick={() => setCurrent(0)}
-              className={`overflow-hidden transition-opacity ${
-                0 === current ? "opacity-100" : "opacity-60"
-              }`}
-            >
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url('${slides[0].image}')` }}
-              />
-            </button>
-          </div>
-        </div>
+                En savoir plus
+              </Link>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-8 md:left-16 lg:left-28 z-10 flex items-center gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`transition-all duration-500 rounded-full ${
+              i === current
+                ? "w-10 h-1.5 bg-[#F88732]"
+                : "w-6 h-1.5 bg-white/40 hover:bg-white/60"
+            }`}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+        <span className="text-white/50 text-xs ml-3 font-[Roboto]">
+          {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+        </span>
       </div>
     </section>
   );

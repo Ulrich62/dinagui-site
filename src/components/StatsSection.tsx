@@ -12,82 +12,52 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     value: 90,
-    suffix: "",
-    label: "PROJETS IMMOBILIERS LIVRÉS DANS LES DÉLAIS",
+    suffix: "+",
+    label: "Projets immobiliers livrés dans les délais",
   },
   {
     value: 85,
-    suffix: "",
-    label: "CLIENTS ET INVESTISSEURS SATISFAITS",
+    suffix: "+",
+    label: "Clients et investisseurs satisfaits",
   },
   {
     value: 100,
     suffix: "%",
-    label: "BIENS DÉVELOPPÉS ET GÉRÉS AVEC SUCCÈS",
+    label: "Biens développés et gérés avec succès",
   },
   {
     value: 100,
     suffix: "%",
-    label: "ENGAGEMENT QUALITÉ & VALORISATION DURABLE",
+    label: "Engagement qualité & valorisation durable",
   },
 ];
 
-function AnimatedCircle({ value, suffix, inView }: { value: number; suffix: string; inView: boolean }) {
+function AnimatedCounter({ value, suffix, inView }: { value: number; suffix: string; inView: boolean }) {
   const [current, setCurrent] = useState(0);
-  const radius = 90;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (current / 100) * circumference;
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
     const duration = 2500;
     const startTime = performance.now();
 
     const animate = (time: number) => {
       const elapsed = time - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutCubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      start = Math.round(eased * value);
-      setCurrent(start);
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+      setCurrent(Math.round(eased * value));
+      if (progress < 1) requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
   }, [inView, value]);
 
   return (
-    <div className="relative w-[200px] h-[200px] mx-auto">
-      <svg className="w-full h-full -rotate-90" viewBox="0 0 200 200">
-        {/* Background circle */}
-        <circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="rgba(255,255,255,0.15)"
-          strokeWidth="4"
-        />
-        {/* Progress circle */}
-        <circle
-          cx="100"
-          cy="100"
-          r={radius}
-          fill="none"
-          stroke="white"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={inView ? strokeDashoffset : circumference}
-          style={{ transition: "stroke-dashoffset 0.05s linear" }}
-        />
-      </svg>
-      {/* Center text */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-5xl md:text-6xl font-bold text-white font-[Roboto]">
-          {current}{suffix}
+    <div className="text-center">
+      <div className="relative inline-block mb-4">
+        <span className="text-5xl md:text-6xl font-bold text-white font-[Roboto_Condensed]">
+          {current}
+        </span>
+        <span className="text-3xl md:text-4xl font-bold text-[#F88732] ml-1">
+          {suffix}
         </span>
       </div>
     </div>
@@ -99,7 +69,7 @@ export default function StatsSection() {
 
   return (
     <section
-      className="relative py-24 px-4"
+      className="relative py-24 px-6"
       style={{
         backgroundImage: "url('/images/parallax-bg.avif')",
         backgroundAttachment: "fixed",
@@ -107,21 +77,31 @@ export default function StatsSection() {
         backgroundPosition: "center",
       }}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1f2d3d]/85" />
+      <div className="absolute inset-0 bg-[#1a2332]/90" />
 
       <div
         ref={ref}
-        className="relative z-10 max-w-[1340px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center"
+        className="relative z-10 max-w-[1340px] mx-auto"
       >
-        {stats.map((stat, index) => (
-          <div key={index} className="flex flex-col items-center gap-5">
-            <AnimatedCircle value={stat.value} suffix={stat.suffix} inView={inView} />
-            <p className="text-white/80 text-sm leading-relaxed max-w-[220px] font-[Roboto] uppercase tracking-wide">
-              {stat.label}
-            </p>
-          </div>
-        ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center gap-4 relative"
+            >
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} inView={inView} />
+              {/* Separator line */}
+              <div className="w-10 h-0.5 bg-[#F88732]/50 rounded" />
+              <p className="text-white/70 text-sm leading-relaxed text-center max-w-[200px] font-[Roboto]">
+                {stat.label}
+              </p>
+              {/* Vertical divider between items (hidden on last) */}
+              {index < stats.length - 1 && (
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/10 hidden lg:block" />
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

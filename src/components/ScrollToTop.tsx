@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { FiArrowUp } from "react-icons/fi";
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -17,15 +18,15 @@ export default function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (!visible) return null;
-
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-50 bg-[#1f2d3d] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-[#F88732] transition-colors duration-300 text-xs font-bold"
+      className={`fixed bottom-6 right-6 z-50 bg-[#F88732] hover:bg-[#e0752a] text-white w-11 h-11 rounded-lg flex items-center justify-center shadow-lg transition-all duration-300 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
       aria-label="Retour en haut"
     >
-      Haut
+      <FiArrowUp className="text-lg" />
     </button>
   );
 }
