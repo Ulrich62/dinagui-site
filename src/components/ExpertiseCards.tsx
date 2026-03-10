@@ -55,7 +55,7 @@ export default function ExpertiseCards() {
                   alt={card.title}
                   width={32}
                   height={32}
-                  className="object-contain invert"
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-[15px] font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase leading-tight">
