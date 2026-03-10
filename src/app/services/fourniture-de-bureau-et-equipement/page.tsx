@@ -51,7 +51,8 @@ export default function FournitureDeBureauPage() {
       otherServices={otherServices}
       ctaTitle="Équipez vos bureaux avec nos solutions"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/fourniture-bureau.jpg"
+      backgroundImage="/images/services/fourniture-bureau.jpg"
     />
   );
 }

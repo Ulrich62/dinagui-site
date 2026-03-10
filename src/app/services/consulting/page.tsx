@@ -57,7 +57,8 @@ export default function ConsultingPage() {
       otherServices={otherServices}
       ctaTitle="Transformez vos ambitions en résultats concrets"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/consulting.jpg"
+      backgroundImage="/images/services/consulting.jpg"
     >
       {/* Atouts Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto">

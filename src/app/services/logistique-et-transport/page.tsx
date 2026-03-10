@@ -61,7 +61,8 @@ export default function LogistiqueTransportPage() {
       otherServices={otherServices}
       ctaTitle="Optimisez votre chaîne logistique avec DINAGUI"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/logistique-transport.jpg"
+      backgroundImage="/images/services/logistique-transport.jpg"
     />
   );
 }

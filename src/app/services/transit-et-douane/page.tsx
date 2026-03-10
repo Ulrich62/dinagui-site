@@ -56,7 +56,8 @@ export default function TransitDouanePage() {
       otherServices={otherServices}
       ctaTitle="Simplifiez vos opérations douanières avec DINAGUI"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/transit-douane.jpg"
+      backgroundImage="/images/services/transit-douane.jpg"
     />
   );
 }

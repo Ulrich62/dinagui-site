@@ -56,7 +56,8 @@ export default function ServiceDeNettoyagePage() {
       otherServices={otherServices}
       ctaTitle="Offrez à vos espaces la propreté qu'ils méritent"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/nettoyage.jpg"
+      backgroundImage="/images/services/nettoyage.jpg"
     >
       {/* Commitments Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto">

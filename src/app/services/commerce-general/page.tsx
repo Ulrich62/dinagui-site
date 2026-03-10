@@ -56,7 +56,8 @@ export default function CommerceGeneralPage() {
       otherServices={otherServices}
       ctaTitle="Faites confiance à DINAGUI pour vos besoins commerciaux"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.jpg"
+      introImage="/images/services/commerce-general.jpg"
+      backgroundImage="/images/services/commerce-general.jpg"
     />
   );
 }
