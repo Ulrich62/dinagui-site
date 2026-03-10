@@ -32,12 +32,12 @@ const otherServices = [
   { name: "Gestion immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
   { name: "Placement de personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
   { name: "Service de gardiennage & de conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.jpg" },
-  { name: "Service de nettoyage", href: "/services/service-de-nettoyage" },
-  { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement" },
-  { name: "Logistique et transport", href: "/services/logistique-et-transport" },
-  { name: "Commerce général", href: "/services/commerce-general" },
-  { name: "Consulting", href: "/services/consulting" },
-  { name: "Transit et douane", href: "/services/transit-et-douane" },
+  { name: "Service de nettoyage", href: "/services/service-de-nettoyage", image: "/images/services/nettoyage.jpg" },
+  { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement", image: "/images/services/fourniture-bureau.jpg" },
+  { name: "Logistique et transport", href: "/services/logistique-et-transport", image: "/images/services/logistique-transport.jpg" },
+  { name: "Commerce général", href: "/services/commerce-general", image: "/images/services/commerce-general.jpg" },
+  { name: "Consulting", href: "/services/consulting", image: "/images/services/consulting.jpg" },
+  { name: "Transit et douane", href: "/services/transit-et-douane", image: "/images/services/transit-douane.jpg" },
 ];
 
 export default function ServiceBTPPage() {
