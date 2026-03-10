@@ -14,6 +14,8 @@ export default function ContactPage() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -30,12 +32,40 @@ export default function ContactPage() {
     return newErrors;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const newErrors = validate();
     setErrors(newErrors);
-    if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
+    if (Object.keys(newErrors).length > 0) return;
+
+    setSending(true);
+    setSendError("");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: `Nouveau message de ${formData.prenom} ${formData.nom} - DINAGUI SARL`,
+          from_name: `${formData.prenom} ${formData.nom}`,
+          name: `${formData.prenom} ${formData.nom}`,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSendError("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch {
+      setSendError("Erreur de connexion. Veuillez réessayer.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -248,11 +278,16 @@ export default function ContactPage() {
                     )}
                   </div>
 
+                  {sendError && (
+                    <p className="text-red-500 text-sm text-center">{sendError}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-[#F88732] text-white py-4 rounded-lg text-lg font-medium hover:bg-[#e0752a] hover:shadow-lg hover:shadow-[#F88732]/25 transition-all duration-300 font-[Roboto]"
+                    disabled={sending}
+                    className="w-full bg-[#F88732] text-white py-4 rounded-lg text-lg font-medium hover:bg-[#e0752a] hover:shadow-lg hover:shadow-[#F88732]/25 transition-all duration-300 font-[Roboto] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Envoyer
+                    {sending ? "Envoi en cours..." : "Envoyer"}
                   </button>
                 </form>
               )}
@@ -265,7 +300,7 @@ export default function ContactPage() {
       <section className="w-full">
         <div className="border-t-4 border-[#F88732]" />
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.2!2d-13.6!3d9.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMzMnMzYuMCJOIDEzwrAzNicwMC4wIlc!5e0!3m2!1sfr!2sgn!4v1696000000000"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d-13.6285!3d9.5655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3530779e70c67d%3A0x5c8bf4c5e6f3c8a!2sCit%C3%A9+Plaza+Platinium!5e0!3m2!1sfr!2sgn!4v1710000000000"
           width="100%"
           height="450"
           style={{ border: 0 }}
