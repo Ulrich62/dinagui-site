@@ -24,7 +24,7 @@ export default function BlogPage() {
                 <div className="pl-6">
                   <div className="relative w-full h-[300px] mb-6 overflow-hidden rounded-lg group">
                     <Image
-                      src="/images/blog/construction-maisons.avif"
+                      src="/images/blog/construction-maisons.jpg"
                       alt="Pourquoi faire appel à une entreprise générale de construction pour vos projets ?"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

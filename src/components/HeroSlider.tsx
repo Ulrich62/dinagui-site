@@ -12,13 +12,13 @@ const slides = [
     desc: "Votre partenaire de confiance pour des projets immobiliers durables et rentables.",
   },
   {
-    image: "/images/services/btp-workers.avif",
+    image: "/images/services/btp-workers.jpg",
     subtitle: "Expertise BTP",
     title: "BÂTIR L'AVENIR",
     desc: "Des infrastructures modernes conçues avec rigueur, qualité et respect des délais.",
   },
   {
-    image: "/images/services/gestion-immobiliere.avif",
+    image: "/images/services/gestion-immobiliere.jpg",
     subtitle: "Gestion immobilière",
     title: "INVESTIR EN CONFIANCE",
     desc: "Valorisez votre patrimoine avec un accompagnement stratégique sur mesure.",

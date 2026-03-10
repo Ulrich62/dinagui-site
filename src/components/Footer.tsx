@@ -30,7 +30,7 @@ export default function Footer() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/parallax-bg.avif')" }}
+        style={{ backgroundImage: "url('/images/parallax-bg.jpg')" }}
       />
       <div className="absolute inset-0 bg-[#111827]/95" />
 

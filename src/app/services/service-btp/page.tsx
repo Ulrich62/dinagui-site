@@ -29,9 +29,9 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Gestion immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.avif" },
-  { name: "Placement de personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.avif" },
-  { name: "Service de gardiennage & de conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.avif" },
+  { name: "Gestion immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
+  { name: "Placement de personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
+  { name: "Service de gardiennage & de conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.jpg" },
   { name: "Service de nettoyage", href: "/services/service-de-nettoyage" },
   { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement" },
   { name: "Logistique et transport", href: "/services/logistique-et-transport" },
@@ -46,14 +46,14 @@ export default function ServiceBTPPage() {
       heroTitle="INGÉNIEUR BTP"
       introTitle="Votre partenaire de confiance en BTP"
       introText="DINAGUI SARL est votre partenaire de confiance pour l'exécution de projets de construction et d'aménagement en macro-lots, en tout corps d'état ou en clé en main. Notre maîtrise s'avère la satisfaction de nos clients. Nous travaillons en étroite collaboration avec vous tout au long du processus, en vous fournissant des conseils d'experts, des devis BTP et des solutions de matériaux pour vous aider à visualiser le résultat final. Un service complet et intégré pour la construction, les intérieurs, le BTP et des solutions de matériaux pour la réalisation de vos projets, en garantissant qualité, sécurité et respect des délais."
-      introImage="/images/services/btp-workers.avif"
+      introImage="/images/services/btp-workers.jpg"
       introCtaText="Contactez-nous"
       sectionTitle="Nos domaines d'expertise en BTP"
       services={services}
       otherServices={otherServices}
       ctaTitle="Lancez votre projet de construction avec nos spécialistes"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.avif"
+      backgroundImage="/images/services/btp-hero.jpg"
     />
   );
 }

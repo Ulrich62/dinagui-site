@@ -15,25 +15,25 @@ interface ServiceCard {
 
 const services: ServiceCard[] = [
   {
-    img: "/images/services/btp-workers.avif",
+    img: "/images/services/btp-workers.jpg",
     title: "BTP",
     desc: "De la conception à la réalisation, nous bâtissons des infrastructures résidentielles, commerciales, industrielles et publiques, en intégrant des solutions modernes et durables.",
     link: "/services/service-btp",
   },
   {
-    img: "/images/services/gestion-immobiliere.avif",
+    img: "/images/services/gestion-immobiliere.jpg",
     title: "GESTION IMMOBILIÈRE",
     desc: "Nous rénovons et modernisons les bâtiments existants en réparant ou en remplaçant les structures vieillissantes, garantissant durabilité et confort.",
     link: "/services/gestion-immobiliere",
   },
   {
-    img: "/images/services/placement-personnel.avif",
+    img: "/images/services/placement-personnel.jpg",
     title: "PLACEMENT DE PERSONNELS",
     desc: "Nous mettons à disposition des entreprises et particuliers des candidats qualifiés, fiables et opérationnels pour des missions ponctuelles ou longues.",
     link: "/services/placements-de-personnels",
   },
   {
-    img: "/images/services/gardiennage.avif",
+    img: "/images/services/gardiennage.jpg",
     title: "GARDIENNAGE & CONCIERGERIE",
     desc: "Nous protégeons vos sites avec un service de sécurité privée et de conciergerie haut de gamme, fiable et discret.",
     link: "/services/service-de-gardiennage-de-conciergerie",

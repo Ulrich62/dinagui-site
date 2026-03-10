@@ -71,7 +71,7 @@ export default function StatsSection() {
     <section
       className="relative py-24 px-6"
       style={{
-        backgroundImage: "url('/images/parallax-bg.avif')",
+        backgroundImage: "url('/images/parallax-bg.jpg')",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
         backgroundPosition: "center",

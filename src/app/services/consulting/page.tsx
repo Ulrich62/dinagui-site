@@ -34,10 +34,10 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.avif" },
-  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.avif" },
-  { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.avif" },
-  { name: "Gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.avif" },
+  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
+  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
+  { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
+  { name: "Gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.jpg" },
   { name: "Service de Nettoyage", href: "/services/service-de-nettoyage" },
   { name: "Fourniture de Bureau", href: "/services/fourniture-de-bureau-et-equipement" },
   { name: "Logistique & Transport", href: "/services/logistique-et-transport" },
@@ -57,7 +57,7 @@ export default function ConsultingPage() {
       otherServices={otherServices}
       ctaTitle="Transformez vos ambitions en résultats concrets"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/btp-hero.avif"
+      backgroundImage="/images/services/btp-hero.jpg"
     >
       {/* Atouts Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto">

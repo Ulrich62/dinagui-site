@@ -24,7 +24,7 @@ export default function BlogDetailPage() {
             <article>
               <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/blog/construction-maisons.avif"
+                  src="/images/blog/construction-maisons.jpg"
                   alt="Pourquoi faire appel à une entreprise générale de construction pour vos projets ?"
                   fill
                   className="object-cover"

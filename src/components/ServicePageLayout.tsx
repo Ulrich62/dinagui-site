@@ -170,7 +170,7 @@ export default function ServicePageLayout({
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative min-h-[400px]">
             <Image
-              src={backgroundImage || "/images/parallax-bg.avif"}
+              src={backgroundImage || "/images/parallax-bg.jpg"}
               alt="Projets DINAGUI"
               fill
               className="object-cover"

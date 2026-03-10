@@ -39,9 +39,9 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.avif" },
-  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.avif" },
-  { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.avif" },
+  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
+  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
+  { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
   { name: "Service de Nettoyage", href: "/services/service-de-nettoyage" },
   { name: "Fourniture de Bureau", href: "/services/fourniture-de-bureau-et-equipement" },
   { name: "Logistique & Transport", href: "/services/logistique-et-transport" },
@@ -56,13 +56,13 @@ export default function GardiennageConciergiePage() {
       heroTitle="SERVICE DE GARDIENNAGE & CONCIERGERIE"
       introTitle="Sécurité et conciergerie professionnelle"
       introText="DINAGUI SARL assure la protection de vos biens, de vos locaux et de vos personnes grâce à des agents de sécurité formés et expérimentés. Nous proposons des solutions de gardiennage et de conciergerie adaptées à tous types d'environnements."
-      introImage="/images/services/gardiennage.avif"
+      introImage="/images/services/gardiennage.jpg"
       sectionTitle="Nos prestations de gardiennage"
       services={services}
       otherServices={otherServices}
       ctaTitle="Sécurisez vos espaces avec nos professionnels"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/gardiennage.avif"
+      backgroundImage="/images/services/gardiennage.jpg"
     >
       {/* Values Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto">

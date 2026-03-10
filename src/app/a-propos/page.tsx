@@ -9,9 +9,9 @@ import PageHero from "@/components/PageHero";
 
 const galleryImages = [
   "/images/apartments/f3-appartement.jpg",
-  "/images/services/gestion-immobiliere.avif",
-  "/images/services/btp-workers.avif",
-  "/images/services/gardiennage.avif",
+  "/images/services/gestion-immobiliere.jpg",
+  "/images/services/btp-workers.jpg",
+  "/images/services/gardiennage.jpg",
 ];
 
 const faqItems = [
@@ -50,7 +50,7 @@ export default function AProposPage() {
       <PageHero
         title="À propos de DINAGUI SARL"
         subtitle="Votre spécialiste en BTP et partenaire pluridisciplinaire"
-        backgroundImage="/images/services/btp-hero.avif"
+        backgroundImage="/images/services/btp-hero.jpg"
         ctaText="Contactez-nous"
         ctaLink="/contact"
       />

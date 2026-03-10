@@ -13,7 +13,7 @@ interface PageHeroProps {
 export default function PageHero({
   title,
   subtitle,
-  backgroundImage = "/images/parallax-bg.avif",
+  backgroundImage = "/images/parallax-bg.jpg",
   ctaText,
   ctaLink = "/contact",
   bordered = false,

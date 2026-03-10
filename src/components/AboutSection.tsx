@@ -19,7 +19,7 @@ export default function AboutSection() {
         >
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/images/about-famille.avif"
+              src="/images/about-famille.jpg"
               alt="Projet immobilier DINAGUI"
               fill
               className="object-cover"

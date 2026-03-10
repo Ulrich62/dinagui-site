@@ -19,9 +19,9 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.avif" },
-  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.avif" },
-  { name: "Gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.avif" },
+  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
+  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
+  { name: "Gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.jpg" },
   { name: "Service de Nettoyage", href: "/services/service-de-nettoyage" },
   { name: "Fourniture de Bureau", href: "/services/fourniture-de-bureau-et-equipement" },
   { name: "Logistique & Transport", href: "/services/logistique-et-transport" },
@@ -36,14 +36,14 @@ export default function PlacementDePersonnelsPage() {
       heroTitle="PLACEMENT DE PERSONNELS"
       introTitle="Placement de personnels qualifiés"
       introText="DINAGUI SARL vous fournit une main-d'œuvre qualifiée et fiable, adaptée à vos exigences opérationnelles. Notre processus de recrutement rigoureux garantit des profils compétents, motivés et immédiatement opérationnels pour renforcer vos équipes."
-      introImage="/images/services/placement-personnel.avif"
+      introImage="/images/services/placement-personnel.jpg"
       sectionTitle="Nos solutions de placement"
       services={services}
       otherServices={otherServices}
       columns={3}
       ctaTitle="Trouvez les talents dont vous avez besoin"
       ctaText="Parlons de votre projet maintenant"
-      backgroundImage="/images/services/placement-personnel.avif"
+      backgroundImage="/images/services/placement-personnel.jpg"
     />
   );
 }
