@@ -19,7 +19,7 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentType 
             src={apartment.image}
             alt={`Plan appartement ${apartment.type}`}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            className="object-contain group-hover:scale-105 transition-transform duration-700"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           {/* Surface badge */}
