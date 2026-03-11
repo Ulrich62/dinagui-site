@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiChevronRight } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
+
+export const metadata: Metadata = {
+  title: "Blog - DINAGUI SARL",
+  description:
+    "Conseils et actualités sur la construction, l'immobilier et les services en Guinée par DINAGUI SARL, votre partenaire de confiance.",
+};
 
 export default function BlogPage() {
   return (

@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gardiennage & Conciergerie - DINAGUI SARL",
+  description:
+    "Services de surveillance, sécurité, rondes et protection de sites à Conakry. Gardiennage professionnel et conciergerie par DINAGUI SARL.",
+};
 
 const services = [
   {

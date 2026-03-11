@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Logistique & Transport - DINAGUI SARL",
+  description:
+    "Transport de marchandises, logistique et livraison en Guinée. Location d'engins et déménagement à Conakry par DINAGUI SARL.",
+};
 
 const services = [
   {

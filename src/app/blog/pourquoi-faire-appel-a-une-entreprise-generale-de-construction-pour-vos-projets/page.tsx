@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FiChevronRight, FiArrowRight } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
+
+export const metadata: Metadata = {
+  title: "Pourquoi faire appel à une entreprise de construction - DINAGUI SARL",
+  description:
+    "Découvrez les avantages de confier vos projets de construction à une entreprise générale comme DINAGUI SARL à Conakry.",
+};
 
 export default function BlogDetailPage() {
   return (

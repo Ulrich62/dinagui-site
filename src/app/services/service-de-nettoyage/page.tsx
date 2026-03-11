@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Service de Nettoyage - DINAGUI SARL",
+  description:
+    "Nettoyage professionnel résidentiel, de bureaux et après chantier à Conakry. Entretien régulier et ponctuel par DINAGUI SARL en Guinée.",
+};
 
 const services = [
   {

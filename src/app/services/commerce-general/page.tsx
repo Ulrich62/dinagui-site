@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Commerce Général - DINAGUI SARL",
+  description:
+    "Vente de produits, équipements de bureau, articles d'entretien et accessoires divers à Conakry. Commerce général par DINAGUI SARL.",
+};
 
 const services = [
   {

@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gestion Immobilière - DINAGUI SARL",
+  description:
+    "Gestion locative et accompagnement des investisseurs immobiliers à Conakry. Location, encaissement des loyers et suivi technique par DINAGUI SARL.",
+};
 
 const services = [
   {

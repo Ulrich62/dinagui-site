@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Consulting - DINAGUI SARL",
+  description:
+    "Conseil stratégique en organisation, ressources humaines, finance et marketing à Conakry. Consulting professionnel par DINAGUI SARL.",
+};
 
 const services = [
   {

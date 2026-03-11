@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Transit & Douane - DINAGUI SARL",
+  description:
+    "Transit maritime, terrestre et aérien, dédouanement et formalités import-export à Conakry. Services douaniers par DINAGUI SARL en Guinée.",
+};
 
 const services = [
   {

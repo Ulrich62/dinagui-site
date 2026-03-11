@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fourniture de Bureau - DINAGUI SARL",
+  description:
+    "Fournitures de bureau, mobilier ergonomique et équipements informatiques à Conakry. Vente et installation par DINAGUI SARL en Guinée.",
+};
 
 const services = [
   {

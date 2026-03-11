@@ -1,4 +1,11 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Placement de Personnels - DINAGUI SARL",
+  description:
+    "Mise à disposition de personnel qualifié en BTP, sécurité, nettoyage et logistique à Conakry. Recrutement et placement par DINAGUI SARL.",
+};
 
 const services = [
   {
