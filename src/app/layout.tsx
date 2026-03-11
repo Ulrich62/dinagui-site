@@ -56,10 +56,14 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
+              "@id": "https://dinagui-site.vercel.app/#organization",
               name: "DINAGUI SARL",
+              alternateName: "DINAGUI",
               description:
                 "Entreprise guinéenne spécialisée en BTP, gestion immobilière et services pluridisciplinaires",
               url: "https://dinagui-site.vercel.app",
+              logo: "https://dinagui-site.vercel.app/images/logo-dinagui.avif",
+              image: "https://dinagui-site.vercel.app/opengraph-image.png",
               telephone: "+224613500404",
               email: "dinagui.sarlu@gmail.com",
               address: {
@@ -69,12 +73,59 @@ export default function RootLayout({
                 addressLocality: "Conakry",
                 addressCountry: "GN",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 9.5655,
+                longitude: -13.6285,
+              },
               foundingDate: "2012",
               founder: {
                 "@type": "Person",
                 name: "Dine DIALLO",
               },
-              sameAs: [],
+              slogan: "Un choix sûr et durable",
+              knowsLanguage: ["fr"],
+              areaServed: {
+                "@type": "Country",
+                name: "Guinée",
+              },
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Services DINAGUI SARL",
+                itemListElement: [
+                  {
+                    "@type": "OfferCatalog",
+                    name: "BTP & Construction",
+                    itemListElement: [
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Construction" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Finition" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation" } },
+                    ],
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    name: "Gestion Immobilière",
+                    itemListElement: [
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gestion locative" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Accompagnement investisseurs" } },
+                    ],
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    name: "Services",
+                    itemListElement: [
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Placement de personnels" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gardiennage & Conciergerie" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Nettoyage" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Logistique & Transport" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commerce général" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Transit & Douane" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consulting" } },
+                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fourniture de bureau" } },
+                    ],
+                  },
+                ],
+              },
             }),
           }}
         />

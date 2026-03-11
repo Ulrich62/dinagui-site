@@ -10,9 +10,42 @@ export const metadata: Metadata = {
     "Découvrez les avantages de confier vos projets de construction à une entreprise générale comme DINAGUI SARL à Conakry.",
 };
 
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Pourquoi faire appel à une entreprise générale de construction pour vos projets ?",
+  description: "Découvrez les avantages de confier vos projets de construction à une entreprise générale comme DINAGUI SARL à Conakry.",
+  image: "https://dinagui-site.vercel.app/images/blog/construction-maisons.jpg",
+  author: { "@type": "Organization", name: "DINAGUI SARL" },
+  publisher: {
+    "@type": "Organization",
+    name: "DINAGUI SARL",
+    logo: { "@type": "ImageObject", url: "https://dinagui-site.vercel.app/images/logo-dinagui.avif" },
+  },
+  mainEntityOfPage: "https://dinagui-site.vercel.app/blog/pourquoi-faire-appel-a-une-entreprise-generale-de-construction-pour-vos-projets",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://dinagui-site.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://dinagui-site.vercel.app/blog" },
+    { "@type": "ListItem", position: 3, name: "Pourquoi faire appel à une entreprise de construction" },
+  ],
+};
+
 export default function BlogDetailPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <PageHero title="Pourquoi faire appel à une entreprise générale de construction pour vos projets ?" />
 
       <section className="py-20 bg-white">

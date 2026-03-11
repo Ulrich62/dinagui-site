@@ -61,8 +61,47 @@ export default function ServicePageLayout({
       ? "grid-cols-1 md:grid-cols-2"
       : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://dinagui-site.vercel.app" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://dinagui-site.vercel.app/#services" },
+      { "@type": "ListItem", position: 3, name: heroTitle },
+    ],
+  };
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: heroTitle,
+    description: introText,
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": "https://dinagui-site.vercel.app/#organization",
+      name: "DINAGUI SARL",
+    },
+    areaServed: { "@type": "Country", name: "Guinée" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: sectionTitle || heroTitle,
+      itemListElement: services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.title, description: s.description },
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <PageHero
         title={heroTitle}
         backgroundImage={backgroundImage}
