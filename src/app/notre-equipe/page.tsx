@@ -8,28 +8,44 @@ import PageHero from "@/components/PageHero";
 
 const teamMembers = [
   {
-    name: "Dine DIALLO",
+    name: "Dine Diallo",
     role: "Directeur Général",
+    photo: "/images/team/dine-diallo.jpg",
   },
   {
     name: "Fatoumata Binta Bah",
-    role: "Directrice Générale Adjointe",
-  },
-  {
-    name: "Mamadou Diao Bah",
-    role: "Gestionnaire de site",
+    role: "Directrice Adjointe",
+    photo: "/images/team/fatoumata-binta-bah.jpg",
   },
   {
     name: "Mohamed Saifon Toure",
-    role: "Gestionnaire Administratif",
+    role: "Gestionnaire Administratif et Financier",
+    photo: "/images/team/mohamed-saifon-toure.jpg",
+  },
+  {
+    name: "Mamadu Diao Bah",
+    role: "Gestionnaire de site",
+    photo: "/images/team/mamadou-diao-bah.jpg",
   },
   {
     name: "Zeinab Soumah",
     role: "Secrétaire",
+    photo: "/images/team/zeinab-soumah.jpg",
   },
   {
-    name: "Aboubacar Yatara",
-    role: "Gestionnaire de Site Adjoint",
+    name: "Aboubacar Yattara",
+    role: "Gestionnaire de site adjoint",
+    photo: "/images/team/aboubacar-yattara.jpg",
+  },
+  {
+    name: "Alpha Abdoulaye Balde",
+    role: "Gestionnaire de site adjoint",
+    photo: "/images/team/alpha-abdoulaye-balde.jpg",
+  },
+  {
+    name: "Kelefa Conde",
+    role: "Responsable salle de vidéosurveillance et sécurité",
+    photo: "/images/team/kelefa-conde.jpg",
   },
 ];
 
@@ -70,13 +86,13 @@ export default function NotreEquipePage() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                   {/* Orange top bar on hover */}
                   <div className="h-1 bg-transparent group-hover:bg-[#F88732] transition-colors duration-300" />
-                  <div className="relative w-full h-[300px] overflow-hidden">
+                  <div className="relative w-full h-[360px] overflow-hidden">
                     <Image
-                      src="/images/team/portrait-team.png"
+                      src={member.photo}
                       alt={member.name}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Hover overlay with name/role */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a2332]/90 via-[#1a2332]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

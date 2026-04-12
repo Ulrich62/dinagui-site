@@ -13,24 +13,24 @@ interface TeamMember {
 
 const members: TeamMember[] = [
   {
-    name: "Zeinab Souma",
-    role: "Secrétaire",
-    photo: "/images/team/portrait-team.png",
-  },
-  {
-    name: "Mamadou Diao Bah",
-    role: "Gestionnaire de site",
-    photo: "/images/team/portrait-team.png",
+    name: "Dine Diallo",
+    role: "Directeur Général",
+    photo: "/images/team/dine-diallo.jpg",
   },
   {
     name: "Fatoumata Binta Bah",
-    role: "Directrice Générale Adjointe",
-    photo: "/images/team/portrait-team.png",
+    role: "Directrice Adjointe",
+    photo: "/images/team/fatoumata-binta-bah.jpg",
   },
   {
-    name: "Dine DIALLO",
-    role: "Directeur Général",
-    photo: "/images/team/portrait-team.png",
+    name: "Mohamed Saifon Toure",
+    role: "Gestionnaire Administratif et Financier",
+    photo: "/images/team/mohamed-saifon-toure.jpg",
+  },
+  {
+    name: "Mamadu Diao Bah",
+    role: "Gestionnaire de site",
+    photo: "/images/team/mamadou-diao-bah.jpg",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function TeamSection() {
                   src={member.photo}
                   alt={member.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 {/* Gradient overlay on hover */}
