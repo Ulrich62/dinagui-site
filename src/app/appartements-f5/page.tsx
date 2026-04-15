@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import ApartmentCard, { ApartmentType } from "@/components/ApartmentCard";
+import OfferVideoSection from "@/components/OfferVideoSection";
 
 export const metadata: Metadata = {
   title: "Appartements F5 - DINAGUI SARL",
@@ -49,6 +50,13 @@ export default function AppartementsF5Page() {
       <PageHero
         title="Appartements F5"
         subtitle="4 chambres pour les familles qui recherchent l&apos;espace et le confort"
+      />
+
+      <OfferVideoSection
+        title="Découvrez l'appartement F5 en vidéo"
+        subtitle="Visite guidée des espaces, des finitions et du cadre de vie."
+        videoSrc="/videos/nos-offres-intro.mp4"
+        background="white"
       />
 
       {/* Apartments */}

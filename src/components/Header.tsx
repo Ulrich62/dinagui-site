@@ -18,10 +18,9 @@ const services = [
   { name: "Consulting", href: "/services/consulting" },
 ];
 
-const offres = [
-  { name: "Appartements F3", href: "/appartements-f3" },
-  { name: "Appartements F4", href: "/appartements-f4" },
-  { name: "Appartements F5", href: "/appartements-f5" },
+const offres: { name: string; href: string; divider?: boolean }[] = [
+  { name: "Vente et location d'appartements", href: "/nos-offres/vente-et-location-dappartements" },
+  { name: "Standard de livraison", href: "/nos-offres/standard-de-livraison" },
 ];
 
 export default function Header() {
@@ -94,25 +93,29 @@ export default function Header() {
             onMouseEnter={() => setActiveDropdown("offres")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <span className="hover:text-[#F88732] transition-colors cursor-pointer">
+            <Link href="/nos-offres" className="hover:text-[#F88732] transition-colors">
               Nos offres
-            </span>
+            </Link>
             <div
               className={`absolute top-full left-0 mt-4 bg-white shadow-lg border border-gray-100 rounded-lg overflow-hidden transition-all duration-200 ease-in-out ${
                 activeDropdown === "offres" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
               }`}
-              style={{ minWidth: "220px" }}
+              style={{ minWidth: "300px" }}
             >
               <div className="py-3 px-4">
-                {offres.map((o) => (
-                  <Link
-                    key={o.href}
-                    href={o.href}
-                    className="block py-2 px-3 text-[14px] text-[#1f2d3d] hover:text-[#F88732] hover:bg-gray-50 rounded transition-colors whitespace-nowrap"
-                  >
-                    {o.name}
-                  </Link>
-                ))}
+                {offres.map((o, i) =>
+                  o.divider ? (
+                    <div key={`div-${i}`} className="my-2 border-t border-gray-100" />
+                  ) : (
+                    <Link
+                      key={o.href}
+                      href={o.href}
+                      className="block py-2 px-3 text-[14px] text-[#1f2d3d] hover:text-[#F88732] hover:bg-gray-50 rounded transition-colors whitespace-nowrap"
+                    >
+                      {o.name}
+                    </Link>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -181,24 +184,38 @@ export default function Header() {
             )}
 
             {/* Offres mobile */}
-            <button
-              className="py-3 border-b border-gray-50 hover:text-[#F88732] flex items-center justify-between"
-              onClick={() => setOffresOpen(!offresOpen)}
-            >
-              Nos offres <FiChevronDown className={`transition-transform ${offresOpen ? "rotate-180" : ""}`} />
-            </button>
+            <div className="flex items-center border-b border-gray-50">
+              <Link
+                href="/nos-offres"
+                className="flex-1 py-3 hover:text-[#F88732]"
+                onClick={() => setMobileOpen(false)}
+              >
+                Nos offres
+              </Link>
+              <button
+                className="p-3 hover:text-[#F88732]"
+                onClick={() => setOffresOpen(!offresOpen)}
+                aria-label="Ouvrir le sous-menu Nos offres"
+              >
+                <FiChevronDown className={`transition-transform ${offresOpen ? "rotate-180" : ""}`} />
+              </button>
+            </div>
             {offresOpen && (
               <div className="flex flex-col pl-4">
-                {offres.map((o) => (
-                  <Link
-                    key={o.href}
-                    href={o.href}
-                    className="py-2 text-sm hover:text-[#F88732] border-b border-gray-50"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {o.name}
-                  </Link>
-                ))}
+                {offres.map((o, i) =>
+                  o.divider ? (
+                    <div key={`mdiv-${i}`} className="my-1 border-t border-gray-100" />
+                  ) : (
+                    <Link
+                      key={o.href}
+                      href={o.href}
+                      className="py-2 text-sm hover:text-[#F88732] border-b border-gray-50"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {o.name}
+                    </Link>
+                  )
+                )}
               </div>
             )}
 
