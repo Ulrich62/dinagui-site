@@ -67,9 +67,10 @@ export default function OfferCard({ offer }: { offer: Offer }) {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           aria-hidden="true"
         >
+          <source src={offer.video.replace(/\.mp4$/i, ".webm")} type="video/webm" />
           <source src={offer.video} type="video/mp4" />
         </video>
 

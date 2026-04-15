@@ -5,6 +5,7 @@ interface OfferVideoSectionProps {
   title: string;
   subtitle?: string;
   background?: "white" | "beige" | "dark";
+  poster?: string;
 }
 
 const bgClasses = {
@@ -18,8 +19,10 @@ export default function OfferVideoSection({
   title,
   subtitle,
   background = "beige",
+  poster,
 }: OfferVideoSectionProps) {
   const isDark = background === "dark";
+  const webmSrc = videoSrc.replace(/\.mp4$/i, ".webm");
   return (
     <section className={`py-20 ${bgClasses[background]}`}>
       <div className="max-w-[1100px] mx-auto px-6">
@@ -60,7 +63,9 @@ export default function OfferVideoSection({
             playsInline
             preload="metadata"
             aria-hidden="true"
+            poster={poster}
           >
+            <source src={webmSrc} type="video/webm" />
             <source src={videoSrc} type="video/mp4" />
           </video>
           <video
@@ -70,8 +75,10 @@ export default function OfferVideoSection({
             loop
             controls
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster={poster}
           >
+            <source src={webmSrc} type="video/webm" />
             <source src={videoSrc} type="video/mp4" />
             Votre navigateur ne prend pas en charge la lecture vidéo.
           </video>

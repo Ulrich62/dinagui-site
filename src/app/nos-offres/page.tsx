@@ -4,11 +4,22 @@ import Image from "next/image";
 import { FiArrowRight, FiPhone, FiMail, FiHome, FiFileText } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import OfferCard, { Offer } from "@/components/OfferCard";
+import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Nos offres — DINAGUI SARL",
   description:
     "Découvrez les appartements F3, F4 et F5 à la Cité Plaza Platinium, Kipé (Conakry). Visite vidéo, plans, surfaces et standard de livraison complet.",
+  alternates: { canonical: "/nos-offres" },
+  openGraph: {
+    title: "Nos offres — DINAGUI SARL",
+    description:
+      "Appartements F3, F4 et F5 à la Cité Plaza Platinium (Kipé, Conakry) — visite vidéo, plans et commodités.",
+    url: "/nos-offres",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/plaza-platinium/brochure-06.jpg", width: 1200, height: 630, alt: "Plaza Platinium — Immeuble 5" }],
+  },
 };
 
 const offres: Offer[] = [
@@ -62,6 +73,15 @@ const offres: Offer[] = [
 export default function NosOffresPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Nos offres", path: "/nos-offres" },
+          ])
+        )}
+      />
       <PageHero
         title="Nos offres"
         subtitle="Des programmes immobiliers pensés pour votre confort, à Conakry"
@@ -119,7 +139,9 @@ export default function NosOffresPage() {
                 playsInline
                 preload="metadata"
                 aria-hidden="true"
+                poster="/images/plaza-platinium/brochure-06.jpg"
               >
+                <source src="/videos/nos-offres-intro.webm" type="video/webm" />
                 <source src="/videos/nos-offres-intro.mp4" type="video/mp4" />
               </video>
               {/* Foreground video */}
@@ -130,8 +152,10 @@ export default function NosOffresPage() {
                 loop
                 controls
                 playsInline
-                preload="auto"
+                preload="metadata"
+                poster="/images/plaza-platinium/brochure-06.jpg"
               >
+                <source src="/videos/nos-offres-intro.webm" type="video/webm" />
                 <source src="/videos/nos-offres-intro.mp4" type="video/mp4" />
                 Votre navigateur ne prend pas en charge la lecture vidéo.
               </video>

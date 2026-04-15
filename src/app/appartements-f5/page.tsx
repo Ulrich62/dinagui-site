@@ -4,11 +4,21 @@ import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import ApartmentCard, { ApartmentType } from "@/components/ApartmentCard";
 import OfferVideoSection from "@/components/OfferVideoSection";
+import { apartmentListing, breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Appartements F5 - DINAGUI SARL",
   description:
     "Découvrez nos appartements F5 à la Cité Plaza Platinium, Kipé, Conakry. 4 chambres, espaces lumineux, design adapté au climat tropical.",
+  alternates: { canonical: "/appartements-f5" },
+  openGraph: {
+    title: "Appartements F5 — DINAGUI SARL",
+    description: "Appartements F5 (117–129 m²) à la Cité Plaza Platinium, Kipé, Conakry.",
+    url: "/appartements-f5",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/apartments/f5-photo.jpg", width: 1200, height: 630, alt: "Appartement F5 - Cité Plaza Platinium" }],
+  },
 };
 
 const apartments: ApartmentType[] = [
@@ -47,6 +57,32 @@ const apartments: ApartmentType[] = [
 export default function AppartementsF5Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          apartmentListing({
+            name: "Appartement F5 — Cité Plaza Platinium",
+            description: "Appartement F5 à la Cité Plaza Platinium, Kipé, Conakry. 4 chambres, surfaces de 117 à 129 m².",
+            path: "/appartements-f5",
+            image: "/images/apartments/f5-photo.jpg",
+            numberOfRooms: 4,
+            floorSize: { min: 117, max: 129 },
+            typologies: [
+              { type: "Type C1", surface: "128,76 m²", price: "11760000" },
+              { type: "Type C2", surface: "117,27 m²", price: "10560000" },
+            ],
+          })
+        )}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Appartements F5", path: "/appartements-f5" },
+          ])
+        )}
+      />
       <PageHero
         title="Appartements F5"
         subtitle="4 chambres pour les familles qui recherchent l&apos;espace et le confort"
@@ -56,6 +92,7 @@ export default function AppartementsF5Page() {
         title="Découvrez l'appartement F5 en vidéo"
         subtitle="Visite guidée des espaces, des finitions et du cadre de vie."
         videoSrc="/videos/nos-offres-intro.mp4"
+        poster="/images/apartments/f5-photo.jpg"
         background="white"
       />
 

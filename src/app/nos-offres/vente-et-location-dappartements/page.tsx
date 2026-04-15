@@ -14,11 +14,22 @@ import {
   FiFileText,
 } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
+import { breadcrumbList, realEstateListingProduct, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Vente et location d'appartements — Plaza Platinium Immeuble 5",
   description:
     "Appartements F3 et F4 modernes à la Cité Plaza Platinium, Immeuble 5, Kipé (Conakry). 6 typologies de 83 à 119 m², plan de financement accessible, commodités complètes.",
+  alternates: { canonical: "/nos-offres/vente-et-location-dappartements" },
+  openGraph: {
+    title: "Vente et location d'appartements — Plaza Platinium Immeuble 5",
+    description:
+      "Appartements F3 et F4 à la Cité Plaza Platinium, Kipé (Conakry). 6 typologies, plan de financement, commodités premium.",
+    url: "/nos-offres/vente-et-location-dappartements",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/plaza-platinium/brochure-01.jpg", width: 1200, height: 630, alt: "Plaza Platinium — Immeuble 5" }],
+  },
 };
 
 type Typologie = {
@@ -166,6 +177,27 @@ const programme = [
 export default function VenteLocationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          realEstateListingProduct({
+            name: "Plaza Platinium — Immeuble 5",
+            description: "Vente et location d'appartements F3 et F4 à la Cité Plaza Platinium, Kipé, Conakry. Typologies C1/C2/C3 de 83 à 119 m² avec commodités complètes et plan de financement.",
+            path: "/nos-offres/vente-et-location-dappartements",
+            image: "/images/plaza-platinium/brochure-01.jpg",
+          })
+        )}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Nos offres", path: "/nos-offres" },
+            { name: "Vente et location d'appartements", path: "/nos-offres/vente-et-location-dappartements" },
+          ])
+        )}
+      />
       <PageHero
         title="Vente et location d'appartements"
         subtitle="Cité Plaza Platinium — Immeuble 5 · Kipé, Conakry"

@@ -4,11 +4,21 @@ import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import ApartmentCard, { ApartmentType } from "@/components/ApartmentCard";
 import OfferVideoSection from "@/components/OfferVideoSection";
+import { apartmentListing, breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Appartements F3 - DINAGUI SARL",
   description:
     "Découvrez nos appartements F3 à la Cité Plaza Platinium, Kipé, Conakry. 2 chambres, espaces lumineux, design adapté au climat tropical.",
+  alternates: { canonical: "/appartements-f3" },
+  openGraph: {
+    title: "Appartements F3 — DINAGUI SARL",
+    description: "Appartements F3 (76–88 m²) à la Cité Plaza Platinium, Kipé, Conakry.",
+    url: "/appartements-f3",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/apartments/f3-photo.jpg", width: 1200, height: 630, alt: "Appartement F3 - Cité Plaza Platinium" }],
+  },
 };
 
 const apartments: ApartmentType[] = [
@@ -47,6 +57,32 @@ const apartments: ApartmentType[] = [
 export default function AppartementsF3Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          apartmentListing({
+            name: "Appartement F3 — Cité Plaza Platinium",
+            description: "Appartement F3 à la Cité Plaza Platinium, Kipé, Conakry. 2 chambres, surfaces de 76 à 88 m².",
+            path: "/appartements-f3",
+            image: "/images/apartments/f3-photo.jpg",
+            numberOfRooms: 2,
+            floorSize: { min: 76, max: 88 },
+            typologies: [
+              { type: "Type A1", surface: "88,04 m²", price: "8040000" },
+              { type: "Type A2", surface: "76,56 m²", price: "6900000" },
+            ],
+          })
+        )}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Appartements F3", path: "/appartements-f3" },
+          ])
+        )}
+      />
       <PageHero
         title="Appartements F3"
         subtitle="2 chambres spacieuses dans un cadre moderne et confortable"
@@ -56,6 +92,7 @@ export default function AppartementsF3Page() {
         title="Découvrez l'appartement F3 en vidéo"
         subtitle="Visite guidée des espaces, des finitions et du cadre de vie."
         videoSrc="/videos/nos-offres-intro.mp4"
+        poster="/images/apartments/f3-photo.jpg"
         background="white"
       />
 

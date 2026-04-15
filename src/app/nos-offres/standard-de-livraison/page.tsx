@@ -12,11 +12,22 @@ import {
   FiHome,
 } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
+import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Standard de livraison — Immeuble 5 — DINAGUI SARL",
   description:
     "Inventaire des équipements et du mobilier inclus dans la livraison standard des appartements de l'Immeuble 5 à la Cité Plaza Platinium, Kipé, Conakry.",
+  alternates: { canonical: "/nos-offres/standard-de-livraison" },
+  openGraph: {
+    title: "Standard de livraison — Immeuble 5 — DINAGUI SARL",
+    description:
+      "Four, climatisation, chauffe-eau, meubles de cuisine et salle de bain : tout ce qui est inclus dans la livraison standard.",
+    url: "/nos-offres/standard-de-livraison",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/plaza-platinium/equip-cuisine.jpg", width: 1200, height: 630, alt: "Standard de livraison Immeuble 5" }],
+  },
 };
 
 const electromenagers = [
@@ -35,6 +46,16 @@ const mobilier = [
 export default function StandardLivraisonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Nos offres", path: "/nos-offres" },
+            { name: "Standard de livraison", path: "/nos-offres/standard-de-livraison" },
+          ])
+        )}
+      />
       <PageHero
         title="Standard de livraison"
         subtitle="Immeuble 5 · Cité Plaza Platinium, Kipé"

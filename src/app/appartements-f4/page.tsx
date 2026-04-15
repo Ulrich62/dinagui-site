@@ -4,11 +4,21 @@ import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import ApartmentCard, { ApartmentType } from "@/components/ApartmentCard";
 import OfferVideoSection from "@/components/OfferVideoSection";
+import { apartmentListing, breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Appartements F4 - DINAGUI SARL",
   description:
     "Découvrez nos appartements F4 à la Cité Plaza Platinium, Kipé, Conakry. 3 chambres, espaces lumineux, design adapté au climat tropical.",
+  alternates: { canonical: "/appartements-f4" },
+  openGraph: {
+    title: "Appartements F4 — DINAGUI SARL",
+    description: "Appartements F4 (95–107 m²) à la Cité Plaza Platinium, Kipé, Conakry.",
+    url: "/appartements-f4",
+    locale: "fr_GN",
+    type: "website",
+    images: [{ url: "/images/apartments/f4-photo.jpg", width: 1200, height: 630, alt: "Appartement F4 - Cité Plaza Platinium" }],
+  },
 };
 
 const apartments: ApartmentType[] = [
@@ -77,6 +87,34 @@ const apartments: ApartmentType[] = [
 export default function AppartementsF4Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          apartmentListing({
+            name: "Appartement F4 — Cité Plaza Platinium",
+            description: "Appartement F4 à la Cité Plaza Platinium, Kipé, Conakry. 3 chambres, surfaces de 95 à 107 m².",
+            path: "/appartements-f4",
+            image: "/images/apartments/f4-photo.jpg",
+            numberOfRooms: 3,
+            floorSize: { min: 95, max: 107 },
+            typologies: [
+              { type: "Type B1", surface: "106,34 m²", price: "9700000" },
+              { type: "Type B1-1", surface: "107,08 m²", price: "9800000" },
+              { type: "Type B2", surface: "95,06 m²", price: "8560000" },
+              { type: "Type B2-1", surface: "98,21 m²", price: "8840000" },
+            ],
+          })
+        )}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(
+          breadcrumbList([
+            { name: "Accueil", path: "/" },
+            { name: "Appartements F4", path: "/appartements-f4" },
+          ])
+        )}
+      />
       <PageHero
         title="Appartements F4"
         subtitle="3 chambres pour un confort optimal au quotidien"
@@ -86,6 +124,7 @@ export default function AppartementsF4Page() {
         title="Découvrez l'appartement F4 en vidéo"
         subtitle="Visite guidée des espaces, des finitions et du cadre de vie."
         videoSrc="/videos/nos-offres-intro.mp4"
+        poster="/images/apartments/f4-photo.jpg"
         background="white"
       />
 
