@@ -116,7 +116,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">E-mail</h4>
-                    <p className="text-[#6b7280] font-[Roboto]">dinagui.sarlu@gmail.com</p>
+                    <p className="text-[#6b7280] font-[Roboto]">contact@dinagui.com</p>
                   </div>
                 </div>
 

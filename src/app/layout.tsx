@@ -68,7 +68,7 @@ export default function RootLayout({
               logo: "https://dinagui-site.vercel.app/images/logo-dinagui.avif",
               image: "https://dinagui-site.vercel.app/opengraph-image.png",
               telephone: "+224613500404",
-              email: "dinagui.sarlu@gmail.com",
+              email: "contact@dinagui.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:

@@ -60,8 +60,6 @@ export function apartmentListing(opts: {
       "@type": "Offer",
       name: `${opts.name} — ${t.type}`,
       description: `Surface ${t.surface}`,
-      priceCurrency: "GNF",
-      price: t.price,
       availability: "https://schema.org/InStock",
       seller: {
         "@type": "Organization",

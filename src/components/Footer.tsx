@@ -6,7 +6,7 @@ const navLinks = [
   { name: "Accueil", href: "/" },
   { name: "Qui sommes-nous", href: "/a-propos" },
   { name: "Services", href: "/services/service-btp" },
-  { name: "Réalisations", href: "/appartements-f3" },
+  { name: "Réalisations", href: "/appartements-c1" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -124,8 +124,8 @@ export default function Footer() {
                 <div className="w-9 h-9 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <FiMail className="text-[#F88732] text-sm" />
                 </div>
-                <a href="mailto:dinagui.sarlu@gmail.com" className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]">
-                  dinagui.sarlu@gmail.com
+                <a href="mailto:contact@dinagui.com" className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]">
+                  contact@dinagui.com
                 </a>
               </li>
             </ul>

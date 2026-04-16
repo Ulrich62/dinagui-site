@@ -307,8 +307,8 @@ export default function StandardLivraisonPage() {
             <a href="tel:+224613500404" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
               <FiPhone /> +224 613 50 04 04
             </a>
-            <a href="mailto:dinagui.sarlu@gmail.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
-              <FiMail /> dinagui.sarlu@gmail.com
+            <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+              <FiMail /> contact@dinagui.com
             </a>
           </div>
           <Link

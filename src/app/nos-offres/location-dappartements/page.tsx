@@ -547,9 +547,9 @@ export default function LocationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: "Appartements F3", href: "/appartements-f3" },
-              { name: "Appartements F4", href: "/appartements-f4" },
-              { name: "Appartements F5", href: "/appartements-f5" },
+              { name: "Type C1 (118 m²)", href: "/appartements-c1" },
+              { name: "Type C2 (100 m²)", href: "/appartements-c2" },
+              { name: "Type C3 (83 m²)", href: "/appartements-c3" },
             ].map((a) => (
               <Link
                 key={a.href}
@@ -626,8 +626,8 @@ export default function LocationPage() {
               <a href="tel:+224613500404" className="flex items-center gap-2 text-white text-lg font-[Roboto_Condensed] font-bold hover:text-[#F88732] transition-colors mb-1">
                 <FiPhone /> +224 613 50 04 04
               </a>
-              <a href="mailto:dinagui.sarlu@gmail.com" className="flex items-center gap-2 text-white/70 text-sm font-[Roboto] hover:text-[#F88732] transition-colors">
-                <FiMail /> dinagui.sarlu@gmail.com
+              <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 text-white/70 text-sm font-[Roboto] hover:text-[#F88732] transition-colors">
+                <FiMail /> contact@dinagui.com
               </a>
             </div>
           </div>

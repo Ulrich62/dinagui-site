@@ -9,12 +9,12 @@ import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Nos offres — DINAGUI SARL",
   description:
-    "Découvrez les appartements F3, F4 et F5 à la Cité Plaza Platinium, Kipé (Conakry). Visite vidéo, plans, surfaces et standard de livraison complet.",
+    "Découvrez les appartements Type C1, C2 et C3 à la Cité Plaza Platinium, Immeuble 5, Kipé (Conakry). Visite vidéo, plans, surfaces et standard de livraison complet.",
   alternates: { canonical: "/nos-offres" },
   openGraph: {
     title: "Nos offres — DINAGUI SARL",
     description:
-      "Appartements F3, F4 et F5 à la Cité Plaza Platinium (Kipé, Conakry) — visite vidéo, plans et commodités.",
+      "Appartements Type C1, C2 et C3 à la Cité Plaza Platinium (Kipé, Conakry) — visite vidéo, plans et commodités.",
     url: "/nos-offres",
     locale: "fr_GN",
     type: "website",
@@ -24,48 +24,48 @@ export const metadata: Metadata = {
 
 const offres: Offer[] = [
   {
-    title: "Appartements F3",
-    kicker: "2 chambres",
-    surface: "76 – 88 m²",
-    description:
-      "Appartements F3 lumineux, conçus pour la ventilation naturelle et adaptés au climat tropical.",
-    highlights: [
-      "2 chambres, 2 salons",
-      "Balcon cuisine + balcon salon",
-      "Ventilation naturelle optimisée",
-    ],
-    href: "/appartements-f3",
-    poster: "/images/apartments/f3-photo.jpg",
-    video: "/videos/nos-offres-intro.mp4",
-  },
-  {
-    title: "Appartements F4",
+    title: "Type C1",
     kicker: "3 chambres",
-    surface: "95 – 107 m²",
+    surface: "118,71 m²",
     description:
-      "Appartements F4 spacieux, parfaits pour les familles, avec pièces de vie généreuses et finitions adaptées au climat tropical.",
+      "Le plus grand format de l'Immeuble 5 : 3 chambres avec toilettes privatives, salon de 36 m² et cuisine équipée.",
     highlights: [
-      "3 chambres, 2 salons, 2 toilettes",
-      "4 variantes de plan (B1, B1-1, B2, B2-1)",
-      "Balcon cuisine + balcon salon",
+      "3 chambres, 3 toilettes privatives",
+      "Salon + salle à manger de 36,36 m²",
+      "Variante symétrique C1' disponible",
     ],
-    href: "/appartements-f4",
-    poster: "/images/apartments/f4-photo.jpg",
+    href: "/appartements-c1",
+    poster: "/images/plaza-platinium/brochure-09.jpg",
     video: "/videos/nos-offres-intro.mp4",
   },
   {
-    title: "Appartements F5",
-    kicker: "4 chambres",
-    surface: "117 – 129 m²",
+    title: "Type C2",
+    kicker: "3 chambres",
+    surface: "100,54 m²",
     description:
-      "Appartements F5 d'exception — le plus grand format, idéal pour les familles à la recherche d'espace et de confort.",
+      "Format intermédiaire optimisé : 3 chambres spacieuses, salon de 32 m² et aménagement adapté au climat tropical.",
     highlights: [
-      "4 chambres, 2 salons, 3 toilettes",
-      "2 typologies disponibles (C1, C2)",
-      "Ventilation naturelle optimisée",
+      "3 chambres, 2 toilettes",
+      "Salon + salle à manger de 31,95 m²",
+      "Variante symétrique C2' disponible",
     ],
-    href: "/appartements-f5",
-    poster: "/images/apartments/f5-photo.jpg",
+    href: "/appartements-c2",
+    poster: "/images/plaza-platinium/brochure-11.jpg",
+    video: "/videos/nos-offres-intro.mp4",
+  },
+  {
+    title: "Type C3",
+    kicker: "2 chambres",
+    surface: "83,11 m²",
+    description:
+      "Format compact et fonctionnel : 2 chambres lumineuses, double balcon et cuisine généreuse.",
+    highlights: [
+      "2 chambres, 2 toilettes",
+      "Double balcon (3,60 + 5,05 m²)",
+      "Variante symétrique C3' disponible",
+    ],
+    href: "/appartements-c3",
+    poster: "/images/plaza-platinium/brochure-13.jpg",
     video: "/videos/nos-offres-intro.mp4",
   },
 ];
@@ -297,8 +297,8 @@ export default function NosOffresPage() {
             <a href="tel:+224613500404" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
               <FiPhone /> +224 613 50 04 04
             </a>
-            <a href="mailto:dinagui.sarlu@gmail.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
-              <FiMail /> dinagui.sarlu@gmail.com
+            <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+              <FiMail /> contact@dinagui.com
             </a>
           </div>
           <Link

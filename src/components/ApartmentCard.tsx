@@ -5,7 +5,7 @@ export interface ApartmentType {
   surface: string;
   config: string;
   features: string[];
-  price: string;
+  price?: string;
   image: string;
 }
 
@@ -58,11 +58,12 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentType 
             </ul>
           </div>
 
-          {/* Price */}
-          <div className="bg-[#faf5f0] rounded-lg px-5 py-4 flex items-center justify-between">
-            <span className="text-sm text-[#6b7280] font-[Roboto]">Loyer mensuel</span>
-            <span className="text-lg font-bold text-[#F88732] font-[Roboto_Condensed]">{apartment.price}</span>
-          </div>
+          {apartment.price && (
+            <div className="bg-[#faf5f0] rounded-lg px-5 py-4 flex items-center justify-between">
+              <span className="text-sm text-[#6b7280] font-[Roboto]">Loyer mensuel</span>
+              <span className="text-lg font-bold text-[#F88732] font-[Roboto_Condensed]">{apartment.price}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

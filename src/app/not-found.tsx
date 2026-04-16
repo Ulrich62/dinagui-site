@@ -20,7 +20,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link href="/a-propos" className="text-[#1f2d3d] hover:text-[#F88732] transition-colors font-[Roboto] text-sm">À propos</Link>
           <Link href="/services/service-btp" className="text-[#1f2d3d] hover:text-[#F88732] transition-colors font-[Roboto] text-sm">Services</Link>
-          <Link href="/appartements-f3" className="text-[#1f2d3d] hover:text-[#F88732] transition-colors font-[Roboto] text-sm">Nos offres</Link>
+          <Link href="/appartements-c1" className="text-[#1f2d3d] hover:text-[#F88732] transition-colors font-[Roboto] text-sm">Nos offres</Link>
           <Link href="/contact" className="text-[#1f2d3d] hover:text-[#F88732] transition-colors font-[Roboto] text-sm">Contact</Link>
         </div>
       </div>

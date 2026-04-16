@@ -7,15 +7,13 @@ import SectionTitle from "./SectionTitle";
 import { FiArrowRight } from "react-icons/fi";
 
 const features = [
-  { text: "Surface de construction", bold: "88.04 m2", italic: true },
-  { text: "Deux (02) chambres, Deux (02) salons, Deux (02) toilettes" },
-  { text: "Une claire division de fonctionnement" },
-  { text: "Toutes les chambres sont entièrement conçues pour répondre aux besoins de rayon du soleil et de ventilation naturelle." },
-  { text: "La conception de la cuisine et du salon fait les espaces publics plus spacieux et lumineux" },
-  { text: "La conception Favorise la dissipation de la chaleur intérieure, s\u2019adapte au climat tropical et améliore le confort de vie" },
-  { text: "Selon les habitudes de vie locale, installation d\u2019un balcon-cuisine pour répondre à ses besoins quotidiens." },
-  { text: "Deuxième balcon disponible pour le salon." },
-  { text: "Mensualité à partir de", bold: "8,04 millions GNF" },
+  { text: "Surface de construction", bold: "118,71 m²", italic: true },
+  { text: "Trois (03) chambres, Trois (03) toilettes privatives" },
+  { text: "Salon + salle à manger de 36,36 m²" },
+  { text: "Toutes les chambres sont conçues pour le rayon du soleil et la ventilation naturelle" },
+  { text: "Cuisine de 10,46 m² et balcon de 5,56 m²" },
+  { text: "La conception favorise la dissipation de la chaleur intérieure, adaptée au climat tropical" },
+  { text: "Variante symétrique C1\u2019 disponible" },
 ];
 
 export default function ProjectsSection() {
@@ -51,7 +49,7 @@ export default function ProjectsSection() {
               transition={{ duration: 0.6 }}
             >
               <h4 className="text-white text-2xl md:text-3xl font-bold mb-8 font-[Roboto_Condensed] uppercase">
-                Appartement F3
+                Appartement Type C1
               </h4>
               <ul className="space-y-3 mb-10">
                 {features.map((f, i) => (
@@ -74,7 +72,7 @@ export default function ProjectsSection() {
                 ))}
               </ul>
               <Link
-                href="/appartements-f3"
+                href="/appartements-c1"
                 className="inline-flex items-center gap-2 text-white border border-white/30 hover:border-[#F88732] hover:text-[#F88732] px-6 py-3 rounded transition-all duration-300 font-[Roboto] text-sm"
               >
                 Voir les détails
