@@ -19,7 +19,8 @@ const services = [
 ];
 
 const offres: { name: string; href: string; divider?: boolean }[] = [
-  { name: "Vente et location d'appartements", href: "/nos-offres/vente-et-location-dappartements" },
+  { name: "Vente d'appartements", href: "/nos-offres/vente-dappartements" },
+  { name: "Location d'appartements", href: "/nos-offres/location-dappartements" },
   { name: "Standard de livraison", href: "/nos-offres/standard-de-livraison" },
 ];
 

@@ -196,9 +196,9 @@ export default function NosOffresPage() {
       {/* Dual CTA banner */}
       <section className="py-24 bg-white">
         <div className="max-w-[1340px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
-              href="/nos-offres/vente-et-location-dappartements"
+              href="/nos-offres/vente-dappartements"
               className="group relative overflow-hidden rounded-[10px] p-10 bg-[#1f2d3d] hover:shadow-xl transition-all duration-300"
             >
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
@@ -206,7 +206,7 @@ export default function NosOffresPage() {
                   src="/images/plaza-platinium/brochure-06.jpg"
                   alt=""
                   fill
-                  sizes="50vw"
+                  sizes="33vw"
                   className="object-cover"
                 />
               </div>
@@ -215,13 +215,42 @@ export default function NosOffresPage() {
                   <FiHome className="text-white text-xl" />
                 </div>
                 <h3 className="text-2xl font-bold text-white font-[Roboto_Condensed] uppercase mb-3">
-                  Plaza Platinium — Immeuble 5
+                  Vente d&apos;appartements
                 </h3>
                 <p className="text-white/75 text-[15px] font-[Roboto] leading-relaxed mb-6">
-                  Brochure complète : typologies, plans, commodités et cadre de vie à Kipé.
+                  Typologies, plans, commodités et plan de financement à la Cité Plaza Platinium.
                 </p>
                 <span className="inline-flex items-center gap-2 text-[#F88732] font-semibold text-[15px] font-[Roboto] group-hover:gap-3 transition-all">
-                  Voir la brochure <FiArrowRight />
+                  Découvrir <FiArrowRight />
+                </span>
+              </div>
+            </Link>
+
+            <Link
+              href="/nos-offres/location-dappartements"
+              className="group relative overflow-hidden rounded-[10px] p-10 bg-[#1f2d3d] hover:shadow-xl transition-all duration-300"
+            >
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <Image
+                  src="/images/plaza-platinium/brochure-07.jpg"
+                  alt=""
+                  fill
+                  sizes="33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-lg bg-[#F88732] flex items-center justify-center mb-5">
+                  <FiHome className="text-white text-xl" />
+                </div>
+                <h3 className="text-2xl font-bold text-white font-[Roboto_Condensed] uppercase mb-3">
+                  Location d&apos;appartements
+                </h3>
+                <p className="text-white/75 text-[15px] font-[Roboto] leading-relaxed mb-6">
+                  Appartements F3 et F4 en location à la Cité Plaza Platinium, Kipé.
+                </p>
+                <span className="inline-flex items-center gap-2 text-[#F88732] font-semibold text-[15px] font-[Roboto] group-hover:gap-3 transition-all">
+                  Découvrir <FiArrowRight />
                 </span>
               </div>
             </Link>

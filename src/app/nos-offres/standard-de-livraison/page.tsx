@@ -252,7 +252,7 @@ export default function StandardLivraisonPage() {
         <div className="max-w-[1340px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <Link
-              href="/nos-offres/vente-et-location-dappartements"
+              href="/nos-offres/vente-dappartements"
               className="group bg-[#F88732] hover:bg-[#e0752a] text-white rounded-[10px] p-8 flex items-center gap-5 transition-all hover:shadow-xl"
             >
               <div className="w-14 h-14 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -260,10 +260,10 @@ export default function StandardLivraisonPage() {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold font-[Roboto_Condensed] uppercase mb-1">
-                  Plaza Platinium — Immeuble 5
+                  Vente d&apos;appartements
                 </h3>
                 <p className="text-white/90 text-sm font-[Roboto]">
-                  Brochure, typologies et commodités
+                  Typologies, plans et commodités
                 </p>
               </div>
               <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
