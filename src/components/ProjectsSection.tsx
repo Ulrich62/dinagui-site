@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { FiArrowRight } from "react-icons/fi";
 
-const features = [
-  { text: "Surface de construction", bold: "118,71 m²", italic: true },
-  { text: "Trois (03) chambres, Trois (03) toilettes privatives" },
-  { text: "Salon + salle à manger de 36,36 m²" },
-  { text: "Toutes les chambres sont conçues pour le rayon du soleil et la ventilation naturelle" },
-  { text: "Cuisine de 10,46 m² et balcon de 5,56 m²" },
-  { text: "La conception favorise la dissipation de la chaleur intérieure, adaptée au climat tropical" },
-  { text: "Variante symétrique C1\u2019 disponible" },
+const highlights = [
+  "Logements modernes de qualité à Kipé, Conakry",
+  "Appartements de F3 à F4 (83 à 119 m²)",
+  "6 typologies d'appartements (C1, C2, C3 et variantes symétriques)",
+  "Commodités premium : jardin 10 000 m², piscine, sécurité 24h/24",
+  "Ascenseurs, fibre optique, groupes électrogènes 1000 kW",
+  "Plan de financement accessible via nos partenaires bancaires",
+  "Proximité aéroport, centre-ville, écoles et hôpitaux",
 ];
 
 export default function ProjectsSection() {
@@ -37,7 +37,7 @@ export default function ProjectsSection() {
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-px bg-[#F88732]" />
             <span className="text-[#F88732] font-medium text-sm tracking-[0.15em] uppercase font-[Roboto]">
-              Construction
+              Projet phare
             </span>
           </div>
 
@@ -48,34 +48,25 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="text-white text-2xl md:text-3xl font-bold mb-8 font-[Roboto_Condensed] uppercase">
-                Appartement Type C1
+              <h4 className="text-white text-2xl md:text-3xl font-bold mb-4 font-[Roboto_Condensed] uppercase">
+                Cité Plaza Platinium
               </h4>
+              <p className="text-[#F88732] font-medium text-sm mb-8 font-[Roboto] tracking-wide uppercase">
+                Immeuble 5 · Kipé, Conakry
+              </p>
               <ul className="space-y-3 mb-10">
-                {features.map((f, i) => (
+                {highlights.map((h, i) => (
                   <li key={i} className="flex items-start gap-3 text-white/80 text-sm leading-relaxed font-[Roboto]">
                     <span className="text-[#F88732] mt-1 flex-shrink-0">&#10003;</span>
-                    <span>
-                      {f.italic ? (
-                        <>
-                          <em className="text-white">{f.text}</em> : <strong className="text-[#F88732]">{f.bold}</strong>
-                        </>
-                      ) : f.bold ? (
-                        <>
-                          {f.text} <strong className="text-[#F88732]">{f.bold}</strong>
-                        </>
-                      ) : (
-                        f.text
-                      )}
-                    </span>
+                    <span>{h}</span>
                   </li>
                 ))}
               </ul>
               <Link
-                href="/appartements-c1"
+                href="/nos-offres/vente-dappartements"
                 className="inline-flex items-center gap-2 text-white border border-white/30 hover:border-[#F88732] hover:text-[#F88732] px-6 py-3 rounded transition-all duration-300 font-[Roboto] text-sm"
               >
-                Voir les détails
+                Découvrir le projet
                 <FiArrowRight />
               </Link>
             </motion.div>
@@ -89,12 +80,12 @@ export default function ProjectsSection() {
             >
               <div className="bg-white rounded-lg p-4 shadow-2xl max-w-[450px]">
                 <Image
-                  src="/images/plaza-platinium/brochure-09.jpg"
-                  alt="Plan appartement Type C1"
+                  src="/images/plaza-platinium/brochure-02.jpg"
+                  alt="Vue aérienne Cité Plaza Platinium"
                   width={450}
                   height={350}
                   sizes="(max-width: 1024px) 100vw, 450px"
-                  className="rounded object-contain"
+                  className="rounded object-cover"
                 />
               </div>
             </motion.div>
