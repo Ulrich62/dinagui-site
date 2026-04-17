@@ -25,8 +25,8 @@ export default function ProjectsSection() {
 
       <div className="relative py-20 px-6 overflow-hidden">
         <Image
-          src="/images/apartments/f3-appartement.jpg"
-          alt="Projet appartement F3"
+          src="/images/plaza-platinium/brochure-06.jpg"
+          alt="Cité Plaza Platinium — Immeuble 5"
           fill
           sizes="100vw"
           className="object-cover"
@@ -89,8 +89,8 @@ export default function ProjectsSection() {
             >
               <div className="bg-white rounded-lg p-4 shadow-2xl max-w-[450px]">
                 <Image
-                  src="/images/apartments/f3-a1-plan.jpg"
-                  alt="Plan appartement F3"
+                  src="/images/plaza-platinium/brochure-09.jpg"
+                  alt="Plan appartement Type C1"
                   width={450}
                   height={350}
                   sizes="(max-width: 1024px) 100vw, 450px"
