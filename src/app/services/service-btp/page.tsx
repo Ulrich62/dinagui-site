@@ -2,7 +2,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ingénieur BTP - DINAGUI SARL",
+  title: "Ingénierie BTP - DINAGUI SARL",
   description:
     "Services de construction, finition et rénovation de bâtiments à Conakry. DINAGUI SARL, expert BTP en Guinée depuis 2012.",
 };

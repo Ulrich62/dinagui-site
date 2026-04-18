@@ -46,7 +46,7 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénieur BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
+  { name: "Ingénierie BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
   { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
   { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
   { name: "Service de Nettoyage", href: "/services/service-de-nettoyage", image: "/images/services/nettoyage.jpg" },
