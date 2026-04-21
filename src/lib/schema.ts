@@ -46,7 +46,7 @@ export function apartmentListing(opts: {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Cité Plaza Platinium, Immeuble 5",
+      streetAddress: "Cité Plaza Platinium",
       addressLocality: "Conakry",
       addressRegion: "Kipé",
       addressCountry: "GN",

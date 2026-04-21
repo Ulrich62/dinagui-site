@@ -17,18 +17,18 @@ import PageHero from "@/components/PageHero";
 import { breadcrumbList, realEstateListingProduct, jsonLdScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Vente d'appartements — Plaza Platinium Immeuble 5",
+  title: "Vente d'appartements — Cité Plaza Platinium",
   description:
-    "Appartements F3 et F4 modernes à la Cité Plaza Platinium, Immeuble 5, Kipé (Conakry). 6 typologies de 83 à 119 m², plan de financement accessible, commodités complètes.",
+    "Appartements F3 et F4 modernes à la Cité Plaza Platinium, Kipé (Conakry). 6 typologies de 83 à 119 m², plan de financement accessible, commodités complètes.",
   alternates: { canonical: "/nos-offres/vente-dappartements" },
   openGraph: {
-    title: "Vente d'appartements — Plaza Platinium Immeuble 5",
+    title: "Vente d'appartements — Cité Plaza Platinium",
     description:
       "Appartements F3 et F4 à la Cité Plaza Platinium, Kipé (Conakry). 6 typologies, plan de financement, commodités premium.",
     url: "/nos-offres/vente-dappartements",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/brochure-01.jpg", width: 1200, height: 630, alt: "Plaza Platinium — Immeuble 5" }],
+    images: [{ url: "/images/plaza-platinium/brochure-01.jpg", width: 1200, height: 630, alt: "Cité Plaza Platinium" }],
   },
 };
 
@@ -181,7 +181,7 @@ export default function VentePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(
           realEstateListingProduct({
-            name: "Plaza Platinium — Immeuble 5",
+            name: "Cité Plaza Platinium — Vente d'appartements",
             description: "Vente d'appartements F3 et F4 à la Cité Plaza Platinium, Kipé, Conakry. Typologies C1/C2/C3 de 83 à 119 m² avec commodités complètes et plan de financement.",
             path: "/nos-offres/vente-dappartements",
             image: "/images/plaza-platinium/brochure-01.jpg",
@@ -200,7 +200,7 @@ export default function VentePage() {
       />
       <PageHero
         title="Vente d'appartements"
-        subtitle="Cité Plaza Platinium — Immeuble 5 · Kipé, Conakry"
+        subtitle="Cité Plaza Platinium · Kipé, Conakry"
         backgroundImage="/images/plaza-platinium/brochure-01.jpg"
         bordered
       />
@@ -237,9 +237,9 @@ export default function VentePage() {
                 en pleine expansion.
               </p>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto] mb-5">
-                L&apos;<strong className="text-[#1f2d3d]">Immeuble 5</strong> vous propose
-                des appartements de F3 à F4, avec un aménagement intérieur optimisé offrant
-                davantage de confort au niveau de la chambre principale et du séjour.
+                Nos <strong className="text-[#1f2d3d]">appartements F3 à F4</strong> bénéficient
+                d&apos;un aménagement intérieur optimisé, offrant davantage de confort au niveau
+                de la chambre principale et du séjour.
               </p>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto]">
                 Un <strong className="text-[#F88732]">plan de financement</strong> avantageux
@@ -249,7 +249,7 @@ export default function VentePage() {
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/images/plaza-platinium/brochure-02.jpg"
+                src="/images/plaza-platinium/vue-aerienne.jpg"
                 alt="Vue aérienne de la Cité Plaza Platinium à Kipé"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -322,7 +322,7 @@ export default function VentePage() {
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/plaza-platinium/brochure-05.jpg"
+                src="/images/plaza-platinium/kipe-pole-urbain.jpg"
                 alt="Situation géographique de Kipé"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -603,22 +603,11 @@ export default function VentePage() {
             Informations & visites
           </h2>
           <p className="text-white/75 text-[15px] md:text-base mb-10 font-[Roboto] max-w-[640px] mx-auto leading-relaxed">
-            Planifions une visite de l&apos;Immeuble 5 et parlons de votre projet
-            d&apos;acquisition ou de location.
+            Planifions une visite et parlons de votre projet d&apos;acquisition
+            ou de location.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[760px] mx-auto mb-10 text-left">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-              <p className="text-xs uppercase tracking-wider text-[#F88732] font-[Roboto_Condensed] font-bold mb-2">
-                Contact direct Plaza Platinium
-              </p>
-              <a href="tel:+224627277272" className="flex items-center gap-2 text-white text-lg font-[Roboto_Condensed] font-bold hover:text-[#F88732] transition-colors mb-1">
-                <FiPhone /> 627 27 72 72
-              </a>
-              <a href="https://www.plazaplatinium.com" target="_blank" rel="noopener noreferrer" className="text-white/70 text-sm font-[Roboto] hover:text-[#F88732] transition-colors">
-                www.plazaplatinium.com
-              </a>
-            </div>
+          <div className="max-w-[420px] mx-auto mb-10 text-left">
             <div className="bg-white/5 border border-white/10 rounded-lg p-6">
               <p className="text-xs uppercase tracking-wider text-[#F88732] font-[Roboto_Condensed] font-bold mb-2">
                 Contact DINAGUI SARL

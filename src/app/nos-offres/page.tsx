@@ -9,7 +9,7 @@ import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Nos offres — DINAGUI SARL",
   description:
-    "Découvrez les appartements Type C1, C2 et C3 à la Cité Plaza Platinium, Immeuble 5, Kipé (Conakry). Visite vidéo, plans, surfaces et standard de livraison complet.",
+    "Découvrez les appartements Type C1, C2 et C3 à la Cité Plaza Platinium, Kipé (Conakry). Visite vidéo, plans, surfaces et standard de livraison complet.",
   alternates: { canonical: "/nos-offres" },
   openGraph: {
     title: "Nos offres — DINAGUI SARL",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/nos-offres",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/brochure-06.jpg", width: 1200, height: 630, alt: "Plaza Platinium — Immeuble 5" }],
+    images: [{ url: "/images/plaza-platinium/brochure-06.jpg", width: 1200, height: 630, alt: "Cité Plaza Platinium" }],
   },
 };
 
@@ -28,7 +28,7 @@ const offres: Offer[] = [
     kicker: "3 chambres",
     surface: "118,71 m²",
     description:
-      "Le plus grand format de l'Immeuble 5 : 3 chambres avec toilettes privatives, salon de 36 m² et cuisine équipée.",
+      "Notre plus grand format : 3 chambres avec toilettes privatives, salon de 36 m² et cuisine équipée.",
     highlights: [
       "3 chambres, 3 toilettes privatives",
       "Salon + salle à manger de 36,36 m²",
@@ -264,7 +264,7 @@ export default function NosOffresPage() {
                   <FiFileText className="text-white text-xl" />
                 </div>
                 <h3 className="text-2xl font-bold text-white font-[Roboto_Condensed] uppercase mb-3">
-                  Standard de livraison — Immeuble 5
+                  Standard de livraison
                 </h3>
                 <p className="text-white/90 text-[15px] font-[Roboto] leading-relaxed mb-6">
                   Inventaire des équipements et du mobilier inclus dans la livraison standard.

@@ -26,7 +26,7 @@ export default function ProjectsSection() {
       <div className="relative py-20 px-6 overflow-hidden">
         <Image
           src="/images/plaza-platinium/brochure-06.jpg"
-          alt="Cité Plaza Platinium — Immeuble 5"
+          alt="Cité Plaza Platinium"
           fill
           sizes="100vw"
           className="object-cover"
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
                 Cité Plaza Platinium
               </h4>
               <p className="text-[#F88732] font-medium text-sm mb-8 font-[Roboto] tracking-wide uppercase">
-                Immeuble 5 · Kipé, Conakry
+                Kipé, Conakry
               </p>
               <ul className="space-y-3 mb-10">
                 {highlights.map((h, i) => (
@@ -80,7 +80,7 @@ export default function ProjectsSection() {
             >
               <div className="bg-white rounded-lg p-4 shadow-2xl max-w-[450px]">
                 <Image
-                  src="/images/plaza-platinium/brochure-02.jpg"
+                  src="/images/plaza-platinium/vue-aerienne.jpg"
                   alt="Vue aérienne Cité Plaza Platinium"
                   width={450}
                   height={350}

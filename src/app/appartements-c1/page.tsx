@@ -9,7 +9,7 @@ import { apartmentListing, breadcrumbList, jsonLdScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Appartements Type C1 — DINAGUI SARL",
   description:
-    "Appartements Type C1 à la Cité Plaza Platinium, Immeuble 5, Kipé, Conakry. 3 chambres, 118,71 m², aménagement intérieur optimisé.",
+    "Appartements Type C1 à la Cité Plaza Platinium, Kipé, Conakry. 3 chambres, 118,71 m², aménagement intérieur optimisé.",
   alternates: { canonical: "/appartements-c1" },
   openGraph: {
     title: "Appartements Type C1 — DINAGUI SARL",
@@ -77,7 +77,7 @@ export default function AppartementsC1Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(schemaBreadcrumb)} />
       <PageHero
         title="Appartements Type C1"
-        subtitle="3 chambres · 118,71 m² · Cité Plaza Platinium, Immeuble 5"
+        subtitle="3 chambres · 118,71 m² · Cité Plaza Platinium, Kipé"
       />
 
       <OfferVideoSection
@@ -108,7 +108,7 @@ export default function AppartementsC1Page() {
               <FiMapPin className="text-[#F88732] text-2xl" />
             </div>
             <p className="text-xl font-bold text-[#1f2d3d] mb-2 font-[Roboto_Condensed]">
-              Cité Plaza Platinium — Immeuble 5
+              Cité Plaza Platinium
             </p>
             <p className="text-[#6b7280] text-lg font-[Roboto]">
               Kipé, C/Ratoma Centre émetteur, Conakry
