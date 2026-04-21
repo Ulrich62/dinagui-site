@@ -51,6 +51,79 @@ body {
   color: #F88732 !important;
 }
 
+.rental-swiper .swiper-button-next,
+.rental-swiper .swiper-button-prev {
+  color: #ffffff !important;
+  background: rgba(31, 45, 61, 0.55);
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.rental-swiper .swiper-button-next:hover,
+.rental-swiper .swiper-button-prev:hover {
+  background: #F88732;
+}
+.rental-swiper .swiper-button-next::after,
+.rental-swiper .swiper-button-prev::after {
+  content: '' !important;
+  width: 9px;
+  height: 9px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  border-radius: 1px;
+}
+.rental-swiper .swiper-button-next::after {
+  transform: translateX(-1px) rotate(45deg);
+}
+.rental-swiper .swiper-button-prev::after {
+  transform: translateX(1px) rotate(-135deg);
+}
+.rental-swiper .swiper-pagination {
+  bottom: 12px !important;
+}
+
+.lightbox-swiper {
+  width: 100%;
+  height: 100%;
+}
+.lightbox-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-swiper .swiper-button-next,
+.lightbox-swiper .swiper-button-prev {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12);
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.lightbox-swiper .swiper-button-next:hover,
+.lightbox-swiper .swiper-button-prev:hover {
+  background: rgba(248, 135, 50, 0.9);
+}
+.lightbox-swiper .swiper-button-next::after,
+.lightbox-swiper .swiper-button-prev::after {
+  content: '' !important;
+  width: 12px;
+  height: 12px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  border-radius: 1px;
+}
+.lightbox-swiper .swiper-button-next::after {
+  transform: translateX(-1px) rotate(45deg);
+}
+.lightbox-swiper .swiper-button-prev::after {
+  transform: translateX(1px) rotate(-135deg);
+}
+.lightbox-swiper .swiper-pagination {
+  bottom: 8px !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
