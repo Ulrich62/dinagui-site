@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-orange: #F88732;
+  --color-orange: #f88732;
   --color-orange-dark: #e0752a;
-  --color-orange-light: #FCEEE5;
-  --color-orange-mid: #FB9E63;
+  --color-orange-light: #fceee5;
+  --color-orange-mid: #fb9e63;
   --color-dark: #1f2d3d;
   --color-gray: #6b7280;
   --color-gray-light: #f5f5f5;
@@ -27,7 +27,7 @@ body {
 
 /* Selection color */
 ::selection {
-  background-color: #F88732;
+  background-color: #f88732;
   color: white;
 }
 
@@ -41,14 +41,14 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #F88732 !important;
+  background-color: #f88732 !important;
   width: 24px !important;
   border-radius: 4px !important;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #F88732 !important;
+  color: #f88732 !important;
 }
 
 .rental-swiper .swiper-button-next,
@@ -62,11 +62,11 @@ body {
 }
 .rental-swiper .swiper-button-next:hover,
 .rental-swiper .swiper-button-prev:hover {
-  background: #F88732;
+  background: #f88732;
 }
 .rental-swiper .swiper-button-next::after,
 .rental-swiper .swiper-button-prev::after {
-  content: '' !important;
+  content: "" !important;
   width: 9px;
   height: 9px;
   border-top: 1.5px solid currentColor;
@@ -107,7 +107,7 @@ body {
 }
 .lightbox-swiper .swiper-button-next::after,
 .lightbox-swiper .swiper-button-prev::after {
-  content: '' !important;
+  content: "" !important;
   width: 12px;
   height: 12px;
   border-top: 1.5px solid currentColor;
@@ -132,7 +132,7 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F88732;
+  background: #f88732;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {

@@ -46,15 +46,51 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénierie BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
-  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
-  { name: "Placement de Personnels", href: "/services/placements-de-personnels", image: "/images/services/placement-personnel.jpg" },
-  { name: "Service de Nettoyage", href: "/services/service-de-nettoyage", image: "/images/services/nettoyage.jpg" },
-  { name: "Fourniture de Bureau", href: "/services/fourniture-de-bureau-et-equipement", image: "/images/services/fourniture-bureau.jpg" },
-  { name: "Logistique & Transport", href: "/services/logistique-et-transport", image: "/images/services/logistique-transport.jpg" },
-  { name: "Commerce Général", href: "/services/commerce-general", image: "/images/services/commerce-general.jpg" },
-  { name: "Transit et Douane", href: "/services/transit-et-douane", image: "/images/services/transit-douane.jpg" },
-  { name: "Consulting", href: "/services/consulting", image: "/images/services/consulting.jpg" },
+  {
+    name: "Ingénierie BTP",
+    href: "/services/service-btp",
+    image: "/images/services/btp-hero.jpg",
+  },
+  {
+    name: "Gestion Immobilière",
+    href: "/services/gestion-immobiliere",
+    image: "/images/services/gestion-immobiliere.jpg",
+  },
+  {
+    name: "Placement de Personnels",
+    href: "/services/placements-de-personnels",
+    image: "/images/services/placement-personnel.jpg",
+  },
+  {
+    name: "Service de Nettoyage",
+    href: "/services/service-de-nettoyage",
+    image: "/images/services/nettoyage.jpg",
+  },
+  {
+    name: "Fourniture de Bureau",
+    href: "/services/fourniture-de-bureau-et-equipement",
+    image: "/images/services/fourniture-bureau.jpg",
+  },
+  {
+    name: "Logistique & Transport",
+    href: "/services/logistique-et-transport",
+    image: "/images/services/logistique-transport.jpg",
+  },
+  {
+    name: "Commerce Général",
+    href: "/services/commerce-general",
+    image: "/images/services/commerce-general.jpg",
+  },
+  {
+    name: "Transit et Douane",
+    href: "/services/transit-et-douane",
+    image: "/images/services/transit-douane.jpg",
+  },
+  {
+    name: "Consulting",
+    href: "/services/consulting",
+    image: "/images/services/consulting.jpg",
+  },
 ];
 
 export default function GardiennageConciergiePage() {
@@ -84,15 +120,18 @@ export default function GardiennageConciergiePage() {
           {[
             {
               title: "Discrétion",
-              description: "Interventions discrètes et respectueuses de votre environnement",
+              description:
+                "Interventions discrètes et respectueuses de votre environnement",
             },
             {
               title: "Réactivité",
-              description: "Capacité d'intervention rapide en toute circonstance",
+              description:
+                "Capacité d'intervention rapide en toute circonstance",
             },
             {
               title: "Professionnalisme",
-              description: "Agents formés aux normes de sécurité les plus exigeantes",
+              description:
+                "Agents formés aux normes de sécurité les plus exigeantes",
             },
             {
               title: "Adaptabilité",

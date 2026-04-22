@@ -147,7 +147,8 @@ function MobileSwiper({
         onClick={() => onOpen(0)}
         className="absolute bottom-3 right-3 z-20 bg-white/95 hover:bg-white text-[#1f2d3d] text-xs font-semibold px-3 py-2 rounded-md shadow-md flex items-center gap-2 font-[Roboto]"
       >
-        <Grid2x2 className="w-4 h-4" strokeWidth={1.75} /> Voir tout ({items.length})
+        <Grid2x2 className="w-4 h-4" strokeWidth={1.75} /> Voir tout (
+        {items.length})
       </button>
     </div>
   );
@@ -190,7 +191,11 @@ function DesktopMosaic({
               src={src}
               alt={`${title} — ${i + 1}`}
               fill
-              sizes={isHero ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+              sizes={
+                isHero
+                  ? "(min-width: 768px) 50vw, 100vw"
+                  : "(min-width: 768px) 25vw, 50vw"
+              }
               className="object-cover group-hover:brightness-90 transition-all duration-300"
               priority={isHero}
             />
@@ -218,7 +223,8 @@ function DesktopMosaic({
         onClick={() => onOpen(0)}
         className="absolute bottom-4 right-4 z-10 bg-white hover:bg-gray-50 text-[#1f2d3d] text-sm font-semibold px-4 py-2.5 rounded-md shadow-lg flex items-center gap-2 font-[Roboto] border border-gray-200"
       >
-        <Grid2x2 className="w-4 h-4" strokeWidth={1.75} /> Afficher toutes les photos
+        <Grid2x2 className="w-4 h-4" strokeWidth={1.75} /> Afficher toutes les
+        photos
       </button>
     </div>
   );
@@ -309,7 +315,10 @@ function Lightbox({
           className="h-full lightbox-swiper"
         >
           {items.map((item, i) => (
-            <SwiperSlide key={`${item.kind}-${i}`} className="flex items-center justify-center">
+            <SwiperSlide
+              key={`${item.kind}-${i}`}
+              className="flex items-center justify-center"
+            >
               {item.kind === "photo" ? (
                 <div className="relative w-full h-full">
                   <Image

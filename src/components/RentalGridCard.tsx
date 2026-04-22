@@ -60,7 +60,9 @@ export default function RentalGridCard({ offer }: { offer: RentalOffer }) {
           <FiMapPin className="text-[#F88732] mt-0.5 flex-shrink-0" />
           <span>
             {offer.location}
-            {offer.landmark && <span className="text-[#6b7280]/80"> — {offer.landmark}</span>}
+            {offer.landmark && (
+              <span className="text-[#6b7280]/80"> — {offer.landmark}</span>
+            )}
           </span>
         </div>
 

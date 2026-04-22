@@ -65,8 +65,18 @@ export default function ServicePageLayout({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://dinagui-site.vercel.app" },
-      { "@type": "ListItem", position: 2, name: "Services", item: "https://dinagui-site.vercel.app/#services" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: "https://dinagui-site.vercel.app",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://dinagui-site.vercel.app/#services",
+      },
       { "@type": "ListItem", position: 3, name: heroTitle },
     ],
   };
@@ -87,7 +97,11 @@ export default function ServicePageLayout({
       name: sectionTitle || heroTitle,
       itemListElement: services.map((s) => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: s.title, description: s.description },
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+        },
       })),
     },
   };
@@ -102,11 +116,7 @@ export default function ServicePageLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <PageHero
-        title={heroTitle}
-        backgroundImage={backgroundImage}
-        bordered
-      />
+      <PageHero title={heroTitle} backgroundImage={backgroundImage} bordered />
 
       {/* Intro Section — image + texte */}
       <section className="py-20 px-6 max-w-[1340px] mx-auto">
@@ -126,9 +136,15 @@ export default function ServicePageLayout({
               </div>
             </div>
           )}
-          <div className={!introImage ? "lg:col-span-2 text-center max-w-3xl mx-auto" : ""}>
+          <div
+            className={
+              !introImage ? "lg:col-span-2 text-center max-w-3xl mx-auto" : ""
+            }
+          >
             {/* Tag element */}
-            <div className={`flex items-center gap-3 mb-4 ${!introImage ? "justify-center" : ""}`}>
+            <div
+              className={`flex items-center gap-3 mb-4 ${!introImage ? "justify-center" : ""}`}
+            >
               <div className="w-10 h-px bg-[#F88732]" />
               <span className="text-[#F88732] font-medium text-sm tracking-[0.15em] uppercase font-[Roboto]">
                 À propos
@@ -200,9 +216,7 @@ export default function ServicePageLayout({
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-[Roboto_Condensed] uppercase">
             {ctaTitle}
           </h3>
-          <p className="text-white/85 mb-8 font-[Roboto]">
-            {ctaText}
-          </p>
+          <p className="text-white/85 mb-8 font-[Roboto]">{ctaText}</p>
           <Link
             href="/contact"
             className="inline-block bg-white text-[#F88732] font-semibold py-3 px-10 rounded hover:bg-gray-100 transition-all duration-300 font-[Roboto] hover:shadow-lg"
@@ -252,11 +266,7 @@ export default function ServicePageLayout({
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {otherServices.map((service, index) => (
-            <Link
-              key={index}
-              href={service.href}
-              className="group block"
-            >
+            <Link key={index} href={service.href} className="group block">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-3">
                 {service.image ? (
                   <Image

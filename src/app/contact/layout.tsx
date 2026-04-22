@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Contactez DINAGUI SARL à Conakry pour vos projets BTP, immobilier et services. Téléphone, email et formulaire de devis disponibles.",
 };
 
-export default function ContactLayout({ children }: { children: React.ReactNode }) {
+export default function ContactLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return children;
 }

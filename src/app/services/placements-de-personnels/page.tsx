@@ -26,15 +26,51 @@ const services = [
 ];
 
 const otherServices = [
-  { name: "Ingénierie BTP", href: "/services/service-btp", image: "/images/services/btp-hero.jpg" },
-  { name: "Gestion Immobilière", href: "/services/gestion-immobiliere", image: "/images/services/gestion-immobiliere.jpg" },
-  { name: "Gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie", image: "/images/services/gardiennage.jpg" },
-  { name: "Service de Nettoyage", href: "/services/service-de-nettoyage", image: "/images/services/nettoyage.jpg" },
-  { name: "Fourniture de Bureau", href: "/services/fourniture-de-bureau-et-equipement", image: "/images/services/fourniture-bureau.jpg" },
-  { name: "Logistique & Transport", href: "/services/logistique-et-transport", image: "/images/services/logistique-transport.jpg" },
-  { name: "Commerce Général", href: "/services/commerce-general", image: "/images/services/commerce-general.jpg" },
-  { name: "Transit et Douane", href: "/services/transit-et-douane", image: "/images/services/transit-douane.jpg" },
-  { name: "Consulting", href: "/services/consulting", image: "/images/services/consulting.jpg" },
+  {
+    name: "Ingénierie BTP",
+    href: "/services/service-btp",
+    image: "/images/services/btp-hero.jpg",
+  },
+  {
+    name: "Gestion Immobilière",
+    href: "/services/gestion-immobiliere",
+    image: "/images/services/gestion-immobiliere.jpg",
+  },
+  {
+    name: "Gardiennage & Conciergerie",
+    href: "/services/service-de-gardiennage-de-conciergerie",
+    image: "/images/services/gardiennage.jpg",
+  },
+  {
+    name: "Service de Nettoyage",
+    href: "/services/service-de-nettoyage",
+    image: "/images/services/nettoyage.jpg",
+  },
+  {
+    name: "Fourniture de Bureau",
+    href: "/services/fourniture-de-bureau-et-equipement",
+    image: "/images/services/fourniture-bureau.jpg",
+  },
+  {
+    name: "Logistique & Transport",
+    href: "/services/logistique-et-transport",
+    image: "/images/services/logistique-transport.jpg",
+  },
+  {
+    name: "Commerce Général",
+    href: "/services/commerce-general",
+    image: "/images/services/commerce-general.jpg",
+  },
+  {
+    name: "Transit et Douane",
+    href: "/services/transit-et-douane",
+    image: "/images/services/transit-douane.jpg",
+  },
+  {
+    name: "Consulting",
+    href: "/services/consulting",
+    image: "/images/services/consulting.jpg",
+  },
 ];
 
 export default function PlacementDePersonnelsPage() {

@@ -70,7 +70,10 @@ export default function OfferCard({ offer }: { offer: Offer }) {
           preload="none"
           aria-hidden="true"
         >
-          <source src={offer.video.replace(/\.mp4$/i, ".webm")} type="video/webm" />
+          <source
+            src={offer.video.replace(/\.mp4$/i, ".webm")}
+            type="video/webm"
+          />
           <source src={offer.video} type="video/mp4" />
         </video>
 
@@ -91,7 +94,9 @@ export default function OfferCard({ offer }: { offer: Offer }) {
         {/* Play indicator (disappears while playing) */}
         <div
           className={`absolute bottom-4 right-4 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg transition-all duration-300 z-10 ${
-            isPlaying ? "opacity-0 scale-75" : "opacity-100 scale-100 group-hover:scale-110"
+            isPlaying
+              ? "opacity-0 scale-75"
+              : "opacity-100 scale-100 group-hover:scale-110"
           }`}
           aria-hidden="true"
         >
@@ -108,7 +113,10 @@ export default function OfferCard({ offer }: { offer: Offer }) {
         </p>
         <ul className="space-y-2 mb-5">
           {offer.highlights.map((h, i) => (
-            <li key={i} className="flex items-start gap-2.5 text-[#6b7280] text-[13.5px] font-[Roboto]">
+            <li
+              key={i}
+              className="flex items-start gap-2.5 text-[#6b7280] text-[13.5px] font-[Roboto]"
+            >
               <FiCheck className="text-[#F88732] mt-0.5 flex-shrink-0" />
               <span>{h}</span>
             </li>

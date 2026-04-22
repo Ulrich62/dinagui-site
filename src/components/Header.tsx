@@ -8,11 +8,23 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 const services = [
   { name: "Service BTP", href: "/services/service-btp" },
   { name: "Gestion immobilière", href: "/services/gestion-immobiliere" },
-  { name: "Placements de personnels", href: "/services/placements-de-personnels" },
-  { name: "Service de gardiennage & de conciergerie", href: "/services/service-de-gardiennage-de-conciergerie" },
+  {
+    name: "Placements de personnels",
+    href: "/services/placements-de-personnels",
+  },
+  {
+    name: "Service de gardiennage & de conciergerie",
+    href: "/services/service-de-gardiennage-de-conciergerie",
+  },
   { name: "Service de nettoyage", href: "/services/service-de-nettoyage" },
-  { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement" },
-  { name: "Logistique et transport", href: "/services/logistique-et-transport" },
+  {
+    name: "Fourniture de bureau et équipement",
+    href: "/services/fourniture-de-bureau-et-equipement",
+  },
+  {
+    name: "Logistique et transport",
+    href: "/services/logistique-et-transport",
+  },
   { name: "Commerce général", href: "/services/commerce-general" },
   { name: "Transit et douane", href: "/services/transit-et-douane" },
   { name: "Consulting", href: "/services/consulting" },
@@ -20,7 +32,10 @@ const services = [
 
 const offres: { name: string; href: string; divider?: boolean }[] = [
   { name: "Vente d'appartements", href: "/nos-offres/vente-dappartements" },
-  { name: "Location d'appartements", href: "/nos-offres/location-dappartements" },
+  {
+    name: "Location d'appartements",
+    href: "/nos-offres/location-dappartements",
+  },
   { name: "Standard de livraison", href: "/nos-offres/standard-de-livraison" },
 ];
 
@@ -47,13 +62,19 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center text-[15px] font-normal text-[#1f2d3d]">
-          <Link href="/" className="hover:text-[#F88732] transition-colors px-6">
+          <Link
+            href="/"
+            className="hover:text-[#F88732] transition-colors px-6"
+          >
             Accueil
           </Link>
           <span className="text-gray-300">|</span>
 
           {/* À-propos → lien direct vers Notre équipe */}
-          <Link href="/a-propos" className="hover:text-[#F88732] transition-colors px-6">
+          <Link
+            href="/a-propos"
+            className="hover:text-[#F88732] transition-colors px-6"
+          >
             À-propos
           </Link>
           <span className="text-gray-300">|</span>
@@ -69,7 +90,9 @@ export default function Header() {
             </span>
             <div
               className={`absolute top-full left-0 mt-4 bg-white shadow-lg border border-gray-100 rounded-lg overflow-hidden transition-all duration-200 ease-in-out ${
-                activeDropdown === "services" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                activeDropdown === "services"
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-2"
               }`}
               style={{ minWidth: "340px" }}
             >
@@ -94,19 +117,27 @@ export default function Header() {
             onMouseEnter={() => setActiveDropdown("offres")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <Link href="/nos-offres" className="hover:text-[#F88732] transition-colors">
+            <Link
+              href="/nos-offres"
+              className="hover:text-[#F88732] transition-colors"
+            >
               Nos offres
             </Link>
             <div
               className={`absolute top-full left-0 mt-4 bg-white shadow-lg border border-gray-100 rounded-lg overflow-hidden transition-all duration-200 ease-in-out ${
-                activeDropdown === "offres" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                activeDropdown === "offres"
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-2"
               }`}
               style={{ minWidth: "300px" }}
             >
               <div className="py-3 px-4">
                 {offres.map((o, i) =>
                   o.divider ? (
-                    <div key={`div-${i}`} className="my-2 border-t border-gray-100" />
+                    <div
+                      key={`div-${i}`}
+                      className="my-2 border-t border-gray-100"
+                    />
                   ) : (
                     <Link
                       key={o.href}
@@ -115,18 +146,24 @@ export default function Header() {
                     >
                       {o.name}
                     </Link>
-                  )
+                  ),
                 )}
               </div>
             </div>
           </div>
           <span className="text-gray-300">|</span>
 
-          <Link href="/blog" className="hover:text-[#F88732] transition-colors px-6">
+          <Link
+            href="/blog"
+            className="hover:text-[#F88732] transition-colors px-6"
+          >
             Blog
           </Link>
           <span className="text-gray-300">|</span>
-          <Link href="/contact" className="hover:text-[#F88732] transition-colors px-6">
+          <Link
+            href="/contact"
+            className="hover:text-[#F88732] transition-colors px-6"
+          >
             Contact
           </Link>
 
@@ -152,13 +189,25 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="flex flex-col px-6 py-4 gap-1">
-            <Link href="/" className="py-3 border-b border-gray-50 hover:text-[#F88732]" onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/"
+              className="py-3 border-b border-gray-50 hover:text-[#F88732]"
+              onClick={() => setMobileOpen(false)}
+            >
               Accueil
             </Link>
-            <Link href="/a-propos" className="py-3 border-b border-gray-50 hover:text-[#F88732]" onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/a-propos"
+              className="py-3 border-b border-gray-50 hover:text-[#F88732]"
+              onClick={() => setMobileOpen(false)}
+            >
               À-propos
             </Link>
-            <Link href="/notre-equipe" className="py-3 pl-4 border-b border-gray-50 hover:text-[#F88732] text-sm" onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/notre-equipe"
+              className="py-3 pl-4 border-b border-gray-50 hover:text-[#F88732] text-sm"
+              onClick={() => setMobileOpen(false)}
+            >
               Notre équipe
             </Link>
 
@@ -167,7 +216,10 @@ export default function Header() {
               className="py-3 border-b border-gray-50 hover:text-[#F88732] flex items-center justify-between"
               onClick={() => setServicesOpen(!servicesOpen)}
             >
-              Services <FiChevronDown className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              Services{" "}
+              <FiChevronDown
+                className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              />
             </button>
             {servicesOpen && (
               <div className="flex flex-col pl-4">
@@ -198,14 +250,19 @@ export default function Header() {
                 onClick={() => setOffresOpen(!offresOpen)}
                 aria-label="Ouvrir le sous-menu Nos offres"
               >
-                <FiChevronDown className={`transition-transform ${offresOpen ? "rotate-180" : ""}`} />
+                <FiChevronDown
+                  className={`transition-transform ${offresOpen ? "rotate-180" : ""}`}
+                />
               </button>
             </div>
             {offresOpen && (
               <div className="flex flex-col pl-4">
                 {offres.map((o, i) =>
                   o.divider ? (
-                    <div key={`mdiv-${i}`} className="my-1 border-t border-gray-100" />
+                    <div
+                      key={`mdiv-${i}`}
+                      className="my-1 border-t border-gray-100"
+                    />
                   ) : (
                     <Link
                       key={o.href}
@@ -215,15 +272,23 @@ export default function Header() {
                     >
                       {o.name}
                     </Link>
-                  )
+                  ),
                 )}
               </div>
             )}
 
-            <Link href="/blog" className="py-3 border-b border-gray-50 hover:text-[#F88732]" onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/blog"
+              className="py-3 border-b border-gray-50 hover:text-[#F88732]"
+              onClick={() => setMobileOpen(false)}
+            >
               Blog
             </Link>
-            <Link href="/contact" className="py-3 border-b border-gray-50 hover:text-[#F88732]" onClick={() => setMobileOpen(false)}>
+            <Link
+              href="/contact"
+              className="py-3 border-b border-gray-50 hover:text-[#F88732]"
+              onClick={() => setMobileOpen(false)}
+            >
               Contact
             </Link>
             <Link

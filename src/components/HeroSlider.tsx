@@ -157,7 +157,8 @@ export default function HeroSlider() {
           />
         ))}
         <span className="text-white/50 text-xs ml-3 font-[Roboto]">
-          {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+          {String(current + 1).padStart(2, "0")} /{" "}
+          {String(slides.length).padStart(2, "0")}
         </span>
       </div>
     </section>

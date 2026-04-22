@@ -25,11 +25,13 @@ const COMMON_LANDMARK = "proximité Radisson Blu";
 
 const photosLuxueuxA = Array.from(
   { length: 15 },
-  (_, i) => `/images/rentals/luxueux-meuble-2ch-a/photo-${String(i + 1).padStart(2, "0")}.jpg`
+  (_, i) =>
+    `/images/rentals/luxueux-meuble-2ch-a/photo-${String(i + 1).padStart(2, "0")}.jpg`,
 );
 const photosNonMeubleA = Array.from(
   { length: 10 },
-  (_, i) => `/images/rentals/non-meuble-2ch-a/photo-${String(i + 1).padStart(2, "0")}.jpg`
+  (_, i) =>
+    `/images/rentals/non-meuble-2ch-a/photo-${String(i + 1).padStart(2, "0")}.jpg`,
 );
 
 export const rentalOffers: RentalOffer[] = [

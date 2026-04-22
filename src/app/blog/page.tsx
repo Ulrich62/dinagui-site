@@ -19,7 +19,12 @@ export default function BlogPage() {
         <div className="max-w-[1100px] mx-auto px-6">
           {/* Breadcrumb */}
           <div className="text-sm text-[#6b7280] mb-10 flex items-center gap-1 font-[Roboto]">
-            <Link href="/" className="hover:text-[#F88732] transition-colors duration-200">Accueil</Link>
+            <Link
+              href="/"
+              className="hover:text-[#F88732] transition-colors duration-200"
+            >
+              Accueil
+            </Link>
             <FiChevronRight className="text-xs" />
             <span className="text-[#1f2d3d] font-medium">Blog</span>
           </div>
@@ -45,7 +50,10 @@ export default function BlogPage() {
                       BTP
                     </span>
                     <span className="italic">
-                      par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
+                      par{" "}
+                      <span className="text-[#F88732] font-medium">
+                        Dinagui Admin
+                      </span>
                     </span>
                     <span>|</span>
                     <span>DINAGUI SARL</span>
@@ -56,14 +64,15 @@ export default function BlogPage() {
                       href="/blog/pourquoi-faire-appel-a-une-entreprise-generale-de-construction-pour-vos-projets"
                       className="hover:text-[#F88732] transition-colors"
                     >
-                      Pourquoi faire appel à une entreprise générale de construction pour vos projets ?
+                      Pourquoi faire appel à une entreprise générale de
+                      construction pour vos projets ?
                     </Link>
                   </h2>
 
                   <p className="text-[#6b7280] text-[15px] leading-relaxed mb-5 font-[Roboto]">
                     Construire, rénover ou aménager un espace est un projet qui
-                    nécessite une expertise technique, une planification rigoureuse
-                    et une exécution parfaite...
+                    nécessite une expertise technique, une planification
+                    rigoureuse et une exécution parfaite...
                   </p>
 
                   <Link
@@ -93,7 +102,10 @@ export default function BlogPage() {
                       Immobilier
                     </span>
                     <span className="italic">
-                      par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
+                      par{" "}
+                      <span className="text-[#F88732] font-medium">
+                        Dinagui Admin
+                      </span>
                     </span>
                     <span>|</span>
                     <span>DINAGUI SARL</span>
@@ -109,9 +121,9 @@ export default function BlogPage() {
                   </h2>
 
                   <p className="text-[#6b7280] text-[15px] leading-relaxed mb-5 font-[Roboto]">
-                    Posséder un bien immobilier à Conakry représente un investissement
-                    important, mais sa rentabilité dépend largement de la qualité
-                    de sa gestion...
+                    Posséder un bien immobilier à Conakry représente un
+                    investissement important, mais sa rentabilité dépend
+                    largement de la qualité de sa gestion...
                   </p>
 
                   <Link
@@ -141,7 +153,10 @@ export default function BlogPage() {
                       Sécurité
                     </span>
                     <span className="italic">
-                      par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
+                      par{" "}
+                      <span className="text-[#F88732] font-medium">
+                        Dinagui Admin
+                      </span>
                     </span>
                     <span>|</span>
                     <span>DINAGUI SARL</span>
@@ -158,8 +173,8 @@ export default function BlogPage() {
 
                   <p className="text-[#6b7280] text-[15px] leading-relaxed mb-5 font-[Roboto]">
                     La sécurité des biens et des personnes est une préoccupation
-                    majeure pour les entreprises, les résidences et les institutions
-                    en Guinée...
+                    majeure pour les entreprises, les résidences et les
+                    institutions en Guinée...
                   </p>
 
                   <Link
@@ -189,7 +204,10 @@ export default function BlogPage() {
                       Logistique
                     </span>
                     <span className="italic">
-                      par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
+                      par{" "}
+                      <span className="text-[#F88732] font-medium">
+                        Dinagui Admin
+                      </span>
                     </span>
                     <span>|</span>
                     <span>DINAGUI SARL</span>
@@ -200,14 +218,16 @@ export default function BlogPage() {
                       href="/blog/logistique-et-transport-en-guinee-les-cles-dune-chaine-performante"
                       className="hover:text-[#F88732] transition-colors"
                     >
-                      Logistique et transport en Guinée : les clés d&apos;une chaîne performante
+                      Logistique et transport en Guinée : les clés d&apos;une
+                      chaîne performante
                     </Link>
                   </h2>
 
                   <p className="text-[#6b7280] text-[15px] leading-relaxed mb-5 font-[Roboto]">
-                    En Guinée, la logistique et le transport représentent des enjeux
-                    majeurs pour les entreprises. Infrastructure, suivi, partenaires
-                    fiables : les clés pour optimiser votre chaîne...
+                    En Guinée, la logistique et le transport représentent des
+                    enjeux majeurs pour les entreprises. Infrastructure, suivi,
+                    partenaires fiables : les clés pour optimiser votre
+                    chaîne...
                   </p>
 
                   <Link
@@ -237,7 +257,10 @@ export default function BlogPage() {
                       Immobilier
                     </span>
                     <span className="italic">
-                      par <span className="text-[#F88732] font-medium">Dinagui Admin</span>
+                      par{" "}
+                      <span className="text-[#F88732] font-medium">
+                        Dinagui Admin
+                      </span>
                     </span>
                     <span>|</span>
                     <span>DINAGUI SARL</span>
@@ -253,9 +276,10 @@ export default function BlogPage() {
                   </h2>
 
                   <p className="text-[#6b7280] text-[15px] leading-relaxed mb-5 font-[Roboto]">
-                    Conakry attire de plus en plus d&apos;investisseurs immobiliers.
-                    Croissance urbaine, forte demande locative et projets modernes
-                    comme la Cité Plaza Platinium font de la capitale un choix stratégique...
+                    Conakry attire de plus en plus d&apos;investisseurs
+                    immobiliers. Croissance urbaine, forte demande locative et
+                    projets modernes comme la Cité Plaza Platinium font de la
+                    capitale un choix stratégique...
                   </p>
 
                   <Link
@@ -282,7 +306,8 @@ export default function BlogPage() {
                       href="/blog/pourquoi-faire-appel-a-une-entreprise-generale-de-construction-pour-vos-projets"
                       className="text-sm text-[#6b7280] hover:text-[#F88732] transition-colors leading-snug block font-[Roboto]"
                     >
-                      Pourquoi faire appel à une entreprise générale de construction pour vos projets ?
+                      Pourquoi faire appel à une entreprise générale de
+                      construction pour vos projets ?
                     </Link>
                   </li>
                   <li className="flex items-start gap-3">
@@ -309,7 +334,8 @@ export default function BlogPage() {
                       href="/blog/logistique-et-transport-en-guinee-les-cles-dune-chaine-performante"
                       className="text-sm text-[#6b7280] hover:text-[#F88732] transition-colors leading-snug block font-[Roboto]"
                     >
-                      Logistique et transport en Guinée : les clés d&apos;une chaîne performante
+                      Logistique et transport en Guinée : les clés d&apos;une
+                      chaîne performante
                     </Link>
                   </li>
                   <li className="flex items-start gap-3">

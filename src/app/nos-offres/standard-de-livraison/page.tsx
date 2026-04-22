@@ -26,7 +26,14 @@ export const metadata: Metadata = {
     url: "/nos-offres/standard-de-livraison",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/equip-cuisine.jpg", width: 1200, height: 630, alt: "Standard de livraison Immeuble 5" }],
+    images: [
+      {
+        url: "/images/plaza-platinium/equip-cuisine.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Standard de livraison Immeuble 5",
+      },
+    ],
   },
 };
 
@@ -52,8 +59,11 @@ export default function StandardLivraisonPage() {
           breadcrumbList([
             { name: "Accueil", path: "/" },
             { name: "Nos offres", path: "/nos-offres" },
-            { name: "Standard de livraison", path: "/nos-offres/standard-de-livraison" },
-          ])
+            {
+              name: "Standard de livraison",
+              path: "/nos-offres/standard-de-livraison",
+            },
+          ]),
         )}
       />
       <PageHero
@@ -66,9 +76,13 @@ export default function StandardLivraisonPage() {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-[1340px] mx-auto px-6 py-4 text-sm text-[#6b7280] font-[Roboto]">
-          <Link href="/" className="hover:text-[#F88732]">Accueil</Link>
+          <Link href="/" className="hover:text-[#F88732]">
+            Accueil
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/nos-offres" className="hover:text-[#F88732]">Nos offres</Link>
+          <Link href="/nos-offres" className="hover:text-[#F88732]">
+            Nos offres
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-[#1f2d3d]">Standard de livraison</span>
         </div>
@@ -86,9 +100,10 @@ export default function StandardLivraisonPage() {
             Inventaire des équipements inclus dans la livraison
           </h2>
           <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto]">
-            Chaque appartement de l&apos;Immeuble 5 est livré prêt à vivre : électroménagers
-            essentiels installés et mobilier intégré cuisine et salle de bain. Voici le
-            détail complet de ce qui est inclus dans la livraison standard.
+            Chaque appartement de l&apos;Immeuble 5 est livré prêt à vivre :
+            électroménagers essentiels installés et mobilier intégré cuisine et
+            salle de bain. Voici le détail complet de ce qui est inclus dans la
+            livraison standard.
           </p>
         </div>
       </section>
@@ -109,7 +124,10 @@ export default function StandardLivraisonPage() {
               </div>
               <ul className="space-y-3">
                 {electromenagers.map((e, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]"
+                  >
                     <FiCheck className="text-[#F88732] mt-0.5 flex-shrink-0" />
                     <span>{e}</span>
                   </li>
@@ -129,7 +147,10 @@ export default function StandardLivraisonPage() {
               </div>
               <ul className="space-y-3">
                 {mobilier.map((m, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]"
+                  >
                     <FiCheck className="text-[#F88732] mt-0.5 flex-shrink-0" />
                     <span>{m}</span>
                   </li>
@@ -153,7 +174,8 @@ export default function StandardLivraisonPage() {
               Les équipements en détail
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Aperçu visuel de chaque équipement inclus dans la livraison standard.
+              Aperçu visuel de chaque équipement inclus dans la livraison
+              standard.
             </p>
           </div>
 
@@ -238,9 +260,9 @@ export default function StandardLivraisonPage() {
                 À noter
               </h3>
               <p className="text-white/80 text-[15px] font-[Roboto] leading-relaxed">
-                Aucun autre appareil électrique ou meuble n&apos;est inclus dans la
-                livraison standard. Pour toute demande d&apos;équipement supplémentaire,
-                contactez-nous.
+                Aucun autre appareil électrique ou meuble n&apos;est inclus dans
+                la livraison standard. Pour toute demande d&apos;équipement
+                supplémentaire, contactez-nous.
               </p>
             </div>
           </div>
@@ -300,14 +322,20 @@ export default function StandardLivraisonPage() {
             Des questions sur la livraison ?
           </h2>
           <p className="text-[#6b7280] text-[15px] md:text-base mb-10 font-[Roboto] max-w-[640px] mx-auto leading-relaxed">
-            Notre équipe est à votre disposition pour répondre à toutes vos questions
-            techniques et organiser une visite sur site.
+            Notre équipe est à votre disposition pour répondre à toutes vos
+            questions techniques et organiser une visite sur site.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-[#1f2d3d] text-[15px]">
-            <a href="tel:+224613500404" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="tel:+224613500404"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiPhone /> +224 613 50 04 04
             </a>
-            <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="mailto:contact@dinagui.com"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiMail /> contact@dinagui.com
             </a>
           </div>

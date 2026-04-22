@@ -17,14 +17,14 @@ DINAGUI SARL est une entreprise guinéenne spécialisée en BTP, gestion immobil
 
 ## Charte graphique
 
-| Token | Valeur | Usage |
-|-------|--------|-------|
-| `orange` | `#F88732` | Couleur principale, CTA, accents |
-| `orange-dark` | `#e0752a` | Hover sur boutons |
-| `orange-light` | `#FCEEE5` | Fonds clairs, badges |
-| `dark` | `#1f2d3d` | Texte principal, header, footer |
-| `gray` | `#6b7280` | Texte secondaire |
-| `beige` | `#faf5f0` | Fonds de sections alternées |
+| Token          | Valeur    | Usage                            |
+| -------------- | --------- | -------------------------------- |
+| `orange`       | `#F88732` | Couleur principale, CTA, accents |
+| `orange-dark`  | `#e0752a` | Hover sur boutons                |
+| `orange-light` | `#FCEEE5` | Fonds clairs, badges             |
+| `dark`         | `#1f2d3d` | Texte principal, header, footer  |
+| `gray`         | `#6b7280` | Texte secondaire                 |
+| `beige`        | `#faf5f0` | Fonds de sections alternées      |
 
 ## Architecture du projet
 
@@ -95,15 +95,19 @@ public/
 ## Pages et leur contenu
 
 ### Page d'accueil (`/`)
+
 9 sections : HeroSlider, ExpertiseCards, AboutSection, StatsSection, ServicesSection, ProjectsSection, TeamSection, CTASection, TestimonialsSection
 
 ### Pages services (10)
+
 Utilisent `ServicePageLayout` : hero banner, texte intro, grille de cartes services, CTA, liste "Autres services"
 
 ### Pages appartements (3)
+
 Utilisent `ApartmentCard` : hero, cartes avec plan/photo, surface, configuration, features, prix, section contact
 
 ### Pages institutionnelles
+
 - **À-propos** : présentation, 4 piliers, FAQ accordion, CTA
 - **Notre équipe** : grille 6 membres
 - **Contact** : infos + formulaire avec validation client

@@ -14,7 +14,11 @@ import {
   FiFileText,
 } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
-import { breadcrumbList, realEstateListingProduct, jsonLdScript } from "@/lib/schema";
+import {
+  breadcrumbList,
+  realEstateListingProduct,
+  jsonLdScript,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Vente d'appartements — Cité Plaza Platinium",
@@ -28,7 +32,14 @@ export const metadata: Metadata = {
     url: "/nos-offres/vente-dappartements",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/brochure-01.jpg", width: 1200, height: 630, alt: "Cité Plaza Platinium" }],
+    images: [
+      {
+        url: "/images/plaza-platinium/brochure-01.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cité Plaza Platinium",
+      },
+    ],
   },
 };
 
@@ -162,15 +173,30 @@ const kipePiliers = [
 const programme = [
   {
     title: "Loisirs",
-    items: ["Espaces de jeux pour enfants", "Salle de sport, terrain basket & football", "Jardins publics"],
+    items: [
+      "Espaces de jeux pour enfants",
+      "Salle de sport, terrain basket & football",
+      "Jardins publics",
+    ],
   },
   {
     title: "Services publics",
-    items: ["Établissements scolaires", "Hôpitaux", "Gendarmerie", "Hôtel Sheraton"],
+    items: [
+      "Établissements scolaires",
+      "Hôpitaux",
+      "Gendarmerie",
+      "Hôtel Sheraton",
+    ],
   },
   {
     title: "Espaces commerciaux",
-    items: ["Plaza Mall", "Restaurants", "Banques", "Supérettes", "Télécommunication"],
+    items: [
+      "Plaza Mall",
+      "Restaurants",
+      "Banques",
+      "Supérettes",
+      "Télécommunication",
+    ],
   },
 ];
 
@@ -182,10 +208,11 @@ export default function VentePage() {
         dangerouslySetInnerHTML={jsonLdScript(
           realEstateListingProduct({
             name: "Cité Plaza Platinium — Vente d'appartements",
-            description: "Vente d'appartements F3 et F4 à la Cité Plaza Platinium, Kipé, Conakry. Typologies C1/C2/C3 de 83 à 119 m² avec commodités complètes et plan de financement.",
+            description:
+              "Vente d'appartements F3 et F4 à la Cité Plaza Platinium, Kipé, Conakry. Typologies C1/C2/C3 de 83 à 119 m² avec commodités complètes et plan de financement.",
             path: "/nos-offres/vente-dappartements",
             image: "/images/plaza-platinium/brochure-01.jpg",
-          })
+          }),
         )}
       />
       <script
@@ -194,8 +221,11 @@ export default function VentePage() {
           breadcrumbList([
             { name: "Accueil", path: "/" },
             { name: "Nos offres", path: "/nos-offres" },
-            { name: "Vente d'appartements", path: "/nos-offres/vente-dappartements" },
-          ])
+            {
+              name: "Vente d'appartements",
+              path: "/nos-offres/vente-dappartements",
+            },
+          ]),
         )}
       />
       <PageHero
@@ -208,9 +238,13 @@ export default function VentePage() {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-[1340px] mx-auto px-6 py-4 text-sm text-[#6b7280] font-[Roboto]">
-          <Link href="/" className="hover:text-[#F88732]">Accueil</Link>
+          <Link href="/" className="hover:text-[#F88732]">
+            Accueil
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/nos-offres" className="hover:text-[#F88732]">Nos offres</Link>
+          <Link href="/nos-offres" className="hover:text-[#F88732]">
+            Nos offres
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-[#1f2d3d]">Vente d&apos;appartements</span>
         </div>
@@ -230,21 +264,26 @@ export default function VentePage() {
                 Présentation du projet
               </h2>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto] mb-5">
-                La <strong className="text-[#1f2d3d]">Cité Plaza Platinium</strong> vise à
-                offrir des logements modernes, de qualité et abordables, à proximité du
-                nouveau centre administratif et financier de Conakry, dans le quartier de
-                <strong className="text-[#1f2d3d]"> Kipé</strong>, un quartier dynamique et
-                en pleine expansion.
+                La{" "}
+                <strong className="text-[#1f2d3d]">Cité Plaza Platinium</strong>{" "}
+                vise à offrir des logements modernes, de qualité et abordables,
+                à proximité du nouveau centre administratif et financier de
+                Conakry, dans le quartier de
+                <strong className="text-[#1f2d3d]"> Kipé</strong>, un quartier
+                dynamique et en pleine expansion.
               </p>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto] mb-5">
-                Nos <strong className="text-[#1f2d3d]">appartements F3 à F4</strong> bénéficient
-                d&apos;un aménagement intérieur optimisé, offrant davantage de confort au niveau
-                de la chambre principale et du séjour.
+                Nos{" "}
+                <strong className="text-[#1f2d3d]">appartements F3 à F4</strong>{" "}
+                bénéficient d&apos;un aménagement intérieur optimisé, offrant
+                davantage de confort au niveau de la chambre principale et du
+                séjour.
               </p>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto]">
-                Un <strong className="text-[#F88732]">plan de financement</strong> avantageux
-                est également accordé à nos futurs acquéreurs, rendant ces magnifiques
-                appartements plus accessibles à tous.
+                Un{" "}
+                <strong className="text-[#F88732]">plan de financement</strong>{" "}
+                avantageux est également accordé à nos futurs acquéreurs,
+                rendant ces magnifiques appartements plus accessibles à tous.
               </p>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
@@ -273,7 +312,8 @@ export default function VentePage() {
               Présentation du programme
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Un écosystème complet pensé pour le quotidien, les loisirs et les services essentiels.
+              Un écosystème complet pensé pour le quotidien, les loisirs et les
+              services essentiels.
             </p>
           </div>
 
@@ -289,7 +329,10 @@ export default function VentePage() {
                 </h3>
                 <ul className="space-y-3">
                   {bloc.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]">
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-[#6b7280] text-[15px] font-[Roboto]"
+                    >
                       <FiCheck className="text-[#F88732] mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -315,9 +358,10 @@ export default function VentePage() {
                 Kipé — pôle urbain dynamique, cadre de vie convivial
               </h2>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto]">
-                Plaza Platinium bénéficie d&apos;une situation géographique stratégique à
-                Kipé, à quelques minutes de l&apos;aéroport, du centre-ville et des
-                principaux pôles économiques, éducatifs et de santé de Conakry.
+                Plaza Platinium bénéficie d&apos;une situation géographique
+                stratégique à Kipé, à quelques minutes de l&apos;aéroport, du
+                centre-ville et des principaux pôles économiques, éducatifs et
+                de santé de Conakry.
               </p>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
@@ -335,7 +379,10 @@ export default function VentePage() {
             {kipePiliers.map((p) => {
               const Icon = p.icon;
               return (
-                <div key={p.title} className="bg-[#faf5f0] rounded-[10px] p-7 hover:shadow-md transition-shadow">
+                <div
+                  key={p.title}
+                  className="bg-[#faf5f0] rounded-[10px] p-7 hover:shadow-md transition-shadow"
+                >
                   <div className="w-12 h-12 rounded-lg bg-[#F88732] flex items-center justify-center mb-5">
                     <Icon className="text-white text-xl" />
                   </div>
@@ -344,7 +391,10 @@ export default function VentePage() {
                   </h3>
                   <ul className="space-y-2">
                     {p.items.map((it, i) => (
-                      <li key={i} className="text-[#6b7280] text-sm font-[Roboto] leading-relaxed">
+                      <li
+                        key={i}
+                        className="text-[#6b7280] text-sm font-[Roboto] leading-relaxed"
+                      >
                         · {it}
                       </li>
                     ))}
@@ -377,7 +427,10 @@ export default function VentePage() {
               "/images/plaza-platinium/brochure-08.jpg",
               "/images/plaza-platinium/brochure-15.jpg",
             ].map((src, i) => (
-              <div key={i} className="relative aspect-[4/5] rounded-lg overflow-hidden group">
+              <div
+                key={i}
+                className="relative aspect-[4/5] rounded-lg overflow-hidden group"
+              >
                 <Image
                   src={src}
                   alt={`Plaza Platinium vue ${i + 1}`}
@@ -404,7 +457,8 @@ export default function VentePage() {
               Typologies d&apos;appartements
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Trois typologies et leurs variantes symétriques — chaque plan est conçu pour maximiser lumière, ventilation et confort.
+              Trois typologies et leurs variantes symétriques — chaque plan est
+              conçu pour maximiser lumière, ventilation et confort.
             </p>
           </div>
 
@@ -423,7 +477,9 @@ export default function VentePage() {
                     className="object-contain p-4"
                   />
                   <div className="absolute top-4 left-4 bg-[#F88732] text-white px-4 py-2 rounded">
-                    <span className="text-lg font-bold font-[Roboto_Condensed]">{t.surface}</span>
+                    <span className="text-lg font-bold font-[Roboto_Condensed]">
+                      {t.surface}
+                    </span>
                   </div>
                 </div>
                 <div className="p-8">
@@ -433,7 +489,9 @@ export default function VentePage() {
                         Type {t.code}
                       </h3>
                       {t.variant && (
-                        <p className="text-sm text-[#F88732] font-[Roboto] mt-1">{t.variant}</p>
+                        <p className="text-sm text-[#F88732] font-[Roboto] mt-1">
+                          {t.variant}
+                        </p>
                       )}
                     </div>
                     <span className="bg-[#FCEEE5] text-[#1f2d3d] text-sm font-medium px-3 py-1.5 rounded font-[Roboto]">
@@ -447,7 +505,10 @@ export default function VentePage() {
                     </p>
                     <ul className="divide-y divide-gray-100">
                       {t.rooms.map((r, i) => (
-                        <li key={i} className="flex items-center justify-between py-2.5 text-[15px] font-[Roboto]">
+                        <li
+                          key={i}
+                          className="flex items-center justify-between py-2.5 text-[15px] font-[Roboto]"
+                        >
                           <span className="text-[#1f2d3d]">{r.label}</span>
                           <span className="text-[#6b7280]">{r.surface}</span>
                         </li>
@@ -482,7 +543,8 @@ export default function VentePage() {
               Les commodités
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-white/80 leading-relaxed font-[Roboto]">
-              Tous les services et équipements pour un cadre de vie serein et sécurisé.
+              Tous les services et équipements pour un cadre de vie serein et
+              sécurisé.
             </p>
           </div>
 
@@ -493,7 +555,9 @@ export default function VentePage() {
                 className="flex items-start gap-3 bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg p-5 hover:bg-white/15 transition-colors"
               >
                 <FiCheck className="text-[#F88732] mt-1 flex-shrink-0 text-lg" />
-                <span className="text-white text-[15px] font-[Roboto]">{c}</span>
+                <span className="text-white text-[15px] font-[Roboto]">
+                  {c}
+                </span>
               </div>
             ))}
           </div>
@@ -576,17 +640,20 @@ export default function VentePage() {
             Nos partenaires bancaires
           </h2>
           <p className="text-[#6b7280] text-[15px] font-[Roboto] mb-10 max-w-[640px] mx-auto">
-            Un plan de financement adapté, en partenariat avec les grandes institutions bancaires de la place.
+            Un plan de financement adapté, en partenariat avec les grandes
+            institutions bancaires de la place.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Ecobank", "Banque Islamique de Guinée", "Orabank", "Vista"].map((b) => (
-              <div
-                key={b}
-                className="bg-white rounded-[10px] shadow-sm hover:shadow-md transition-shadow px-6 py-8 flex items-center justify-center text-[#1f2d3d] font-[Roboto_Condensed] font-bold uppercase tracking-wide text-sm md:text-base text-center"
-              >
-                {b}
-              </div>
-            ))}
+            {["Ecobank", "Banque Islamique de Guinée", "Orabank", "Vista"].map(
+              (b) => (
+                <div
+                  key={b}
+                  className="bg-white rounded-[10px] shadow-sm hover:shadow-md transition-shadow px-6 py-8 flex items-center justify-center text-[#1f2d3d] font-[Roboto_Condensed] font-bold uppercase tracking-wide text-sm md:text-base text-center"
+                >
+                  {b}
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -612,10 +679,16 @@ export default function VentePage() {
               <p className="text-xs uppercase tracking-wider text-[#F88732] font-[Roboto_Condensed] font-bold mb-2">
                 Contact DINAGUI SARL
               </p>
-              <a href="tel:+224613500404" className="flex items-center gap-2 text-white text-lg font-[Roboto_Condensed] font-bold hover:text-[#F88732] transition-colors mb-1">
+              <a
+                href="tel:+224613500404"
+                className="flex items-center gap-2 text-white text-lg font-[Roboto_Condensed] font-bold hover:text-[#F88732] transition-colors mb-1"
+              >
                 <FiPhone /> +224 613 50 04 04
               </a>
-              <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 text-white/70 text-sm font-[Roboto] hover:text-[#F88732] transition-colors">
+              <a
+                href="mailto:contact@dinagui.com"
+                className="flex items-center gap-2 text-white/70 text-sm font-[Roboto] hover:text-[#F88732] transition-colors"
+              >
                 <FiMail /> contact@dinagui.com
               </a>
             </div>

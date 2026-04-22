@@ -30,8 +30,12 @@ export default function AboutSection() {
           <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#F88732] rounded-br-lg hidden lg:block" />
           {/* Experience badge */}
           <div className="absolute -bottom-6 -left-3 lg:-left-6 bg-[#F88732] text-white px-6 py-4 rounded-lg shadow-lg">
-            <span className="text-3xl font-bold font-[Roboto_Condensed]">+12</span>
-            <span className="text-sm block font-[Roboto]">ans d&apos;expérience</span>
+            <span className="text-3xl font-bold font-[Roboto_Condensed]">
+              +12
+            </span>
+            <span className="text-sm block font-[Roboto]">
+              ans d&apos;expérience
+            </span>
           </div>
         </motion.div>
 
@@ -53,13 +57,21 @@ export default function AboutSection() {
             Bâtisseur de projets immobiliers durables, rentables et modernes
           </h2>
           <p className="text-[#6b7280] leading-relaxed mb-4 font-[Roboto]">
-            Depuis plus d&apos;une décennie, <strong className="text-[#1f2d3d]">DINAGUI SARL</strong> met son expertise au service de projets immobiliers ambitieux. Construction, gestion de patrimoine, investissement stratégique : nous accompagnons les particuliers, les entreprises et les investisseurs dans la concrétisation de projets solides et performants.
+            Depuis plus d&apos;une décennie,{" "}
+            <strong className="text-[#1f2d3d]">DINAGUI SARL</strong> met son
+            expertise au service de projets immobiliers ambitieux. Construction,
+            gestion de patrimoine, investissement stratégique : nous
+            accompagnons les particuliers, les entreprises et les investisseurs
+            dans la concrétisation de projets solides et performants.
           </p>
           <p className="text-[#6b7280] leading-relaxed mb-8 font-[Roboto]">
-            Nous concevons des espaces de vie fonctionnels, des infrastructures modernes et des solutions immobilières conçues pour{" "}
+            Nous concevons des espaces de vie fonctionnels, des infrastructures
+            modernes et des solutions immobilières conçues pour{" "}
             <strong className="text-[#1f2d3d]">
-              créer de la valeur aujourd&apos;hui et sécuriser votre avenir demain
-            </strong>.
+              créer de la valeur aujourd&apos;hui et sécuriser votre avenir
+              demain
+            </strong>
+            .
           </p>
 
           <div className="flex flex-wrap gap-4">
