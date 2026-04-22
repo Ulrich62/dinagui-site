@@ -78,8 +78,8 @@ export default function RootLayout({
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 9.5655,
-                longitude: -13.6285,
+                latitude: 9.605534,
+                longitude: -13.651446,
               },
               foundingDate: "2012",
               founder: {
@@ -100,31 +100,97 @@ export default function RootLayout({
                     "@type": "OfferCatalog",
                     name: "BTP & Construction",
                     itemListElement: [
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Construction" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Finition" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rénovation" } },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Construction",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: { "@type": "Service", name: "Finition" },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: { "@type": "Service", name: "Rénovation" },
+                      },
                     ],
                   },
                   {
                     "@type": "OfferCatalog",
                     name: "Gestion Immobilière",
                     itemListElement: [
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gestion locative" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Accompagnement investisseurs" } },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Gestion locative",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Accompagnement investisseurs",
+                        },
+                      },
                     ],
                   },
                   {
                     "@type": "OfferCatalog",
                     name: "Services",
                     itemListElement: [
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Placement de personnels" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gardiennage & Conciergerie" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Nettoyage" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Logistique & Transport" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commerce général" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Transit & Douane" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Consulting" } },
-                      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fourniture de bureau" } },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Placement de personnels",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Gardiennage & Conciergerie",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: { "@type": "Service", name: "Nettoyage" },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Logistique & Transport",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Commerce général",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Transit & Douane",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: { "@type": "Service", name: "Consulting" },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Fourniture de bureau",
+                        },
+                      },
                     ],
                   },
                 ],
