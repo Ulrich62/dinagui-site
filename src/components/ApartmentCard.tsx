@@ -9,7 +9,11 @@ export interface ApartmentType {
   image: string;
 }
 
-export default function ApartmentCard({ apartment }: { apartment: ApartmentType }) {
+export default function ApartmentCard({
+  apartment,
+}: {
+  apartment: ApartmentType;
+}) {
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -24,7 +28,9 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentType 
           />
           {/* Surface badge */}
           <div className="absolute top-4 left-4 bg-[#F88732] text-white px-4 py-2 rounded">
-            <span className="text-lg font-bold font-[Roboto_Condensed]">{apartment.surface}</span>
+            <span className="text-lg font-bold font-[Roboto_Condensed]">
+              {apartment.surface}
+            </span>
           </div>
         </div>
 
@@ -50,8 +56,13 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentType 
             {/* Features */}
             <ul className="space-y-2.5 mb-6">
               {apartment.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-[#6b7280] text-[15px]">
-                  <span className="text-[#F88732] mt-0.5 flex-shrink-0 font-bold">&#10003;</span>
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-[#6b7280] text-[15px]"
+                >
+                  <span className="text-[#F88732] mt-0.5 flex-shrink-0 font-bold">
+                    &#10003;
+                  </span>
                   <span className="font-[Roboto]">{feature}</span>
                 </li>
               ))}
@@ -60,8 +71,12 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentType 
 
           {apartment.price && (
             <div className="bg-[#faf5f0] rounded-lg px-5 py-4 flex items-center justify-between">
-              <span className="text-sm text-[#6b7280] font-[Roboto]">Loyer mensuel</span>
-              <span className="text-lg font-bold text-[#F88732] font-[Roboto_Condensed]">{apartment.price}</span>
+              <span className="text-sm text-[#6b7280] font-[Roboto]">
+                Loyer mensuel
+              </span>
+              <span className="text-lg font-bold text-[#F88732] font-[Roboto_Condensed]">
+                {apartment.price}
+              </span>
             </div>
           )}
         </div>

@@ -47,7 +47,9 @@ export default function CTASection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white/75 text-base md:text-lg mb-10 leading-relaxed font-[Roboto]"
         >
-          Confiez votre projet à un partenaire stratégique capable de développer, structurer et valoriser vos biens immobiliers avec rigueur et transparence.
+          Confiez votre projet à un partenaire stratégique capable de
+          développer, structurer et valoriser vos biens immobiliers avec rigueur
+          et transparence.
         </motion.p>
 
         <motion.div

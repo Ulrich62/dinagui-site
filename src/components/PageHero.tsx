@@ -49,7 +49,9 @@ export default function PageHero({
         )}
 
         {subtitle && (
-          <p className="mt-5 text-base md:text-lg text-white/80 font-[Roboto] max-w-[600px] mx-auto leading-relaxed">{subtitle}</p>
+          <p className="mt-5 text-base md:text-lg text-white/80 font-[Roboto] max-w-[600px] mx-auto leading-relaxed">
+            {subtitle}
+          </p>
         )}
 
         {ctaText && (

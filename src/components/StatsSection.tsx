@@ -33,7 +33,15 @@ const stats: StatItem[] = [
   },
 ];
 
-function AnimatedCounter({ value, suffix, inView }: { value: number; suffix: string; inView: boolean }) {
+function AnimatedCounter({
+  value,
+  suffix,
+  inView,
+}: {
+  value: number;
+  suffix: string;
+  inView: boolean;
+}) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -79,17 +87,18 @@ export default function StatsSection() {
       />
       <div className="absolute inset-0 bg-[#1a2332]/90" />
 
-      <div
-        ref={ref}
-        className="relative z-10 max-w-[1340px] mx-auto"
-      >
+      <div ref={ref} className="relative z-10 max-w-[1340px] mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <div
               key={index}
               className="flex flex-col items-center gap-4 relative"
             >
-              <AnimatedCounter value={stat.value} suffix={stat.suffix} inView={inView} />
+              <AnimatedCounter
+                value={stat.value}
+                suffix={stat.suffix}
+                inView={inView}
+              />
               {/* Separator line */}
               <div className="w-10 h-0.5 bg-[#F88732]/50 rounded" />
               <p className="text-white/70 text-sm leading-relaxed text-center max-w-[200px] font-[Roboto]">

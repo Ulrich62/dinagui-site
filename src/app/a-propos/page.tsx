@@ -16,12 +16,14 @@ const galleryImages = [
 
 const faqItems = [
   {
-    question: "TRAVAILLEZ-VOUS UNIQUEMENT AVEC DES PARTICULIERS ET ENTREPRISES PRIVÉES ?",
+    question:
+      "TRAVAILLEZ-VOUS UNIQUEMENT AVEC DES PARTICULIERS ET ENTREPRISES PRIVÉES ?",
     answer:
       "Non, nous travaillons aussi bien avec des particuliers que des entreprises privées et des collectivités publiques. Notre offre de services est adaptée à chaque type de clientèle, avec un accompagnement personnalisé quel que soit l'envergure du projet.",
   },
   {
-    question: "POUVEZ-VOUS FOURNIR DES PLANS ET VISUELS AVANT LE DÉBUT DU CHANTIER ?",
+    question:
+      "POUVEZ-VOUS FOURNIR DES PLANS ET VISUELS AVANT LE DÉBUT DU CHANTIER ?",
     answer:
       "Oui, absolument. Nous fournissons des plans détaillés, des rendus 3D et des échantillons de matériaux avant le début de tout chantier. Cela vous permet de visualiser le résultat final et de valider chaque étape du projet en toute confiance.",
   },
@@ -116,22 +118,51 @@ export default function AProposPage() {
               L&apos;excellence BTP à votre service
             </h2>
             <p className="text-[#6b7280] leading-relaxed mb-4 font-[Roboto]">
-              DINAGUI SARL est votre partenaire de confiance pour la construction et l&apos;aménagement, en <strong className="text-[#1f2d3d]">macro-lots, tous corps d&apos;état ou clé en main</strong>.
-              Notre équipe d&apos;architectes, ingénieurs et artisans expérimentés vous accompagne de la <strong className="text-[#1f2d3d]">conception à la réalisation</strong>, avec un engagement constant pour la <strong className="text-[#1f2d3d]">qualité, la durabilité et le respect des délais</strong>.
+              DINAGUI SARL est votre partenaire de confiance pour la
+              construction et l&apos;aménagement, en{" "}
+              <strong className="text-[#1f2d3d]">
+                macro-lots, tous corps d&apos;état ou clé en main
+              </strong>
+              . Notre équipe d&apos;architectes, ingénieurs et artisans
+              expérimentés vous accompagne de la{" "}
+              <strong className="text-[#1f2d3d]">
+                conception à la réalisation
+              </strong>
+              , avec un engagement constant pour la{" "}
+              <strong className="text-[#1f2d3d]">
+                qualité, la durabilité et le respect des délais
+              </strong>
+              .
             </p>
             <p className="text-[#6b7280] leading-relaxed mb-4 font-[Roboto]">
-              Nous transformons vos idées en <strong className="text-[#1f2d3d]">espaces fonctionnels, esthétiques et adaptés</strong> à vos besoins, qu&apos;il s&apos;agisse de projets <strong className="text-[#1f2d3d]">résidentiels, commerciaux, industriels ou institutionnels</strong>. Grâce à notre expertise en construction neuve, rénovation et aménagement, nous vous proposons des solutions sur mesure adaptées à vos besoins et à vos contraintes.
+              Nous transformons vos idées en{" "}
+              <strong className="text-[#1f2d3d]">
+                espaces fonctionnels, esthétiques et adaptés
+              </strong>{" "}
+              à vos besoins, qu&apos;il s&apos;agisse de projets{" "}
+              <strong className="text-[#1f2d3d]">
+                résidentiels, commerciaux, industriels ou institutionnels
+              </strong>
+              . Grâce à notre expertise en construction neuve, rénovation et
+              aménagement, nous vous proposons des solutions sur mesure adaptées
+              à vos besoins et à vos contraintes.
             </p>
             <p className="text-[#6b7280] leading-relaxed mb-8 font-[Roboto]">
-              Notre vision repose sur l&apos;innovation, la fiabilité et l&apos;excellence afin de garantir des résultats qui dépassent vos attentes et contribuent directement à la réussite de vos projets.
+              Notre vision repose sur l&apos;innovation, la fiabilité et
+              l&apos;excellence afin de garantir des résultats qui dépassent vos
+              attentes et contribuent directement à la réussite de vos projets.
             </p>
 
             {/* Progress bars */}
             <div className="space-y-5 mb-8">
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-[#1f2d3d] font-bold text-lg font-[Roboto_Condensed] uppercase">Fiable</span>
-                  <span className="text-[#1f2d3d] font-bold font-[Roboto]">100%</span>
+                  <span className="text-[#1f2d3d] font-bold text-lg font-[Roboto_Condensed] uppercase">
+                    Fiable
+                  </span>
+                  <span className="text-[#1f2d3d] font-bold font-[Roboto]">
+                    100%
+                  </span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
@@ -145,8 +176,12 @@ export default function AProposPage() {
               </div>
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-[#1f2d3d] font-bold text-lg font-[Roboto_Condensed] uppercase">Satisfaction</span>
-                  <span className="text-[#1f2d3d] font-bold font-[Roboto]">100%</span>
+                  <span className="text-[#1f2d3d] font-bold text-lg font-[Roboto_Condensed] uppercase">
+                    Satisfaction
+                  </span>
+                  <span className="text-[#1f2d3d] font-bold font-[Roboto]">
+                    100%
+                  </span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
@@ -194,8 +229,18 @@ export default function AProposPage() {
                 {/* Hover overlay with zoom icon */}
                 <div className="absolute inset-0 bg-[#F88732]/0 group-hover:bg-[#F88732]/40 transition-colors duration-500 flex items-center justify-center">
                   <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-500">
-                    <svg className="w-5 h-5 text-[#F88732]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    <svg
+                      className="w-5 h-5 text-[#F88732]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -213,11 +258,22 @@ export default function AProposPage() {
           </h2>
           <div className="text-[#6b7280] leading-relaxed space-y-4 text-[17px] font-[Roboto]">
             <p>
-              Chez DINAGUI SARL, nous nous engageons à fournir un service sur mesure,
-              adapté aux besoins spécifiques de chaque client. Nous proposons des <strong className="text-[#1f2d3d]">solutions sur mesure adaptées à vos besoins et à vos contraintes</strong>.
+              Chez DINAGUI SARL, nous nous engageons à fournir un service sur
+              mesure, adapté aux besoins spécifiques de chaque client. Nous
+              proposons des{" "}
+              <strong className="text-[#1f2d3d]">
+                solutions sur mesure adaptées à vos besoins et à vos contraintes
+              </strong>
+              .
             </p>
             <p>
-              Notre équipe d&apos;architectes, d&apos;ingénieurs et d&apos;artisans qualifiés veille à chaque étape du projet pour garantir des <strong className="text-[#1f2d3d]">résultats durables, esthétiques et fonctionnels</strong>, tout en respectant les délais et le budget convenus.
+              Notre équipe d&apos;architectes, d&apos;ingénieurs et
+              d&apos;artisans qualifiés veille à chaque étape du projet pour
+              garantir des{" "}
+              <strong className="text-[#1f2d3d]">
+                résultats durables, esthétiques et fonctionnels
+              </strong>
+              , tout en respectant les délais et le budget convenus.
             </p>
           </div>
         </div>
@@ -231,7 +287,9 @@ export default function AProposPage() {
               <div
                 key={index}
                 className={`border-b border-gray-200 transition-all duration-300 ${
-                  openFaq === index ? "border-l-4 border-l-[#F88732] bg-white rounded-r-lg" : "border-l-4 border-l-transparent"
+                  openFaq === index
+                    ? "border-l-4 border-l-[#F88732] bg-white rounded-r-lg"
+                    : "border-l-4 border-l-transparent"
                 }`}
               >
                 <button
@@ -241,7 +299,9 @@ export default function AProposPage() {
                   <span>{item.question}</span>
                   <span
                     className={`text-2xl flex-shrink-0 transition-all duration-300 ${
-                      openFaq === index ? "rotate-45 text-[#F88732]" : "text-[#6b7280]"
+                      openFaq === index
+                        ? "rotate-45 text-[#F88732]"
+                        : "text-[#6b7280]"
                     }`}
                   >
                     +
@@ -272,10 +332,12 @@ export default function AProposPage() {
             <div className="w-2 h-2 rounded-full bg-white/60" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-[Roboto_Condensed] uppercase">
-            Besoin d&apos;architectes, d&apos;ingénieurs et d&apos;artisans expérimentés ?
+            Besoin d&apos;architectes, d&apos;ingénieurs et d&apos;artisans
+            expérimentés ?
           </h2>
           <p className="text-white/85 mb-8 font-[Roboto]">
-            Bénéficiez de l&apos;expertise de nos professionnels pour concrétiser vos projets de construction du concept à la réalisation.
+            Bénéficiez de l&apos;expertise de nos professionnels pour
+            concrétiser vos projets de construction du concept à la réalisation.
           </p>
           <Link
             href="/contact"

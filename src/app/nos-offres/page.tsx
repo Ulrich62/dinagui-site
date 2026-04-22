@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRight, FiPhone, FiMail, FiHome, FiFileText } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiPhone,
+  FiMail,
+  FiHome,
+  FiFileText,
+} from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import OfferCard, { Offer } from "@/components/OfferCard";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
@@ -18,7 +24,14 @@ export const metadata: Metadata = {
     url: "/nos-offres",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/brochure-06.jpg", width: 1200, height: 630, alt: "Cité Plaza Platinium" }],
+    images: [
+      {
+        url: "/images/plaza-platinium/brochure-06.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cité Plaza Platinium",
+      },
+    ],
   },
 };
 
@@ -79,7 +92,7 @@ export default function NosOffresPage() {
           breadcrumbList([
             { name: "Accueil", path: "/" },
             { name: "Nos offres", path: "/nos-offres" },
-          ])
+          ]),
         )}
       />
       <PageHero
@@ -103,14 +116,16 @@ export default function NosOffresPage() {
                 Un choix sûr et durable pour votre habitat
               </h2>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto] mb-5">
-                DINAGUI SARL accompagne particuliers et investisseurs dans l&apos;acquisition
-                et la location de biens immobiliers de standing à Conakry. Nos offres
-                regroupent des logements modernes, soigneusement finis et intégrés à un
-                cadre de vie dynamique.
+                DINAGUI SARL accompagne particuliers et investisseurs dans
+                l&apos;acquisition et la location de biens immobiliers de
+                standing à Conakry. Nos offres regroupent des logements
+                modernes, soigneusement finis et intégrés à un cadre de vie
+                dynamique.
               </p>
               <p className="text-[#6b7280] text-[15px] leading-relaxed font-[Roboto] mb-8">
-                Découvrez en vidéo la Cité Plaza Platinium, l&apos;environnement Kipé et les
-                finitions de nos appartements — puis explorez nos offres en détail.
+                Découvrez en vidéo la Cité Plaza Platinium, l&apos;environnement
+                Kipé et les finitions de nos appartements — puis explorez nos
+                offres en détail.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -177,7 +192,8 @@ export default function NosOffresPage() {
               Découvrez nos offres
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Chaque offre est détaillée sur sa propre page, avec photos, plans et vidéo.
+              Chaque offre est détaillée sur sa propre page, avec photos, plans
+              et vidéo.
             </p>
           </div>
 
@@ -218,7 +234,8 @@ export default function NosOffresPage() {
                   Vente d&apos;appartements
                 </h3>
                 <p className="text-white/75 text-[15px] font-[Roboto] leading-relaxed mb-6">
-                  Typologies, plans, commodités et plan de financement à la Cité Plaza Platinium.
+                  Typologies, plans, commodités et plan de financement à la Cité
+                  Plaza Platinium.
                 </p>
                 <span className="inline-flex items-center gap-2 text-[#F88732] font-semibold text-[15px] font-[Roboto] group-hover:gap-3 transition-all">
                   Découvrir <FiArrowRight />
@@ -247,7 +264,8 @@ export default function NosOffresPage() {
                   Location d&apos;appartements
                 </h3>
                 <p className="text-white/75 text-[15px] font-[Roboto] leading-relaxed mb-6">
-                  Appartements F3 et F4 en location à la Cité Plaza Platinium, Kipé.
+                  Appartements F3 et F4 en location à la Cité Plaza Platinium,
+                  Kipé.
                 </p>
                 <span className="inline-flex items-center gap-2 text-[#F88732] font-semibold text-[15px] font-[Roboto] group-hover:gap-3 transition-all">
                   Découvrir <FiArrowRight />
@@ -267,7 +285,8 @@ export default function NosOffresPage() {
                   Standard de livraison
                 </h3>
                 <p className="text-white/90 text-[15px] font-[Roboto] leading-relaxed mb-6">
-                  Inventaire des équipements et du mobilier inclus dans la livraison standard.
+                  Inventaire des équipements et du mobilier inclus dans la
+                  livraison standard.
                 </p>
                 <span className="inline-flex items-center gap-2 text-white font-semibold text-[15px] font-[Roboto] group-hover:gap-3 transition-all">
                   Consulter le standard <FiArrowRight />
@@ -290,14 +309,20 @@ export default function NosOffresPage() {
             Un projet d&apos;acquisition ou de location ?
           </h2>
           <p className="text-white/75 text-[15px] md:text-base mb-10 font-[Roboto] max-w-[640px] mx-auto leading-relaxed">
-            Notre équipe vous accompagne de la première visite à la remise des clés.
-            Parlons de votre projet.
+            Notre équipe vous accompagne de la première visite à la remise des
+            clés. Parlons de votre projet.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-white/90 text-[15px]">
-            <a href="tel:+224613500404" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="tel:+224613500404"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiPhone /> +224 613 50 04 04
             </a>
-            <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="mailto:contact@dinagui.com"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiMail /> contact@dinagui.com
             </a>
           </div>

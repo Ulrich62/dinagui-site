@@ -41,19 +41,23 @@ export const metadata: Metadata = {
 const zones = [
   {
     name: "Kaloum",
-    description: "Cœur administratif et économique de Conakry — idéal pour les cadres et expatriés.",
+    description:
+      "Cœur administratif et économique de Conakry — idéal pour les cadres et expatriés.",
   },
   {
     name: "Camayenne",
-    description: "Quartier résidentiel prisé, proche des commerces, ambassades et lieux de loisirs.",
+    description:
+      "Quartier résidentiel prisé, proche des commerces, ambassades et lieux de loisirs.",
   },
   {
     name: "Kipé",
-    description: "Pôle urbain dynamique à proximité du nouveau centre administratif et financier.",
+    description:
+      "Pôle urbain dynamique à proximité du nouveau centre administratif et financier.",
   },
   {
     name: "Nongo",
-    description: "Zone en pleine expansion, accessible et calme, parfaite pour familles et investisseurs.",
+    description:
+      "Zone en pleine expansion, accessible et calme, parfaite pour familles et investisseurs.",
   },
 ];
 
@@ -93,8 +97,11 @@ export default function LocationPage() {
           breadcrumbList([
             { name: "Accueil", path: "/" },
             { name: "Nos offres", path: "/nos-offres" },
-            { name: "Location d'appartements", path: "/nos-offres/location-dappartements" },
-          ])
+            {
+              name: "Location d'appartements",
+              path: "/nos-offres/location-dappartements",
+            },
+          ]),
         )}
       />
       <PageHero
@@ -107,9 +114,13 @@ export default function LocationPage() {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-[1340px] mx-auto px-6 py-4 text-sm text-[#6b7280] font-[Roboto]">
-          <Link href="/" className="hover:text-[#F88732]">Accueil</Link>
+          <Link href="/" className="hover:text-[#F88732]">
+            Accueil
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/nos-offres" className="hover:text-[#F88732]">Nos offres</Link>
+          <Link href="/nos-offres" className="hover:text-[#F88732]">
+            Nos offres
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-[#1f2d3d]">Location d&apos;appartements</span>
         </div>
@@ -127,14 +138,16 @@ export default function LocationPage() {
             Trouvez votre prochain logement à Conakry
           </h2>
           <p className="text-[#6b7280] text-[15px] md:text-base leading-relaxed font-[Roboto] mb-5">
-            <strong className="text-[#1f2d3d]">DINAGUI SARL</strong> accompagne particuliers,
-            familles et expatriés dans la location d&apos;appartements modernes, sûrs et bien
-            entretenus. Nous sélectionnons pour vous des logements meublés ou non meublés,
-            avec des prestations adaptées à chaque usage.
+            <strong className="text-[#1f2d3d]">DINAGUI SARL</strong> accompagne
+            particuliers, familles et expatriés dans la location
+            d&apos;appartements modernes, sûrs et bien entretenus. Nous
+            sélectionnons pour vous des logements meublés ou non meublés, avec
+            des prestations adaptées à chaque usage.
           </p>
           <p className="text-[#6b7280] text-[15px] md:text-base leading-relaxed font-[Roboto]">
-            Nos appartements sont disponibles dans les quartiers les plus stratégiques de
-            Conakry, à proximité des centres d&apos;affaires, écoles, ambassades et commerces.
+            Nos appartements sont disponibles dans les quartiers les plus
+            stratégiques de Conakry, à proximité des centres d&apos;affaires,
+            écoles, ambassades et commerces.
           </p>
         </div>
       </section>
@@ -152,8 +165,8 @@ export default function LocationPage() {
               Zones desservies
             </h2>
             <p className="mt-4 max-w-[640px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              DINAGUI propose des appartements en location dans les quartiers les plus
-              recherchés de Conakry.
+              DINAGUI propose des appartements en location dans les quartiers
+              les plus recherchés de Conakry.
             </p>
           </div>
 
@@ -191,8 +204,9 @@ export default function LocationPage() {
               Appartements disponibles
             </h2>
             <p className="mt-4 max-w-[680px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Découvrez nos logements disponibles immédiatement. Chaque appartement est
-              visitable sur rendez-vous — contactez-nous pour les tarifs et modalités.
+              Découvrez nos logements disponibles immédiatement. Chaque
+              appartement est visitable sur rendez-vous — contactez-nous pour
+              les tarifs et modalités.
             </p>
           </div>
 
@@ -217,8 +231,8 @@ export default function LocationPage() {
               Pourquoi louer avec DINAGUI
             </h2>
             <p className="mt-4 max-w-[680px] mx-auto text-[15px] text-[#6b7280] leading-relaxed font-[Roboto]">
-              Une gestion professionnelle, transparente et proactive, pour des locations
-              sans souci — côté locataires comme côté propriétaires.
+              Une gestion professionnelle, transparente et proactive, pour des
+              locations sans souci — côté locataires comme côté propriétaires.
             </p>
           </div>
 
@@ -256,7 +270,8 @@ export default function LocationPage() {
               </h3>
               <p className="text-[#6b7280] text-[15px] font-[Roboto] leading-relaxed">
                 Confiez-nous la gestion de votre bien : recherche de locataires,
-                encaissement, entretien et reporting mensuel — nous assurons tout.
+                encaissement, entretien et reporting mensuel — nous assurons
+                tout.
               </p>
             </div>
             <Link
@@ -281,8 +296,8 @@ export default function LocationPage() {
             Planifions une visite
           </h2>
           <p className="text-white/75 text-[15px] md:text-base mb-10 font-[Roboto] max-w-[640px] mx-auto leading-relaxed">
-            Contactez-nous pour organiser une visite, obtenir les tarifs ou discuter
-            de votre projet locatif.
+            Contactez-nous pour organiser une visite, obtenir les tarifs ou
+            discuter de votre projet locatif.
           </p>
 
           <div className="max-w-[420px] mx-auto mb-10 text-left">

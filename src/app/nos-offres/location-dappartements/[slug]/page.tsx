@@ -11,11 +11,7 @@ import {
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
 import { featureIcon } from "@/lib/featureIcon";
-import {
-  rentalOffers,
-  getRentalBySlug,
-  getRentalCover,
-} from "@/lib/rentals";
+import { rentalOffers, getRentalBySlug, getRentalCover } from "@/lib/rentals";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 type Params = { slug: string };
@@ -33,14 +29,19 @@ export async function generateMetadata({
   const offer = getRentalBySlug(slug);
   if (!offer) return {};
 
-  const cover = getRentalCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
-  const locationLine = [offer.location, offer.landmark].filter(Boolean).join(" — ");
+  const cover =
+    getRentalCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
+  const locationLine = [offer.location, offer.landmark]
+    .filter(Boolean)
+    .join(" — ");
   const description = `${offer.title} à ${locationLine}. ${offer.summary}`;
 
   return {
     title: `${offer.title} — Location DINAGUI`,
     description,
-    alternates: { canonical: `/nos-offres/location-dappartements/${offer.slug}` },
+    alternates: {
+      canonical: `/nos-offres/location-dappartements/${offer.slug}`,
+    },
     openGraph: {
       title: `${offer.title} — Location DINAGUI`,
       description,
@@ -79,16 +80,20 @@ export default async function RentalDetailPage({
               name: offer.shortTitle,
               path: `/nos-offres/location-dappartements/${offer.slug}`,
             },
-          ])
+          ]),
         )}
       />
 
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-[1340px] mx-auto px-6 py-4 text-sm text-[#6b7280] font-[Roboto]">
-          <Link href="/" className="hover:text-[#F88732]">Accueil</Link>
+          <Link href="/" className="hover:text-[#F88732]">
+            Accueil
+          </Link>
           <span className="mx-2">/</span>
-          <Link href="/nos-offres" className="hover:text-[#F88732]">Nos offres</Link>
+          <Link href="/nos-offres" className="hover:text-[#F88732]">
+            Nos offres
+          </Link>
           <span className="mx-2">/</span>
           <Link
             href="/nos-offres/location-dappartements"
@@ -121,7 +126,10 @@ export default async function RentalDetailPage({
                 <span>
                   {offer.location}
                   {offer.landmark && (
-                    <span className="text-[#6b7280]/80"> — {offer.landmark}</span>
+                    <span className="text-[#6b7280]/80">
+                      {" "}
+                      — {offer.landmark}
+                    </span>
                   )}
                 </span>
               </div>
@@ -171,7 +179,10 @@ export default async function RentalDetailPage({
                       className="flex items-center gap-3 text-[#1f2d3d] text-[15px] font-[Roboto] bg-[#faf5f0] rounded-lg px-4 py-3"
                     >
                       <span className="w-9 h-9 flex items-center justify-center rounded-md bg-white text-[#F88732] flex-shrink-0 shadow-sm">
-                        <Icon className="w-[18px] h-[18px]" strokeWidth={1.75} />
+                        <Icon
+                          className="w-[18px] h-[18px]"
+                          strokeWidth={1.75}
+                        />
                       </span>
                       <span className="leading-snug">{f}</span>
                     </li>
@@ -207,8 +218,8 @@ export default async function RentalDetailPage({
                   Planifions une visite
                 </h3>
                 <p className="text-white/75 text-sm font-[Roboto] leading-relaxed mb-6">
-                  Contactez notre équipe pour obtenir les tarifs, organiser une visite
-                  ou demander plus d&apos;informations.
+                  Contactez notre équipe pour obtenir les tarifs, organiser une
+                  visite ou demander plus d&apos;informations.
                 </p>
 
                 <div className="space-y-3 mb-6">
@@ -218,7 +229,9 @@ export default async function RentalDetailPage({
                   >
                     <FiPhone className="text-[#F88732] text-lg flex-shrink-0" />
                     <div>
-                      <p className="text-xs text-white/60 font-[Roboto]">Téléphone</p>
+                      <p className="text-xs text-white/60 font-[Roboto]">
+                        Téléphone
+                      </p>
                       <p className="text-white font-[Roboto_Condensed] font-bold">
                         +224 613 50 04 04
                       </p>
@@ -230,7 +243,9 @@ export default async function RentalDetailPage({
                   >
                     <FiMail className="text-[#F88732] text-lg flex-shrink-0" />
                     <div>
-                      <p className="text-xs text-white/60 font-[Roboto]">E-mail</p>
+                      <p className="text-xs text-white/60 font-[Roboto]">
+                        E-mail
+                      </p>
                       <p className="text-white text-sm font-[Roboto]">
                         contact@dinagui.com
                       </p>

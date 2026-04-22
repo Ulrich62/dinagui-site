@@ -13,11 +13,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/appartements-c1" },
   openGraph: {
     title: "Appartements Type C1 — DINAGUI SARL",
-    description: "Appartements Type C1 (118,71 m²) à la Cité Plaza Platinium, Kipé, Conakry.",
+    description:
+      "Appartements Type C1 (118,71 m²) à la Cité Plaza Platinium, Kipé, Conakry.",
     url: "/appartements-c1",
     locale: "fr_GN",
     type: "website",
-    images: [{ url: "/images/plaza-platinium/brochure-09.jpg", width: 1200, height: 630, alt: "Plan Type C1 — Plaza Platinium" }],
+    images: [
+      {
+        url: "/images/plaza-platinium/brochure-09.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Plan Type C1 — Plaza Platinium",
+      },
+    ],
   },
 };
 
@@ -54,7 +62,8 @@ const apartments: ApartmentType[] = [
 
 const schemaApartment = apartmentListing({
   name: "Appartement Type C1 — Cité Plaza Platinium",
-  description: "Appartement Type C1 à la Cité Plaza Platinium, Kipé, Conakry. 3 chambres, 118,71 m².",
+  description:
+    "Appartement Type C1 à la Cité Plaza Platinium, Kipé, Conakry. 3 chambres, 118,71 m².",
   path: "/appartements-c1",
   image: "/images/plaza-platinium/brochure-09.jpg",
   numberOfRooms: 3,
@@ -73,8 +82,14 @@ const schemaBreadcrumb = breadcrumbList([
 export default function AppartementsC1Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(schemaApartment)} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(schemaBreadcrumb)} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(schemaApartment)}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(schemaBreadcrumb)}
+      />
       <PageHero
         title="Appartements Type C1"
         subtitle="3 chambres · 118,71 m² · Cité Plaza Platinium, Kipé"
@@ -123,17 +138,27 @@ export default function AppartementsC1Page() {
             Intéressé par un appartement C1 ?
           </h2>
           <p className="text-white/80 mb-4 text-lg font-[Roboto]">
-            Contactez-nous pour plus d&apos;informations ou pour planifier une visite.
+            Contactez-nous pour plus d&apos;informations ou pour planifier une
+            visite.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-white/90">
-            <a href="tel:+224613500404" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="tel:+224613500404"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiPhone className="text-lg" /> +224 613 50 04 04
             </a>
-            <a href="mailto:contact@dinagui.com" className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]">
+            <a
+              href="mailto:contact@dinagui.com"
+              className="flex items-center gap-2 hover:text-[#F88732] transition-colors font-[Roboto]"
+            >
               <FiMail className="text-lg" /> contact@dinagui.com
             </a>
           </div>
-          <Link href="/contact" className="inline-block bg-[#F88732] text-white px-10 py-4 rounded-lg text-lg font-medium hover:bg-[#e0752a] hover:shadow-lg hover:shadow-[#F88732]/25 transition-all duration-300 font-[Roboto]">
+          <Link
+            href="/contact"
+            className="inline-block bg-[#F88732] text-white px-10 py-4 rounded-lg text-lg font-medium hover:bg-[#e0752a] hover:shadow-lg hover:shadow-[#F88732]/25 transition-all duration-300 font-[Roboto]"
+          >
             Demandez un devis
           </Link>
         </div>

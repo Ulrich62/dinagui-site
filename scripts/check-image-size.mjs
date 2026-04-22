@@ -14,7 +14,7 @@ function stagedFiles() {
   const out = execFileSync(
     "git",
     ["diff", "--cached", "--name-only", "--diff-filter=ACMR"],
-    { encoding: "utf8" }
+    { encoding: "utf8" },
   );
   return out.split("\n").filter(Boolean);
 }

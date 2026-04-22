@@ -14,11 +14,23 @@ const navLinks = [
 const serviceLinks = [
   { name: "Conception et planification en BTP", href: "/services/service-btp" },
   { name: "Gestion immobilière", href: "/services/gestion-immobiliere" },
-  { name: "Placement de personnels", href: "/services/placements-de-personnels" },
-  { name: "Service de gardiennage & Conciergerie", href: "/services/service-de-gardiennage-de-conciergerie" },
+  {
+    name: "Placement de personnels",
+    href: "/services/placements-de-personnels",
+  },
+  {
+    name: "Service de gardiennage & Conciergerie",
+    href: "/services/service-de-gardiennage-de-conciergerie",
+  },
   { name: "Service de nettoyage", href: "/services/service-de-nettoyage" },
-  { name: "Logistique et transport", href: "/services/logistique-et-transport" },
-  { name: "Fourniture de bureau et équipement", href: "/services/fourniture-de-bureau-et-equipement" },
+  {
+    name: "Logistique et transport",
+    href: "/services/logistique-et-transport",
+  },
+  {
+    name: "Fourniture de bureau et équipement",
+    href: "/services/fourniture-de-bureau-et-equipement",
+  },
   { name: "Commerce général", href: "/services/commerce-general" },
   { name: "Transit et Douane", href: "/services/transit-et-douane" },
   { name: "Consulting", href: "/services/consulting" },
@@ -53,7 +65,10 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              <strong className="text-white">DINAGUI SARL</strong>, votre partenaire de confiance pour l&apos;exécution de projet de construction et d&apos;aménagement en macro-lots, en tous corps d&apos;état ou en clé en main.
+              <strong className="text-white">DINAGUI SARL</strong>, votre
+              partenaire de confiance pour l&apos;exécution de projet de
+              construction et d&apos;aménagement en macro-lots, en tous corps
+              d&apos;état ou en clé en main.
             </p>
             <div className="w-12 h-0.5 bg-[#F88732]/50 rounded" />
           </div>
@@ -108,7 +123,10 @@ export default function Footer() {
                 <div className="w-9 h-9 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <FiPhone className="text-[#F88732] text-sm" />
                 </div>
-                <a href="tel:+224613500404" className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]">
+                <a
+                  href="tel:+224613500404"
+                  className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]"
+                >
                   (+224) 613 50 04 04
                 </a>
               </li>
@@ -124,7 +142,10 @@ export default function Footer() {
                 <div className="w-9 h-9 rounded-lg bg-[#F88732]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <FiMail className="text-[#F88732] text-sm" />
                 </div>
-                <a href="mailto:contact@dinagui.com" className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]">
+                <a
+                  href="mailto:contact@dinagui.com"
+                  className="text-gray-400 hover:text-[#F88732] transition-colors text-sm font-[Roboto]"
+                >
                   contact@dinagui.com
                 </a>
               </li>
@@ -137,7 +158,8 @@ export default function Footer() {
       <div className="relative z-10 border-t border-white/10">
         <div className="max-w-[1340px] mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-gray-500 text-sm font-[Roboto]">
-            &copy; {new Date().getFullYear()} DINAGUI Sarl. Tous droits réservés.
+            &copy; {new Date().getFullYear()} DINAGUI Sarl. Tous droits
+            réservés.
           </p>
           <p className="text-gray-600 text-xs font-[Roboto]">
             Un choix sûr et durable

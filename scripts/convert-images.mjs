@@ -34,7 +34,9 @@ async function compress(src) {
     meta.width && meta.width > MAX_WIDTH
       ? img.resize({ width: MAX_WIDTH, withoutEnlargement: true })
       : img;
-  await pipeline.jpeg({ quality: JPG_QUALITY, mozjpeg: true, progressive: true }).toFile(tmp);
+  await pipeline
+    .jpeg({ quality: JPG_QUALITY, mozjpeg: true, progressive: true })
+    .toFile(tmp);
 
   const newSize = (await stat(tmp)).size;
   if (newSize >= original) {
@@ -46,7 +48,10 @@ async function compress(src) {
 }
 
 const started = Date.now();
-let totalBefore = 0, totalAfter = 0, converted = 0, skipped = 0;
+let totalBefore = 0,
+  totalAfter = 0,
+  converted = 0,
+  skipped = 0;
 
 for (const root of ROOTS) {
   try {
@@ -63,11 +68,15 @@ for (const root of ROOTS) {
       const kb = (n) => (n / 1024).toFixed(0);
       if (r.skipped) {
         skipped++;
-        process.stdout.write(`  skip ${rel}  ${kb(r.original)}K (already optimal)\n`);
+        process.stdout.write(
+          `  skip ${rel}  ${kb(r.original)}K (already optimal)\n`,
+        );
       } else {
         converted++;
         const pct = ((1 - r.final / r.original) * 100).toFixed(0);
-        process.stdout.write(`  ✓    ${rel}  ${kb(r.original)}K → ${kb(r.final)}K (−${pct}%)\n`);
+        process.stdout.write(
+          `  ✓    ${rel}  ${kb(r.original)}K → ${kb(r.final)}K (−${pct}%)\n`,
+        );
       }
     } catch (err) {
       console.error(`  ! ${f} — ${err.message}`);

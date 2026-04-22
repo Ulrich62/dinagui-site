@@ -65,7 +65,10 @@ export default function NotreEquipePage() {
             <div className="w-10 h-px bg-[#F88732]" />
           </div>
           <p className="text-[#6b7280] leading-relaxed text-lg font-[Roboto]">
-            Chez DINAGUI SARL, notre équipe est composée de professionnels passionnés et expérimentés, engagés à offrir un service d&apos;excellence. Chaque membre apporte son expertise unique pour garantir la réussite de vos projets.
+            Chez DINAGUI SARL, notre équipe est composée de professionnels
+            passionnés et expérimentés, engagés à offrir un service
+            d&apos;excellence. Chaque membre apporte son expertise unique pour
+            garantir la réussite de vos projets.
           </p>
         </div>
       </section>
@@ -107,8 +110,12 @@ export default function NotreEquipePage() {
                   </div>
                   {/* Name/role below (visible by default, fades on hover) */}
                   <div className="p-6 text-center group-hover:opacity-0 transition-opacity duration-300">
-                    <h3 className="text-xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase">{member.name}</h3>
-                    <p className="text-[#6b7280] mt-1 text-[15px] font-[Roboto]">{member.role}</p>
+                    <h3 className="text-xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase">
+                      {member.name}
+                    </h3>
+                    <p className="text-[#6b7280] mt-1 text-[15px] font-[Roboto]">
+                      {member.role}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -129,7 +136,8 @@ export default function NotreEquipePage() {
             Envie de rejoindre notre équipe ?
           </h2>
           <p className="text-white/85 mb-8 font-[Roboto]">
-            Nous sommes toujours à la recherche de talents passionnés. Contactez-nous pour découvrir les opportunités disponibles.
+            Nous sommes toujours à la recherche de talents passionnés.
+            Contactez-nous pour découvrir les opportunités disponibles.
           </p>
           <Link
             href="/contact"

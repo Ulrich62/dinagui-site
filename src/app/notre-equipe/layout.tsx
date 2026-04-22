@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     "Rencontrez l'équipe de DINAGUI SARL : des professionnels dévoués en BTP, gestion immobilière et services à Conakry, Guinée.",
 };
 
-export default function NotreEquipeLayout({ children }: { children: React.ReactNode }) {
+export default function NotreEquipeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return children;
 }

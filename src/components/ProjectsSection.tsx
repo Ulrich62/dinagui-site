@@ -56,8 +56,13 @@ export default function ProjectsSection() {
               </p>
               <ul className="space-y-3 mb-10">
                 {highlights.map((h, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80 text-sm leading-relaxed font-[Roboto]">
-                    <span className="text-[#F88732] mt-1 flex-shrink-0">&#10003;</span>
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-white/80 text-sm leading-relaxed font-[Roboto]"
+                  >
+                    <span className="text-[#F88732] mt-1 flex-shrink-0">
+                      &#10003;
+                    </span>
                     <span>{h}</span>
                   </li>
                 ))}

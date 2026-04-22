@@ -70,7 +70,7 @@ export default function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -96,7 +96,8 @@ export default function ContactPage() {
                 Vous avez un projet ou un besoin spécifique ?
               </h2>
               <p className="text-[#6b7280] mb-10 leading-relaxed font-[Roboto]">
-                Notre équipe est à votre écoute pour vous conseiller et vous accompagner à chaque étape de vos projets.
+                Notre équipe est à votre écoute pour vous conseiller et vous
+                accompagner à chaque étape de vos projets.
               </p>
 
               <div className="space-y-6">
@@ -105,8 +106,12 @@ export default function ContactPage() {
                     <FiPhone className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">Téléphone</h4>
-                    <p className="text-[#6b7280] font-[Roboto]">(+224) 613 50 04 04</p>
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">
+                      Téléphone
+                    </h4>
+                    <p className="text-[#6b7280] font-[Roboto]">
+                      (+224) 613 50 04 04
+                    </p>
                   </div>
                 </div>
 
@@ -115,8 +120,12 @@ export default function ContactPage() {
                     <FiMail className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">E-mail</h4>
-                    <p className="text-[#6b7280] font-[Roboto]">contact@dinagui.com</p>
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">
+                      E-mail
+                    </h4>
+                    <p className="text-[#6b7280] font-[Roboto]">
+                      contact@dinagui.com
+                    </p>
                   </div>
                 </div>
 
@@ -125,7 +134,9 @@ export default function ContactPage() {
                     <FiMapPin className="text-[#F88732] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">Adresse</h4>
+                    <h4 className="font-bold text-[#1f2d3d] mb-1 font-[Roboto_Condensed]">
+                      Adresse
+                    </h4>
                     <p className="text-[#6b7280] font-[Roboto]">
                       Conakry / Kipé C/Ratoma Centre émetteur Cité Plaza
                       Platinium
@@ -143,8 +154,8 @@ export default function ContactPage() {
                     Message envoyé !
                   </h3>
                   <p className="text-green-600">
-                    Merci pour votre message. Notre équipe vous répondra dans les
-                    plus brefs délais.
+                    Merci pour votre message. Notre équipe vous répondra dans
+                    les plus brefs délais.
                   </p>
                 </div>
               ) : (
@@ -156,7 +167,9 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-[#1f2d3d] text-center mb-4 font-[Roboto_Condensed] uppercase">
                     Formulaire de devis
                   </h3>
-                  <p className="text-sm font-bold text-[#1f2d3d] mb-2 font-[Roboto]">Nom complet <span className="text-[#F88732]">*</span></p>
+                  <p className="text-sm font-bold text-[#1f2d3d] mb-2 font-[Roboto]">
+                    Nom complet <span className="text-[#F88732]">*</span>
+                  </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label
@@ -172,7 +185,9 @@ export default function ContactPage() {
                         value={formData.prenom}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 rounded-lg border-2 ${
-                          errors.prenom ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                          errors.prenom
+                            ? "border-red-400"
+                            : "border-gray-200 focus:border-[#F88732]"
                         } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                       />
                       {errors.prenom && (
@@ -195,7 +210,9 @@ export default function ContactPage() {
                         value={formData.nom}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 rounded-lg border-2 ${
-                          errors.nom ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                          errors.nom
+                            ? "border-red-400"
+                            : "border-gray-200 focus:border-[#F88732]"
                         } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                       />
                       {errors.nom && (
@@ -220,7 +237,9 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg border-2 ${
-                        errors.email ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                        errors.email
+                          ? "border-red-400"
+                          : "border-gray-200 focus:border-[#F88732]"
                       } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                     />
                     {errors.email && (
@@ -244,7 +263,9 @@ export default function ContactPage() {
                       value={formData.telephone}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg border-2 ${
-                        errors.telephone ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                        errors.telephone
+                          ? "border-red-400"
+                          : "border-gray-200 focus:border-[#F88732]"
                       } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200`}
                     />
                     {errors.telephone && (
@@ -268,7 +289,9 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg border-2 ${
-                        errors.message ? "border-red-400" : "border-gray-200 focus:border-[#F88732]"
+                        errors.message
+                          ? "border-red-400"
+                          : "border-gray-200 focus:border-[#F88732]"
                       } bg-white focus:outline-none focus:ring-2 focus:ring-[#F88732]/20 transition-all duration-200 resize-none`}
                     />
                     {errors.message && (
@@ -279,7 +302,9 @@ export default function ContactPage() {
                   </div>
 
                   {sendError && (
-                    <p className="text-red-500 text-sm text-center">{sendError}</p>
+                    <p className="text-red-500 text-sm text-center">
+                      {sendError}
+                    </p>
                   )}
 
                   <button
@@ -300,7 +325,7 @@ export default function ContactPage() {
       <section className="w-full">
         <div className="border-t-4 border-[#F88732]" />
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d-13.6285!3d9.5655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3530779e70c67d%3A0x5c8bf4c5e6f3c8a!2sCit%C3%A9+Plaza+Platinium!5e0!3m2!1sfr!2sgn!4v1710000000000"
+          src="https://maps.google.com/maps?q=9.605534,-13.651446&z=17&output=embed"
           width="100%"
           height="450"
           style={{ border: 0 }}
