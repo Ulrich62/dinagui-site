@@ -169,7 +169,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="bg-[#F88732] text-white px-8 py-3 rounded-full hover:bg-[#e0752a] transition-colors font-medium ml-6 text-[15px]"
+            className="bg-[#F88732] hover:bg-[#e0752a] text-white font-semibold px-8 py-3 rounded transition-all duration-300 font-[Roboto] hover:shadow-lg hover:shadow-[#F88732]/25 ml-6 text-[15px]"
           >
             Demandez un devis
           </Link>
@@ -293,7 +293,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="bg-[#F88732] text-white text-center py-3 rounded-full mt-3 hover:bg-[#e0752a]"
+              className="bg-[#F88732] hover:bg-[#e0752a] text-white text-center font-semibold py-3 rounded transition-all duration-300 font-[Roboto] hover:shadow-lg hover:shadow-[#F88732]/25 mt-3"
               onClick={() => setMobileOpen(false)}
             >
               Demandez un devis
