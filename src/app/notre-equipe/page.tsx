@@ -18,12 +18,17 @@ const teamMembers = [
     photo: "/images/team/fatoumata-binta-bah.jpg",
   },
   {
+    name: "Mamadou Macka Diallo",
+    role: "Directeur Technique",
+    photo: "/images/team/mamadou-macka-diallo.jpg",
+  },
+  {
     name: "Mohamed Saifon Toure",
     role: "Gestionnaire Administratif et Financier",
     photo: "/images/team/mohamed-saifon-toure.jpg",
   },
   {
-    name: "Mamadu Diao Bah",
+    name: "Mamadou Diao Bah",
     role: "Gestionnaire de site",
     photo: "/images/team/mamadou-diao-bah.jpg",
   },
