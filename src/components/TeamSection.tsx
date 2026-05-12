@@ -28,7 +28,7 @@ const members: TeamMember[] = [
     photo: "/images/team/mohamed-saifon-toure.jpg",
   },
   {
-    name: "Mamadu Diao Bah",
+    name: "Mamadou Diao Bah",
     role: "Gestionnaire de site",
     photo: "/images/team/mamadou-diao-bah.jpg",
   },
