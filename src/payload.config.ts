@@ -29,6 +29,7 @@ export default buildConfig({
       connectionString:
         process.env.DATABASE_URL || process.env.POSTGRES_URL || '',
     },
+    migrationDir: path.resolve(dirname, 'migrations'),
   }),
   sharp,
   upload: { limits: { fileSize: 100_000_000 } }, // 100 Mo côté Payload ; la limite serveur Vercel (4,5 Mo) est contournée par clientUploads
