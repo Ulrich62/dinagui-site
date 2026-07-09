@@ -1,5 +1,10 @@
-import type { CollectionConfig } from 'payload'
-import { estConnecte, lecturePublique } from './acces'
+import type { Access, CollectionConfig } from 'payload'
+import { estConnecte } from './acces'
+
+// Public : seules les annonces publiées sont lisibles (y compris via l'API REST brute).
+// Connecté (admin/éditeur) : accès à tout, brouillons compris.
+const lectureAnnonces: Access = ({ req }) =>
+  req.user ? true : { _status: { equals: 'published' } }
 
 const slugifier = (v: string) =>
   v
@@ -43,7 +48,7 @@ export const Annonces: CollectionConfig = {
   },
   versions: { drafts: true }, // brouillon / publié
   access: {
-    read: lecturePublique, // seules les versions publiées sortent pour un visiteur anonyme
+    read: lectureAnnonces, // public → published uniquement ; connecté → tout (brouillons compris)
     create: estConnecte,
     update: estConnecte,
     delete: estConnecte,
