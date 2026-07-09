@@ -12,6 +12,19 @@ export const Users: CollectionConfig = {
     update: adminOuSoiMeme, // l'éditeur peut changer son mot de passe, pas son rôle
     delete: estAdmin,
   },
+  hooks: {
+    beforeChange: [
+      async ({ req, operation, data }) => {
+        // Le tout premier utilisateur (création initiale) est forcé admin,
+        // sinon personne ne pourrait ensuite créer d'utilisateurs (create = admin only).
+        if (operation === 'create') {
+          const { totalDocs } = await req.payload.count({ collection: 'users' })
+          if (totalDocs === 0) data.role = 'admin'
+        }
+        return data
+      },
+    ],
+  },
   fields: [
     { name: 'nom', type: 'text' },
     {
