@@ -158,25 +158,34 @@ export interface Annonce {
   repere?: string | null;
   resume?: string | null;
   /**
-   * Un élément par ligne (ex. « Cuisine équipée », « Ascenseur »).
+   * Ajoutez une caractéristique et choisissez une icône pour chacune (icône neutre par défaut).
    */
-  equipements?: string[] | null;
+  equipements?:
+    | {
+        label: string;
+        icone:
+          | 'neutre'
+          | 'chambre'
+          | 'sdb'
+          | 'eauChaude'
+          | 'cuisine'
+          | 'frigo'
+          | 'laver'
+          | 'climatisation'
+          | 'wifi'
+          | 'meuble'
+          | 'securite'
+          | 'parking'
+          | 'electricite'
+          | 'ascenseur';
+        id?: string | null;
+      }[]
+    | null;
   prixAffiche?: string | null;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  /**
+   * Texte affiché dans la section « Description » de la page de l’annonce.
+   */
+  description?: string | null;
   galerie?: (number | Media)[] | null;
   video?: (number | null) | Video;
   updatedAt: string;
@@ -370,7 +379,13 @@ export interface AnnoncesSelect<T extends boolean = true> {
   localisation?: T;
   repere?: T;
   resume?: T;
-  equipements?: T;
+  equipements?:
+    | T
+    | {
+        label?: T;
+        icone?: T;
+        id?: T;
+      };
   prixAffiche?: T;
   description?: T;
   galerie?: T;

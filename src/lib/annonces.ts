@@ -2,7 +2,8 @@ import "server-only";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import type { Annonce, Media, Video } from "@/payload-types";
-import type { RentalOffer } from "@/lib/rentals";
+import type { Offer } from "@/lib/offer";
+import { EQUIPEMENT_ICONE_DEFAUT } from "@/lib/equipementIcons";
 
 type Offre = "location" | "vente";
 
@@ -12,10 +13,16 @@ function mediaUrl(m: number | Media | Video | null | undefined): string | undefi
   return m.url ?? undefined;
 }
 
-/** Mappe un document Payload « annonce » vers la forme RentalOffer consommée par le front. */
-function toOffer(a: Annonce): RentalOffer {
+/** Mappe un document Payload « annonce » vers la forme Offer consommée par le front. */
+function toOffer(a: Annonce): Offer {
   const photos = Array.isArray(a.galerie)
     ? a.galerie.map(mediaUrl).filter((u): u is string => Boolean(u))
+    : [];
+
+  const equipements = Array.isArray(a.equipements)
+    ? a.equipements
+        .filter((e) => e && e.label)
+        .map((e) => ({ label: e.label as string, icone: e.icone ?? EQUIPEMENT_ICONE_DEFAUT }))
     : [];
 
   return {
@@ -28,14 +35,15 @@ function toOffer(a: Annonce): RentalOffer {
     location: a.localisation ?? "",
     landmark: a.repere ?? undefined,
     summary: a.resume ?? "",
-    features: Array.isArray(a.equipements) ? a.equipements : [],
+    description: a.description ?? undefined,
+    equipements,
     photos,
     video: mediaUrl(a.video),
   };
 }
 
 /** Toutes les annonces publiées et disponibles d'une offre, triées par `ordre`. */
-export async function getOffers(offre: Offre): Promise<RentalOffer[]> {
+export async function getOffers(offre: Offre): Promise<Offer[]> {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "annonces",
@@ -73,7 +81,7 @@ export async function getOfferSlugs(offre: Offre): Promise<string[]> {
 export async function getOfferBySlug(
   offre: Offre,
   slug: string,
-): Promise<RentalOffer | undefined> {
+): Promise<Offer | undefined> {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "annonces",

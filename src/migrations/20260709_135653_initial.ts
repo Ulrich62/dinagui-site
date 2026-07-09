@@ -2,41 +2,43 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
-   CREATE TYPE "public"."enum_annonces_offre" AS ENUM('location', 'vente');
+   CREATE TYPE "public"."enum_annonces_equipements_icone" AS ENUM('neutre', 'chambre', 'sdb', 'eauChaude', 'cuisine', 'frigo', 'laver', 'climatisation', 'wifi', 'meuble', 'securite', 'parking', 'electricite', 'ascenseur');
+  CREATE TYPE "public"."enum_annonces_offre" AS ENUM('location', 'vente');
   CREATE TYPE "public"."enum_annonces_type" AS ENUM('meuble', 'non-meuble');
   CREATE TYPE "public"."enum_annonces_status" AS ENUM('draft', 'published');
+  CREATE TYPE "public"."enum__annonces_v_version_equipements_icone" AS ENUM('neutre', 'chambre', 'sdb', 'eauChaude', 'cuisine', 'frigo', 'laver', 'climatisation', 'wifi', 'meuble', 'securite', 'parking', 'electricite', 'ascenseur');
   CREATE TYPE "public"."enum__annonces_v_version_offre" AS ENUM('location', 'vente');
   CREATE TYPE "public"."enum__annonces_v_version_type" AS ENUM('meuble', 'non-meuble');
   CREATE TYPE "public"."enum__annonces_v_version_status" AS ENUM('draft', 'published');
   CREATE TYPE "public"."enum_users_role" AS ENUM('admin', 'editeur');
+  CREATE TABLE "annonces_equipements" (
+  	"_order" integer NOT NULL,
+  	"_parent_id" integer NOT NULL,
+  	"id" varchar PRIMARY KEY NOT NULL,
+  	"label" varchar,
+  	"icone" "enum_annonces_equipements_icone" DEFAULT 'neutre'
+  );
+  
   CREATE TABLE "annonces" (
   	"id" serial PRIMARY KEY NOT NULL,
-  	"titre" varchar,
-  	"titre_court" varchar,
   	"slug" varchar,
   	"offre" "enum_annonces_offre" DEFAULT 'location',
-  	"type" "enum_annonces_type",
-  	"localisation" varchar,
-  	"repere" varchar,
-  	"chambres" numeric,
-  	"salles_de_bain" numeric,
-  	"resume" varchar,
-  	"description" jsonb,
-  	"video_id" integer,
-  	"prix_affiche" varchar,
   	"disponible" boolean DEFAULT true,
   	"ordre" numeric,
+  	"titre" varchar,
+  	"titre_court" varchar,
+  	"type" "enum_annonces_type",
+  	"chambres" numeric,
+  	"salles_de_bain" numeric,
+  	"localisation" varchar,
+  	"repere" varchar,
+  	"resume" varchar,
+  	"prix_affiche" varchar,
+  	"description" varchar,
+  	"video_id" integer,
   	"updated_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"created_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"_status" "enum_annonces_status" DEFAULT 'draft'
-  );
-  
-  CREATE TABLE "annonces_texts" (
-  	"id" serial PRIMARY KEY NOT NULL,
-  	"order" integer NOT NULL,
-  	"parent_id" integer NOT NULL,
-  	"path" varchar NOT NULL,
-  	"text" varchar
   );
   
   CREATE TABLE "annonces_rels" (
@@ -47,38 +49,39 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"medias_id" integer
   );
   
+  CREATE TABLE "_annonces_v_version_equipements" (
+  	"_order" integer NOT NULL,
+  	"_parent_id" integer NOT NULL,
+  	"id" serial PRIMARY KEY NOT NULL,
+  	"label" varchar,
+  	"icone" "enum__annonces_v_version_equipements_icone" DEFAULT 'neutre',
+  	"_uuid" varchar
+  );
+  
   CREATE TABLE "_annonces_v" (
   	"id" serial PRIMARY KEY NOT NULL,
   	"parent_id" integer,
-  	"version_titre" varchar,
-  	"version_titre_court" varchar,
   	"version_slug" varchar,
   	"version_offre" "enum__annonces_v_version_offre" DEFAULT 'location',
-  	"version_type" "enum__annonces_v_version_type",
-  	"version_localisation" varchar,
-  	"version_repere" varchar,
-  	"version_chambres" numeric,
-  	"version_salles_de_bain" numeric,
-  	"version_resume" varchar,
-  	"version_description" jsonb,
-  	"version_video_id" integer,
-  	"version_prix_affiche" varchar,
   	"version_disponible" boolean DEFAULT true,
   	"version_ordre" numeric,
+  	"version_titre" varchar,
+  	"version_titre_court" varchar,
+  	"version_type" "enum__annonces_v_version_type",
+  	"version_chambres" numeric,
+  	"version_salles_de_bain" numeric,
+  	"version_localisation" varchar,
+  	"version_repere" varchar,
+  	"version_resume" varchar,
+  	"version_prix_affiche" varchar,
+  	"version_description" varchar,
+  	"version_video_id" integer,
   	"version_updated_at" timestamp(3) with time zone,
   	"version_created_at" timestamp(3) with time zone,
   	"version__status" "enum__annonces_v_version_status" DEFAULT 'draft',
   	"created_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"updated_at" timestamp(3) with time zone DEFAULT now() NOT NULL,
   	"latest" boolean
-  );
-  
-  CREATE TABLE "_annonces_v_texts" (
-  	"id" serial PRIMARY KEY NOT NULL,
-  	"order" integer NOT NULL,
-  	"parent_id" integer NOT NULL,
-  	"path" varchar NOT NULL,
-  	"text" varchar
   );
   
   CREATE TABLE "_annonces_v_rels" (
@@ -204,13 +207,13 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"created_at" timestamp(3) with time zone DEFAULT now() NOT NULL
   );
   
+  ALTER TABLE "annonces_equipements" ADD CONSTRAINT "annonces_equipements_parent_id_fk" FOREIGN KEY ("_parent_id") REFERENCES "public"."annonces"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "annonces" ADD CONSTRAINT "annonces_video_id_videos_id_fk" FOREIGN KEY ("video_id") REFERENCES "public"."videos"("id") ON DELETE set null ON UPDATE no action;
-  ALTER TABLE "annonces_texts" ADD CONSTRAINT "annonces_texts_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."annonces"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "annonces_rels" ADD CONSTRAINT "annonces_rels_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."annonces"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "annonces_rels" ADD CONSTRAINT "annonces_rels_medias_fk" FOREIGN KEY ("medias_id") REFERENCES "public"."medias"("id") ON DELETE cascade ON UPDATE no action;
+  ALTER TABLE "_annonces_v_version_equipements" ADD CONSTRAINT "_annonces_v_version_equipements_parent_id_fk" FOREIGN KEY ("_parent_id") REFERENCES "public"."_annonces_v"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "_annonces_v" ADD CONSTRAINT "_annonces_v_parent_id_annonces_id_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."annonces"("id") ON DELETE set null ON UPDATE no action;
   ALTER TABLE "_annonces_v" ADD CONSTRAINT "_annonces_v_version_video_id_videos_id_fk" FOREIGN KEY ("version_video_id") REFERENCES "public"."videos"("id") ON DELETE set null ON UPDATE no action;
-  ALTER TABLE "_annonces_v_texts" ADD CONSTRAINT "_annonces_v_texts_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."_annonces_v"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "_annonces_v_rels" ADD CONSTRAINT "_annonces_v_rels_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."_annonces_v"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "_annonces_v_rels" ADD CONSTRAINT "_annonces_v_rels_medias_fk" FOREIGN KEY ("medias_id") REFERENCES "public"."medias"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "users_sessions" ADD CONSTRAINT "users_sessions_parent_id_fk" FOREIGN KEY ("_parent_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;
@@ -221,16 +224,19 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   ALTER TABLE "payload_locked_documents_rels" ADD CONSTRAINT "payload_locked_documents_rels_users_fk" FOREIGN KEY ("users_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "payload_preferences_rels" ADD CONSTRAINT "payload_preferences_rels_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "public"."payload_preferences"("id") ON DELETE cascade ON UPDATE no action;
   ALTER TABLE "payload_preferences_rels" ADD CONSTRAINT "payload_preferences_rels_users_fk" FOREIGN KEY ("users_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;
+  CREATE INDEX "annonces_equipements_order_idx" ON "annonces_equipements" USING btree ("_order");
+  CREATE INDEX "annonces_equipements_parent_id_idx" ON "annonces_equipements" USING btree ("_parent_id");
   CREATE UNIQUE INDEX "annonces_slug_idx" ON "annonces" USING btree ("slug");
   CREATE INDEX "annonces_video_idx" ON "annonces" USING btree ("video_id");
   CREATE INDEX "annonces_updated_at_idx" ON "annonces" USING btree ("updated_at");
   CREATE INDEX "annonces_created_at_idx" ON "annonces" USING btree ("created_at");
   CREATE INDEX "annonces__status_idx" ON "annonces" USING btree ("_status");
-  CREATE INDEX "annonces_texts_order_parent" ON "annonces_texts" USING btree ("order","parent_id");
   CREATE INDEX "annonces_rels_order_idx" ON "annonces_rels" USING btree ("order");
   CREATE INDEX "annonces_rels_parent_idx" ON "annonces_rels" USING btree ("parent_id");
   CREATE INDEX "annonces_rels_path_idx" ON "annonces_rels" USING btree ("path");
   CREATE INDEX "annonces_rels_medias_id_idx" ON "annonces_rels" USING btree ("medias_id");
+  CREATE INDEX "_annonces_v_version_equipements_order_idx" ON "_annonces_v_version_equipements" USING btree ("_order");
+  CREATE INDEX "_annonces_v_version_equipements_parent_id_idx" ON "_annonces_v_version_equipements" USING btree ("_parent_id");
   CREATE INDEX "_annonces_v_parent_idx" ON "_annonces_v" USING btree ("parent_id");
   CREATE INDEX "_annonces_v_version_version_slug_idx" ON "_annonces_v" USING btree ("version_slug");
   CREATE INDEX "_annonces_v_version_version_video_idx" ON "_annonces_v" USING btree ("version_video_id");
@@ -240,7 +246,6 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "_annonces_v_created_at_idx" ON "_annonces_v" USING btree ("created_at");
   CREATE INDEX "_annonces_v_updated_at_idx" ON "_annonces_v" USING btree ("updated_at");
   CREATE INDEX "_annonces_v_latest_idx" ON "_annonces_v" USING btree ("latest");
-  CREATE INDEX "_annonces_v_texts_order_parent" ON "_annonces_v_texts" USING btree ("order","parent_id");
   CREATE INDEX "_annonces_v_rels_order_idx" ON "_annonces_v_rels" USING btree ("order");
   CREATE INDEX "_annonces_v_rels_parent_idx" ON "_annonces_v_rels" USING btree ("parent_id");
   CREATE INDEX "_annonces_v_rels_path_idx" ON "_annonces_v_rels" USING btree ("path");
@@ -282,11 +287,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
-   DROP TABLE "annonces" CASCADE;
-  DROP TABLE "annonces_texts" CASCADE;
+   DROP TABLE "annonces_equipements" CASCADE;
+  DROP TABLE "annonces" CASCADE;
   DROP TABLE "annonces_rels" CASCADE;
+  DROP TABLE "_annonces_v_version_equipements" CASCADE;
   DROP TABLE "_annonces_v" CASCADE;
-  DROP TABLE "_annonces_v_texts" CASCADE;
   DROP TABLE "_annonces_v_rels" CASCADE;
   DROP TABLE "medias" CASCADE;
   DROP TABLE "videos" CASCADE;
@@ -298,9 +303,11 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   DROP TABLE "payload_preferences" CASCADE;
   DROP TABLE "payload_preferences_rels" CASCADE;
   DROP TABLE "payload_migrations" CASCADE;
+  DROP TYPE "public"."enum_annonces_equipements_icone";
   DROP TYPE "public"."enum_annonces_offre";
   DROP TYPE "public"."enum_annonces_type";
   DROP TYPE "public"."enum_annonces_status";
+  DROP TYPE "public"."enum__annonces_v_version_equipements_icone";
   DROP TYPE "public"."enum__annonces_v_version_offre";
   DROP TYPE "public"."enum__annonces_v_version_type";
   DROP TYPE "public"."enum__annonces_v_version_status";

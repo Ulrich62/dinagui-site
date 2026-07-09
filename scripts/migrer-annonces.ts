@@ -12,6 +12,7 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
 import { rentalOffers } from '../src/lib/rentals'
+import { devinerIconeKey } from '../src/lib/equipementIcons'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDir = path.resolve(dirname, '../public')
@@ -65,7 +66,7 @@ const run = async () => {
         chambres: a.bedrooms,
         sallesDeBain: a.bathrooms,
         resume: a.summary,
-        equipements: a.features,
+        equipements: a.features.map((f) => ({ label: f, icone: devinerIconeKey(f) })),
         galerie,
         video,
         disponible: true,

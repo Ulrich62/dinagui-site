@@ -2,6 +2,96 @@
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.annonces_equipements": {
+      "name": "annonces_equipements",
+      "schema": "",
+      "columns": {
+        "_order": {
+          "name": "_order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "_parent_id": {
+          "name": "_parent_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "label": {
+          "name": "label",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "icone": {
+          "name": "icone",
+          "type": "enum_annonces_equipements_icone",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'neutre'"
+        }
+      },
+      "indexes": {
+        "annonces_equipements_order_idx": {
+          "name": "annonces_equipements_order_idx",
+          "columns": [
+            {
+              "expression": "_order",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "annonces_equipements_parent_id_idx": {
+          "name": "annonces_equipements_parent_id_idx",
+          "columns": [
+            {
+              "expression": "_parent_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "annonces_equipements_parent_id_fk": {
+          "name": "annonces_equipements_parent_id_fk",
+          "tableFrom": "annonces_equipements",
+          "tableTo": "annonces",
+          "columnsFrom": [
+            "_parent_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public.annonces": {
       "name": "annonces",
       "schema": "",
@@ -11,18 +101,6 @@
           "type": "serial",
           "primaryKey": true,
           "notNull": true
-        },
-        "titre": {
-          "name": "titre",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "titre_court": {
-          "name": "titre_court",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
         },
         "slug": {
           "name": "slug",
@@ -38,22 +116,35 @@
           "notNull": false,
           "default": "'location'"
         },
+        "disponible": {
+          "name": "disponible",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": true
+        },
+        "ordre": {
+          "name": "ordre",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "titre": {
+          "name": "titre",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "titre_court": {
+          "name": "titre_court",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
         "type": {
           "name": "type",
           "type": "enum_annonces_type",
           "typeSchema": "public",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "localisation": {
-          "name": "localisation",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "repere": {
-          "name": "repere",
-          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -69,21 +160,21 @@
           "primaryKey": false,
           "notNull": false
         },
-        "resume": {
-          "name": "resume",
+        "localisation": {
+          "name": "localisation",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "description": {
-          "name": "description",
-          "type": "jsonb",
+        "repere": {
+          "name": "repere",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "video_id": {
-          "name": "video_id",
-          "type": "integer",
+        "resume": {
+          "name": "resume",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -93,16 +184,15 @@
           "primaryKey": false,
           "notNull": false
         },
-        "disponible": {
-          "name": "disponible",
-          "type": "boolean",
+        "description": {
+          "name": "description",
+          "type": "varchar",
           "primaryKey": false,
-          "notNull": false,
-          "default": true
+          "notNull": false
         },
-        "ordre": {
-          "name": "ordre",
-          "type": "numeric",
+        "video_id": {
+          "name": "video_id",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },
@@ -218,85 +308,6 @@
             "id"
           ],
           "onDelete": "set null",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public.annonces_texts": {
-      "name": "annonces_texts",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "order": {
-          "name": "order",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "parent_id": {
-          "name": "parent_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "path": {
-          "name": "path",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "text": {
-          "name": "text",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "indexes": {
-        "annonces_texts_order_parent": {
-          "name": "annonces_texts_order_parent",
-          "columns": [
-            {
-              "expression": "order",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            },
-            {
-              "expression": "parent_id",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": false,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        }
-      },
-      "foreignKeys": {
-        "annonces_texts_parent_fk": {
-          "name": "annonces_texts_parent_fk",
-          "tableFrom": "annonces_texts",
-          "tableTo": "annonces",
-          "columnsFrom": [
-            "parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -437,6 +448,102 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
+    "public._annonces_v_version_equipements": {
+      "name": "_annonces_v_version_equipements",
+      "schema": "",
+      "columns": {
+        "_order": {
+          "name": "_order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "_parent_id": {
+          "name": "_parent_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "label": {
+          "name": "label",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "icone": {
+          "name": "icone",
+          "type": "enum__annonces_v_version_equipements_icone",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'neutre'"
+        },
+        "_uuid": {
+          "name": "_uuid",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "_annonces_v_version_equipements_order_idx": {
+          "name": "_annonces_v_version_equipements_order_idx",
+          "columns": [
+            {
+              "expression": "_order",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "_annonces_v_version_equipements_parent_id_idx": {
+          "name": "_annonces_v_version_equipements_parent_id_idx",
+          "columns": [
+            {
+              "expression": "_parent_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "_annonces_v_version_equipements_parent_id_fk": {
+          "name": "_annonces_v_version_equipements_parent_id_fk",
+          "tableFrom": "_annonces_v_version_equipements",
+          "tableTo": "_annonces_v",
+          "columnsFrom": [
+            "_parent_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public._annonces_v": {
       "name": "_annonces_v",
       "schema": "",
@@ -450,18 +557,6 @@
         "parent_id": {
           "name": "parent_id",
           "type": "integer",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "version_titre": {
-          "name": "version_titre",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "version_titre_court": {
-          "name": "version_titre_court",
-          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -479,22 +574,35 @@
           "notNull": false,
           "default": "'location'"
         },
+        "version_disponible": {
+          "name": "version_disponible",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": true
+        },
+        "version_ordre": {
+          "name": "version_ordre",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "version_titre": {
+          "name": "version_titre",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "version_titre_court": {
+          "name": "version_titre_court",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
         "version_type": {
           "name": "version_type",
           "type": "enum__annonces_v_version_type",
           "typeSchema": "public",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "version_localisation": {
-          "name": "version_localisation",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "version_repere": {
-          "name": "version_repere",
-          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -510,21 +618,21 @@
           "primaryKey": false,
           "notNull": false
         },
-        "version_resume": {
-          "name": "version_resume",
+        "version_localisation": {
+          "name": "version_localisation",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_description": {
-          "name": "version_description",
-          "type": "jsonb",
+        "version_repere": {
+          "name": "version_repere",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_video_id": {
-          "name": "version_video_id",
-          "type": "integer",
+        "version_resume": {
+          "name": "version_resume",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -534,16 +642,15 @@
           "primaryKey": false,
           "notNull": false
         },
-        "version_disponible": {
-          "name": "version_disponible",
-          "type": "boolean",
+        "version_description": {
+          "name": "version_description",
+          "type": "varchar",
           "primaryKey": false,
-          "notNull": false,
-          "default": true
+          "notNull": false
         },
-        "version_ordre": {
-          "name": "version_ordre",
-          "type": "numeric",
+        "version_video_id": {
+          "name": "version_video_id",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },
@@ -750,85 +857,6 @@
             "id"
           ],
           "onDelete": "set null",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public._annonces_v_texts": {
-      "name": "_annonces_v_texts",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "order": {
-          "name": "order",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "parent_id": {
-          "name": "parent_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "path": {
-          "name": "path",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "text": {
-          "name": "text",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "indexes": {
-        "_annonces_v_texts_order_parent": {
-          "name": "_annonces_v_texts_order_parent",
-          "columns": [
-            {
-              "expression": "order",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            },
-            {
-              "expression": "parent_id",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": false,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        }
-      },
-      "foreignKeys": {
-        "_annonces_v_texts_parent_fk": {
-          "name": "_annonces_v_texts_parent_fk",
-          "tableFrom": "_annonces_v_texts",
-          "tableTo": "_annonces_v",
-          "columnsFrom": [
-            "parent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -2238,6 +2266,26 @@
     }
   },
   "enums": {
+    "public.enum_annonces_equipements_icone": {
+      "name": "enum_annonces_equipements_icone",
+      "schema": "public",
+      "values": [
+        "neutre",
+        "chambre",
+        "sdb",
+        "eauChaude",
+        "cuisine",
+        "frigo",
+        "laver",
+        "climatisation",
+        "wifi",
+        "meuble",
+        "securite",
+        "parking",
+        "electricite",
+        "ascenseur"
+      ]
+    },
     "public.enum_annonces_offre": {
       "name": "enum_annonces_offre",
       "schema": "public",
@@ -2260,6 +2308,26 @@
       "values": [
         "draft",
         "published"
+      ]
+    },
+    "public.enum__annonces_v_version_equipements_icone": {
+      "name": "enum__annonces_v_version_equipements_icone",
+      "schema": "public",
+      "values": [
+        "neutre",
+        "chambre",
+        "sdb",
+        "eauChaude",
+        "cuisine",
+        "frigo",
+        "laver",
+        "climatisation",
+        "wifi",
+        "meuble",
+        "securite",
+        "parking",
+        "electricite",
+        "ascenseur"
       ]
     },
     "public.enum__annonces_v_version_offre": {
@@ -2305,6 +2373,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "9a08f372-3f3f-46a0-ade5-b010a46185e4",
+  "id": "995a8124-4868-490e-88e9-98c187c69bf6",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

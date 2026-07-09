@@ -1,5 +1,6 @@
 import type { Access, CollectionConfig } from 'payload'
 import { estConnecte } from './acces'
+import { equipementIconeOptions, EQUIPEMENT_ICONE_DEFAUT } from '../lib/equipementIcons'
 
 // Public : seules les annonces publiées sont lisibles (y compris via l'API REST brute).
 // Connecté (admin/éditeur) : accès à tout, brouillons compris.
@@ -164,13 +165,49 @@ export const Annonces: CollectionConfig = {
             },
             {
               name: 'equipements',
-              type: 'text',
-              hasMany: true,
-              label: 'Équipements / caractéristiques',
-              admin: { description: 'Un élément par ligne (ex. « Cuisine équipée », « Ascenseur »).' },
+              type: 'array',
+              label: 'Caractéristiques',
+              labels: { singular: 'Caractéristique', plural: 'Caractéristiques' },
+              admin: {
+                description:
+                  'Ajoutez une caractéristique et choisissez une icône pour chacune (icône neutre par défaut).',
+                initCollapsed: false,
+              },
+              fields: [
+                {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'label',
+                      type: 'text',
+                      required: true,
+                      label: 'Texte',
+                      admin: { width: '55%' },
+                    },
+                    {
+                      name: 'icone',
+                      type: 'select',
+                      required: true,
+                      defaultValue: EQUIPEMENT_ICONE_DEFAUT,
+                      options: equipementIconeOptions,
+                      admin: {
+                        width: '45%',
+                        components: { Field: '/components/payload/IconPicker#IconPicker' },
+                      },
+                    },
+                  ],
+                },
+              ],
             },
             { name: 'prixAffiche', type: 'text', label: 'Prix affiché (optionnel)' },
-            { name: 'description', type: 'richText', label: 'Description détaillée (optionnel)' },
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description (page de l’annonce)',
+              admin: {
+                description: 'Texte affiché dans la section « Description » de la page de l’annonce.',
+              },
+            },
           ],
         },
         {

@@ -10,8 +10,8 @@ import {
 } from "react-icons/fi";
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
-import { featureIcon } from "@/lib/featureIcon";
-import { getRentalCover } from "@/lib/rentals";
+import { equipementIcon } from "@/lib/equipementIcons";
+import { getOfferCover } from "@/lib/offer";
 import { getOffers, getOfferBySlug, getOfferSlugs } from "@/lib/annonces";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!offer) return {};
 
   const cover =
-    getRentalCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
+    getOfferCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
   const locationLine = [offer.location, offer.landmark]
     .filter(Boolean)
     .join(" — ");
@@ -170,32 +170,36 @@ export default async function RentalDetailPage({
               <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-4">
                 Description
               </h2>
-              <p className="text-[#6b7280] text-[15px] md:text-base font-[Roboto] leading-relaxed mb-10">
-                {offer.summary}
+              <p className="text-[#6b7280] text-[15px] md:text-base font-[Roboto] leading-relaxed mb-10 whitespace-pre-line">
+                {offer.description || offer.summary}
               </p>
 
-              <h3 className="text-xl md:text-2xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-5">
-                Caractéristiques
-              </h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-10">
-                {offer.features.map((f, i) => {
-                  const Icon = featureIcon(f);
-                  return (
-                    <li
-                      key={i}
-                      className="flex items-center gap-3 text-[#1f2d3d] text-[15px] font-[Roboto] bg-[#faf5f0] rounded-lg px-4 py-3"
-                    >
-                      <span className="w-9 h-9 flex items-center justify-center rounded-md bg-white text-[#F88732] flex-shrink-0 shadow-sm">
-                        <Icon
-                          className="w-[18px] h-[18px]"
-                          strokeWidth={1.75}
-                        />
-                      </span>
-                      <span className="leading-snug">{f}</span>
-                    </li>
-                  );
-                })}
-              </ul>
+              {offer.equipements.length > 0 && (
+                <>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-5">
+                    Caractéristiques
+                  </h3>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-10">
+                    {offer.equipements.map((e, i) => {
+                      const Icon = equipementIcon(e.icone);
+                      return (
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-[#1f2d3d] text-[15px] font-[Roboto] bg-[#faf5f0] rounded-lg px-4 py-3"
+                        >
+                          <span className="w-9 h-9 flex items-center justify-center rounded-md bg-white text-[#F88732] flex-shrink-0 shadow-sm">
+                            <Icon
+                              className="w-[18px] h-[18px]"
+                              strokeWidth={1.75}
+                            />
+                          </span>
+                          <span className="leading-snug">{e.label}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
+              )}
 
               <div className="bg-[#faf5f0] rounded-[14px] p-6 flex items-start gap-3">
                 <FiMapPin className="text-[#F88732] text-xl mt-0.5 flex-shrink-0" />
