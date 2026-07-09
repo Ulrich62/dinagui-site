@@ -6,6 +6,8 @@ export const Videos: CollectionConfig = {
   labels: { singular: 'Vidéo', plural: 'Vidéos' },
   admin: {
     group: 'Médias',
+    hideAPIURL: true,
+    hidden: ({ user }) => (user as { role?: string } | undefined)?.role !== 'admin',
     description:
       'Compresser les vidéos avant upload (idéalement < 40 Mo) : le poids = coût de diffusion + temps de chargement pour les visiteurs.',
   },

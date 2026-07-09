@@ -19,7 +19,19 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || '',
   admin: {
     user: Users.slug,
-    meta: { titleSuffix: '— DINAGUI' },
+    theme: 'light',
+    meta: {
+      titleSuffix: ' — DINAGUI',
+      icons: [{ url: '/images/logo-dinagui-small.avif' }],
+    },
+    importMap: { baseDir: dirname },
+    components: {
+      graphics: {
+        Logo: '/components/payload/Logo#Logo',
+        Icon: '/components/payload/Icon#Icon',
+      },
+      beforeDashboard: ['/components/payload/BeforeDashboard#BeforeDashboard'],
+    },
   },
   i18n: { supportedLanguages: { fr, en }, fallbackLanguage: 'fr' },
   editor: lexicalEditor(),

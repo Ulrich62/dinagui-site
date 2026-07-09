@@ -4,7 +4,12 @@ import { estConnecte, lecturePublique } from './acces'
 export const Medias: CollectionConfig = {
   slug: 'medias',
   labels: { singular: 'Photo', plural: 'Photos' },
-  admin: { group: 'Médias' },
+  admin: {
+    group: 'Médias',
+    hideAPIURL: true,
+    // Masqué de la navigation pour l'éditeur (il ajoute les photos depuis l'annonce).
+    hidden: ({ user }) => (user as { role?: string } | undefined)?.role !== 'admin',
+  },
   access: {
     read: lecturePublique,
     create: estConnecte,

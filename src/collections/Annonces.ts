@@ -39,6 +39,7 @@ export const Annonces: CollectionConfig = {
     useAsTitle: 'titre',
     defaultColumns: ['titre', 'offre', 'type', 'chambres', 'disponible', '_status'],
     group: 'Contenu',
+    hideAPIURL: true,
   },
   versions: { drafts: true }, // brouillon / publié
   access: {
@@ -57,13 +58,7 @@ export const Annonces: CollectionConfig = {
     afterDelete: [({ doc }) => void revalider(doc)],
   },
   fields: [
-    { name: 'titre', type: 'text', required: true },
-    {
-      name: 'titreCourt',
-      type: 'text',
-      label: 'Titre court (cartes / listes)',
-      admin: { description: 'Ex. : « Luxueux meublé · 2 ch »' },
-    },
+    // ---- Barre latérale (publication & tri) ----
     {
       name: 'slug',
       type: 'text',
@@ -91,60 +86,103 @@ export const Annonces: CollectionConfig = {
       admin: { position: 'sidebar' },
     },
     {
-      name: 'type',
-      type: 'select',
-      required: true,
-      options: [
-        { label: 'Meublé', value: 'meuble' },
-        { label: 'Non meublé', value: 'non-meuble' },
-      ],
-    },
-    {
-      name: 'localisation',
-      type: 'text',
-      admin: { description: 'Ex. : Plaza Platinium, Kipé' },
-    },
-    {
-      name: 'repere',
-      type: 'text',
-      label: 'Point de repère (optionnel)',
-      admin: { description: 'Ex. : proximité Radisson Blu' },
-    },
-    { name: 'chambres', type: 'number', required: true, min: 0 },
-    { name: 'sallesDeBain', type: 'number', required: true, min: 0, label: 'Salles de bain' },
-    {
-      name: 'resume',
-      type: 'textarea',
-      label: 'Résumé (affiché sur la carte)',
-      maxLength: 300,
-    },
-    {
-      name: 'equipements',
-      type: 'text',
-      hasMany: true,
-      label: 'Équipements / caractéristiques',
-      admin: { description: 'Un élément par ligne (ex. « Cuisine équipée », « Ascenseur »).' },
-    },
-    { name: 'description', type: 'richText', label: 'Description détaillée (optionnel)' },
-    {
-      name: 'galerie',
-      type: 'upload',
-      relationTo: 'medias',
-      hasMany: true,
-      label: 'Galerie photos',
-    },
-    { name: 'video', type: 'upload', relationTo: 'videos', label: 'Vidéo (optionnel)' },
-    { name: 'prixAffiche', type: 'text', label: 'Prix affiché (optionnel)' },
-    {
       name: 'disponible',
       type: 'checkbox',
       defaultValue: true,
-      admin: { position: 'sidebar' },
+      label: 'Disponible',
+      admin: { position: 'sidebar', description: 'Décocher pour retirer l’annonce du site.' },
     },
     {
       name: 'ordre',
       type: 'number',
       admin: { position: 'sidebar', description: 'Tri croissant sur la page.' },
+    },
+    // ---- Contenu principal (onglets) ----
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Informations',
+          description: 'Le titre, la localisation et les caractéristiques de l’appartement.',
+          fields: [
+            { name: 'titre', type: 'text', required: true },
+            {
+              name: 'titreCourt',
+              type: 'text',
+              label: 'Titre court (cartes / listes)',
+              admin: { description: 'Ex. : « Luxueux meublé · 2 ch »' },
+            },
+            {
+              name: 'type',
+              type: 'select',
+              required: true,
+              options: [
+                { label: 'Meublé', value: 'meuble' },
+                { label: 'Non meublé', value: 'non-meuble' },
+              ],
+            },
+            {
+              type: 'row',
+              fields: [
+                { name: 'chambres', type: 'number', required: true, min: 0, admin: { width: '50%' } },
+                {
+                  name: 'sallesDeBain',
+                  type: 'number',
+                  required: true,
+                  min: 0,
+                  label: 'Salles de bain',
+                  admin: { width: '50%' },
+                },
+              ],
+            },
+            {
+              type: 'row',
+              fields: [
+                {
+                  name: 'localisation',
+                  type: 'text',
+                  admin: { width: '50%', description: 'Ex. : Plaza Platinium, Kipé' },
+                },
+                {
+                  name: 'repere',
+                  type: 'text',
+                  label: 'Point de repère (optionnel)',
+                  admin: { width: '50%', description: 'Ex. : proximité Radisson Blu' },
+                },
+              ],
+            },
+            {
+              name: 'resume',
+              type: 'textarea',
+              label: 'Résumé (affiché sur la carte)',
+              maxLength: 300,
+            },
+            {
+              name: 'equipements',
+              type: 'text',
+              hasMany: true,
+              label: 'Équipements / caractéristiques',
+              admin: { description: 'Un élément par ligne (ex. « Cuisine équipée », « Ascenseur »).' },
+            },
+            { name: 'prixAffiche', type: 'text', label: 'Prix affiché (optionnel)' },
+            { name: 'description', type: 'richText', label: 'Description détaillée (optionnel)' },
+          ],
+        },
+        {
+          label: 'Photos & vidéo',
+          description: 'La galerie de photos et la vidéo de présentation.',
+          fields: [
+            {
+              name: 'galerie',
+              type: 'upload',
+              relationTo: 'medias',
+              hasMany: true,
+              label: 'Galerie photos',
+            },
+            { name: 'video', type: 'upload', relationTo: 'videos', label: 'Vidéo (optionnel)' },
+          ],
+        },
+      ],
     },
   ],
 }

@@ -5,7 +5,12 @@ export const Users: CollectionConfig = {
   slug: 'users',
   auth: true,
   labels: { singular: 'Utilisateur', plural: 'Utilisateurs' },
-  admin: { useAsTitle: 'email', group: 'Administration' },
+  admin: {
+    useAsTitle: 'email',
+    group: 'Administration',
+    hideAPIURL: true,
+    hidden: ({ user }) => (user as { role?: string } | undefined)?.role !== 'admin',
+  },
   access: {
     read: estConnecte,
     create: estAdmin,

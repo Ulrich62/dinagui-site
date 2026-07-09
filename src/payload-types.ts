@@ -127,17 +127,27 @@ export interface UserAuthOperations {
  */
 export interface Annonce {
   id: number;
-  titre: string;
-  /**
-   * Ex. : « Luxueux meublé · 2 ch »
-   */
-  titreCourt?: string | null;
   /**
    * Généré depuis le titre si laissé vide. Fait partie de l’URL.
    */
   slug?: string | null;
   offre: 'location' | 'vente';
+  /**
+   * Décocher pour retirer l’annonce du site.
+   */
+  disponible?: boolean | null;
+  /**
+   * Tri croissant sur la page.
+   */
+  ordre?: number | null;
+  titre: string;
+  /**
+   * Ex. : « Luxueux meublé · 2 ch »
+   */
+  titreCourt?: string | null;
   type: 'meuble' | 'non-meuble';
+  chambres: number;
+  sallesDeBain: number;
   /**
    * Ex. : Plaza Platinium, Kipé
    */
@@ -146,13 +156,12 @@ export interface Annonce {
    * Ex. : proximité Radisson Blu
    */
   repere?: string | null;
-  chambres: number;
-  sallesDeBain: number;
   resume?: string | null;
   /**
    * Un élément par ligne (ex. « Cuisine équipée », « Ascenseur »).
    */
   equipements?: string[] | null;
+  prixAffiche?: string | null;
   description?: {
     root: {
       type: string;
@@ -170,12 +179,6 @@ export interface Annonce {
   } | null;
   galerie?: (number | Media)[] | null;
   video?: (number | null) | Video;
-  prixAffiche?: string | null;
-  disponible?: boolean | null;
-  /**
-   * Tri croissant sur la page.
-   */
-  ordre?: number | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -355,23 +358,23 @@ export interface PayloadMigration {
  * via the `definition` "annonces_select".
  */
 export interface AnnoncesSelect<T extends boolean = true> {
-  titre?: T;
-  titreCourt?: T;
   slug?: T;
   offre?: T;
+  disponible?: T;
+  ordre?: T;
+  titre?: T;
+  titreCourt?: T;
   type?: T;
-  localisation?: T;
-  repere?: T;
   chambres?: T;
   sallesDeBain?: T;
+  localisation?: T;
+  repere?: T;
   resume?: T;
   equipements?: T;
+  prixAffiche?: T;
   description?: T;
   galerie?: T;
   video?: T;
-  prixAffiche?: T;
-  disponible?: T;
-  ordre?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
