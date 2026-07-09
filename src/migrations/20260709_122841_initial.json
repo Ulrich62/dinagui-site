@@ -983,7 +983,7 @@
           "name": "alt",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "updated_at": {
           "name": "updated_at",
@@ -2305,6 +2305,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "2fc7b5a7-2a23-44a4-b463-62f4480acfeb",
+  "id": "9a08f372-3f3f-46a0-ade5-b010a46185e4",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

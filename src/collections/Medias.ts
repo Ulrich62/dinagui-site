@@ -18,7 +18,30 @@ export const Medias: CollectionConfig = {
       { name: 'hero', width: 1920 },
     ],
   },
+  hooks: {
+    // L'upload ne doit jamais être bloqué : si aucun texte alternatif n'est
+    // saisi, on le dérive du nom de fichier (accessibilité minimale garantie).
+    beforeChange: [
+      ({ data }) => {
+        if (data && !data.alt) {
+          const base = typeof data.filename === 'string'
+            ? data.filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim()
+            : ''
+          data.alt = base || 'Photo DINAGUI'
+        }
+        return data
+      },
+    ],
+  },
   fields: [
-    { name: 'alt', type: 'text', required: true, label: 'Texte alternatif' },
+    {
+      name: 'alt',
+      type: 'text',
+      label: 'Texte alternatif',
+      admin: {
+        description:
+          'Description de l’image (accessibilité/SEO). Rempli automatiquement depuis le nom du fichier si laissé vide.',
+      },
+    },
   ],
 }

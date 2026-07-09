@@ -186,7 +186,10 @@ export interface Annonce {
  */
 export interface Media {
   id: number;
-  alt: string;
+  /**
+   * Description de l’image (accessibilité/SEO). Rempli automatiquement depuis le nom du fichier si laissé vide.
+   */
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
