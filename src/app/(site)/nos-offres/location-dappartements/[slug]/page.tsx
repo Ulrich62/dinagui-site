@@ -11,13 +11,18 @@ import {
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
 import { featureIcon } from "@/lib/featureIcon";
-import { rentalOffers, getRentalBySlug, getRentalCover } from "@/lib/rentals";
+import { getRentalCover } from "@/lib/rentals";
+import { getOffers, getOfferBySlug, getOfferSlugs } from "@/lib/annonces";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
+
+// ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
+export const revalidate = 3600;
 
 type Params = { slug: string };
 
-export function generateStaticParams(): Params[] {
-  return rentalOffers.map((o) => ({ slug: o.slug }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const slugs = await getOfferSlugs("location");
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -26,7 +31,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const offer = getRentalBySlug(slug);
+  const offer = await getOfferBySlug("location", slug);
   if (!offer) return {};
 
   const cover =
@@ -59,10 +64,12 @@ export default async function RentalDetailPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const offer = getRentalBySlug(slug);
+  const offer = await getOfferBySlug("location", slug);
   if (!offer) notFound();
 
-  const others = rentalOffers.filter((o) => o.slug !== offer.slug).slice(0, 3);
+  const others = (await getOffers("location"))
+    .filter((o) => o.slug !== offer.slug)
+    .slice(0, 3);
 
   return (
     <>

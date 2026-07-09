@@ -12,8 +12,11 @@ import {
 } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import RentalGridCard from "@/components/RentalGridCard";
-import { rentalOffers } from "@/lib/rentals";
+import { getOffers } from "@/lib/annonces";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
+
+// ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Location d'appartements — DINAGUI SARL",
@@ -88,7 +91,9 @@ const services = [
   },
 ];
 
-export default function LocationPage() {
+export default async function LocationPage() {
+  const rentalOffers = await getOffers("location");
+
   return (
     <>
       <script
