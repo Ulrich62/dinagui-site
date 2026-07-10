@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiMapPin } from "react-icons/fi";
-import { RentalOffer, getRentalCover } from "@/lib/rentals";
+import { Offer, getOfferCover } from "@/lib/offer";
 
-export default function RentalGridCard({ offer }: { offer: RentalOffer }) {
-  const cover = getRentalCover(offer);
+export default function RentalGridCard({ offer }: { offer: Offer }) {
+  const cover = getOfferCover(offer);
   const href = `/nos-offres/location-dappartements/${offer.slug}`;
 
   return (

@@ -10,14 +10,25 @@ import {
 } from "react-icons/fi";
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
-import { featureIcon } from "@/lib/featureIcon";
-import { rentalOffers, getRentalBySlug, getRentalCover } from "@/lib/rentals";
+import { draftMode } from "next/headers";
+import { featureIcon } from "@/lib/featureIcons";
+import { getOfferCover } from "@/lib/offer";
+import {
+  getListings,
+  getListingBySlug,
+  getListingSlugs,
+  getListingForPreview,
+} from "@/lib/listings";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
+
+// ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
+export const revalidate = 3600;
 
 type Params = { slug: string };
 
-export function generateStaticParams(): Params[] {
-  return rentalOffers.map((o) => ({ slug: o.slug }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const slugs = await getListingSlugs("rent");
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -26,11 +37,11 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const offer = getRentalBySlug(slug);
+  const offer = await getListingBySlug("rent", slug);
   if (!offer) return {};
 
   const cover =
-    getRentalCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
+    getOfferCover(offer) ?? "/images/plaza-platinium/vue-aerienne.jpg";
   const locationLine = [offer.location, offer.landmark]
     .filter(Boolean)
     .join(" — ");
@@ -59,13 +70,34 @@ export default async function RentalDetailPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const offer = getRentalBySlug(slug);
+  const { isEnabled: isPreview } = await draftMode();
+  const offer = isPreview
+    ? await getListingForPreview(slug)
+    : await getListingBySlug("rent", slug);
   if (!offer) notFound();
 
-  const others = rentalOffers.filter((o) => o.slug !== offer.slug).slice(0, 3);
+  const others = (await getListings("rent"))
+    .filter((o) => o.slug !== offer.slug)
+    .slice(0, 3);
 
   return (
     <>
+      {isPreview && (
+        <div className="bg-[#1f2d3d] text-white text-sm font-[Roboto]">
+          <div className="max-w-[1340px] mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
+            <span>
+              <strong className="text-[#F88732]">Mode aperçu</strong> — vous
+              voyez la dernière version (brouillon inclus), non publiée.
+            </span>
+            <a
+              href={`/next/exit-preview?to=/nos-offres/location-dappartements/${offer.slug}`}
+              className="underline hover:text-[#F88732] whitespace-nowrap"
+            >
+              Quitter l’aperçu
+            </a>
+          </div>
+        </div>
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(
@@ -163,32 +195,36 @@ export default async function RentalDetailPage({
               <h2 className="text-2xl md:text-3xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-4">
                 Description
               </h2>
-              <p className="text-[#6b7280] text-[15px] md:text-base font-[Roboto] leading-relaxed mb-10">
-                {offer.summary}
+              <p className="text-[#6b7280] text-[15px] md:text-base font-[Roboto] leading-relaxed mb-10 whitespace-pre-line">
+                {offer.description || offer.summary}
               </p>
 
-              <h3 className="text-xl md:text-2xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-5">
-                Caractéristiques
-              </h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-10">
-                {offer.features.map((f, i) => {
-                  const Icon = featureIcon(f);
-                  return (
-                    <li
-                      key={i}
-                      className="flex items-center gap-3 text-[#1f2d3d] text-[15px] font-[Roboto] bg-[#faf5f0] rounded-lg px-4 py-3"
-                    >
-                      <span className="w-9 h-9 flex items-center justify-center rounded-md bg-white text-[#F88732] flex-shrink-0 shadow-sm">
-                        <Icon
-                          className="w-[18px] h-[18px]"
-                          strokeWidth={1.75}
-                        />
-                      </span>
-                      <span className="leading-snug">{f}</span>
-                    </li>
-                  );
-                })}
-              </ul>
+              {offer.features.length > 0 && (
+                <>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-5">
+                    Caractéristiques
+                  </h3>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-10">
+                    {offer.features.map((e, i) => {
+                      const Icon = featureIcon(e.icon);
+                      return (
+                        <li
+                          key={i}
+                          className="flex items-center gap-3 text-[#1f2d3d] text-[15px] font-[Roboto] bg-[#faf5f0] rounded-lg px-4 py-3"
+                        >
+                          <span className="w-9 h-9 flex items-center justify-center rounded-md bg-white text-[#F88732] flex-shrink-0 shadow-sm">
+                            <Icon
+                              className="w-[18px] h-[18px]"
+                              strokeWidth={1.75}
+                            />
+                          </span>
+                          <span className="leading-snug">{e.label}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
+              )}
 
               <div className="bg-[#faf5f0] rounded-[14px] p-6 flex items-start gap-3">
                 <FiMapPin className="text-[#F88732] text-xl mt-0.5 flex-shrink-0" />

@@ -152,11 +152,3 @@ export const rentalOffers: RentalOffer[] = [
     video: "/images/rentals/meuble-3ch/video.mp4",
   },
 ];
-
-export function getRentalBySlug(slug: string): RentalOffer | undefined {
-  return rentalOffers.find((o) => o.slug === slug);
-}
-
-export function getRentalCover(offer: RentalOffer): string | undefined {
-  return offer.photos[0];
-}

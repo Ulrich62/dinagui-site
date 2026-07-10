@@ -1,0 +1,41 @@
+/* Thème DINAGUI pour l'admin Payload — accents orange (#F88732) sur la base claire. */
+
+/* Boutons d'action primaires (Enregistrer, Créer, Publier…) → orange DINAGUI.
+   .btn--style-primary expose --bg-color / --hover-bg en variables locales. */
+.btn--style-primary {
+  --bg-color: #f88732;
+  --hover-bg: #e0752a;
+  --color: #ffffff;
+  --hover-color: #ffffff;
+}
+
+/* Liens de contenu en orange foncé (lisible sur fond clair). */
+a:not(.btn):not(.nav__link):hover {
+  color: #e0752a;
+}
+
+/* Élément de navigation actif : accent orange + repère latéral. */
+.nav .nav__link.active,
+.nav__link[aria-current='page'],
+.nav__link--active {
+  color: #f88732;
+  box-shadow: inset 3px 0 0 #f88732;
+}
+
+/* Onglet actif du formulaire (tabs) souligné en orange. */
+.tabs-field__tab-button--active {
+  box-shadow: inset 0 -2px 0 #f88732;
+}
+
+/* Focus visible orange sur les champs (accessibilité + cohérence). */
+.field-type input:focus,
+.field-type textarea:focus,
+.field-type .rs__control--is-focused {
+  border-color: #f88732 !important;
+  box-shadow: 0 0 0 1px #f88732 !important;
+}
+
+/* Pastilles de statut « Publié » teintées marque (best-effort, sans casser les autres). */
+.status__value {
+  font-weight: 600;
+}
