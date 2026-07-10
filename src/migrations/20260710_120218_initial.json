@@ -2,8 +2,8 @@
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.annonces_equipements": {
-      "name": "annonces_equipements",
+    "public.listings_features": {
+      "name": "listings_features",
       "schema": "",
       "columns": {
         "_order": {
@@ -30,18 +30,18 @@
           "primaryKey": false,
           "notNull": false
         },
-        "icone": {
-          "name": "icone",
-          "type": "enum_annonces_equipements_icone",
+        "icon": {
+          "name": "icon",
+          "type": "enum_listings_features_icon",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'neutre'"
+          "default": "'neutral'"
         }
       },
       "indexes": {
-        "annonces_equipements_order_idx": {
-          "name": "annonces_equipements_order_idx",
+        "listings_features_order_idx": {
+          "name": "listings_features_order_idx",
           "columns": [
             {
               "expression": "_order",
@@ -55,8 +55,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_equipements_parent_id_idx": {
-          "name": "annonces_equipements_parent_id_idx",
+        "listings_features_parent_id_idx": {
+          "name": "listings_features_parent_id_idx",
           "columns": [
             {
               "expression": "_parent_id",
@@ -72,10 +72,10 @@
         }
       },
       "foreignKeys": {
-        "annonces_equipements_parent_id_fk": {
-          "name": "annonces_equipements_parent_id_fk",
-          "tableFrom": "annonces_equipements",
-          "tableTo": "annonces",
+        "listings_features_parent_id_fk": {
+          "name": "listings_features_parent_id_fk",
+          "tableFrom": "listings_features",
+          "tableTo": "listings",
           "columnsFrom": [
             "_parent_id"
           ],
@@ -92,8 +92,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.annonces": {
-      "name": "annonces",
+    "public.listings": {
+      "name": "listings",
       "schema": "",
       "columns": {
         "id": {
@@ -108,78 +108,78 @@
           "primaryKey": false,
           "notNull": false
         },
-        "offre": {
-          "name": "offre",
-          "type": "enum_annonces_offre",
+        "offer": {
+          "name": "offer",
+          "type": "enum_listings_offer",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'location'"
+          "default": "'rent'"
         },
-        "disponible": {
-          "name": "disponible",
+        "available": {
+          "name": "available",
           "type": "boolean",
           "primaryKey": false,
           "notNull": false,
           "default": true
         },
-        "ordre": {
-          "name": "ordre",
+        "order": {
+          "name": "order",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "titre": {
-          "name": "titre",
+        "title": {
+          "name": "title",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "titre_court": {
-          "name": "titre_court",
+        "short_title": {
+          "name": "short_title",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
         "type": {
           "name": "type",
-          "type": "enum_annonces_type",
+          "type": "enum_listings_type",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
-        "chambres": {
-          "name": "chambres",
+        "bedrooms": {
+          "name": "bedrooms",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "salles_de_bain": {
-          "name": "salles_de_bain",
+        "bathrooms": {
+          "name": "bathrooms",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "localisation": {
-          "name": "localisation",
+        "location": {
+          "name": "location",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "repere": {
-          "name": "repere",
+        "landmark": {
+          "name": "landmark",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "resume": {
-          "name": "resume",
+        "summary": {
+          "name": "summary",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "prix_affiche": {
-          "name": "prix_affiche",
+        "price": {
+          "name": "price",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -212,7 +212,7 @@
         },
         "_status": {
           "name": "_status",
-          "type": "enum_annonces_status",
+          "type": "enum_listings_status",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
@@ -220,8 +220,8 @@
         }
       },
       "indexes": {
-        "annonces_slug_idx": {
-          "name": "annonces_slug_idx",
+        "listings_slug_idx": {
+          "name": "listings_slug_idx",
           "columns": [
             {
               "expression": "slug",
@@ -235,8 +235,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_video_idx": {
-          "name": "annonces_video_idx",
+        "listings_video_idx": {
+          "name": "listings_video_idx",
           "columns": [
             {
               "expression": "video_id",
@@ -250,8 +250,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_updated_at_idx": {
-          "name": "annonces_updated_at_idx",
+        "listings_updated_at_idx": {
+          "name": "listings_updated_at_idx",
           "columns": [
             {
               "expression": "updated_at",
@@ -265,8 +265,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_created_at_idx": {
-          "name": "annonces_created_at_idx",
+        "listings_created_at_idx": {
+          "name": "listings_created_at_idx",
           "columns": [
             {
               "expression": "created_at",
@@ -280,8 +280,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces__status_idx": {
-          "name": "annonces__status_idx",
+        "listings__status_idx": {
+          "name": "listings__status_idx",
           "columns": [
             {
               "expression": "_status",
@@ -297,9 +297,9 @@
         }
       },
       "foreignKeys": {
-        "annonces_video_id_videos_id_fk": {
-          "name": "annonces_video_id_videos_id_fk",
-          "tableFrom": "annonces",
+        "listings_video_id_videos_id_fk": {
+          "name": "listings_video_id_videos_id_fk",
+          "tableFrom": "listings",
           "tableTo": "videos",
           "columnsFrom": [
             "video_id"
@@ -317,8 +317,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.annonces_rels": {
-      "name": "annonces_rels",
+    "public.listings_rels": {
+      "name": "listings_rels",
       "schema": "",
       "columns": {
         "id": {
@@ -345,16 +345,16 @@
           "primaryKey": false,
           "notNull": true
         },
-        "medias_id": {
-          "name": "medias_id",
+        "media_id": {
+          "name": "media_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
         }
       },
       "indexes": {
-        "annonces_rels_order_idx": {
-          "name": "annonces_rels_order_idx",
+        "listings_rels_order_idx": {
+          "name": "listings_rels_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -368,8 +368,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_rels_parent_idx": {
-          "name": "annonces_rels_parent_idx",
+        "listings_rels_parent_idx": {
+          "name": "listings_rels_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -383,8 +383,8 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_rels_path_idx": {
-          "name": "annonces_rels_path_idx",
+        "listings_rels_path_idx": {
+          "name": "listings_rels_path_idx",
           "columns": [
             {
               "expression": "path",
@@ -398,11 +398,11 @@
           "method": "btree",
           "with": {}
         },
-        "annonces_rels_medias_id_idx": {
-          "name": "annonces_rels_medias_id_idx",
+        "listings_rels_media_id_idx": {
+          "name": "listings_rels_media_id_idx",
           "columns": [
             {
-              "expression": "medias_id",
+              "expression": "media_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -415,10 +415,10 @@
         }
       },
       "foreignKeys": {
-        "annonces_rels_parent_fk": {
-          "name": "annonces_rels_parent_fk",
-          "tableFrom": "annonces_rels",
-          "tableTo": "annonces",
+        "listings_rels_parent_fk": {
+          "name": "listings_rels_parent_fk",
+          "tableFrom": "listings_rels",
+          "tableTo": "listings",
           "columnsFrom": [
             "parent_id"
           ],
@@ -428,12 +428,12 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "annonces_rels_medias_fk": {
-          "name": "annonces_rels_medias_fk",
-          "tableFrom": "annonces_rels",
-          "tableTo": "medias",
+        "listings_rels_media_fk": {
+          "name": "listings_rels_media_fk",
+          "tableFrom": "listings_rels",
+          "tableTo": "media",
           "columnsFrom": [
-            "medias_id"
+            "media_id"
           ],
           "columnsTo": [
             "id"
@@ -448,8 +448,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._annonces_v_version_equipements": {
-      "name": "_annonces_v_version_equipements",
+    "public._listings_v_version_features": {
+      "name": "_listings_v_version_features",
       "schema": "",
       "columns": {
         "_order": {
@@ -476,13 +476,13 @@
           "primaryKey": false,
           "notNull": false
         },
-        "icone": {
-          "name": "icone",
-          "type": "enum__annonces_v_version_equipements_icone",
+        "icon": {
+          "name": "icon",
+          "type": "enum__listings_v_version_features_icon",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'neutre'"
+          "default": "'neutral'"
         },
         "_uuid": {
           "name": "_uuid",
@@ -492,8 +492,8 @@
         }
       },
       "indexes": {
-        "_annonces_v_version_equipements_order_idx": {
-          "name": "_annonces_v_version_equipements_order_idx",
+        "_listings_v_version_features_order_idx": {
+          "name": "_listings_v_version_features_order_idx",
           "columns": [
             {
               "expression": "_order",
@@ -507,8 +507,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_equipements_parent_id_idx": {
-          "name": "_annonces_v_version_equipements_parent_id_idx",
+        "_listings_v_version_features_parent_id_idx": {
+          "name": "_listings_v_version_features_parent_id_idx",
           "columns": [
             {
               "expression": "_parent_id",
@@ -524,10 +524,10 @@
         }
       },
       "foreignKeys": {
-        "_annonces_v_version_equipements_parent_id_fk": {
-          "name": "_annonces_v_version_equipements_parent_id_fk",
-          "tableFrom": "_annonces_v_version_equipements",
-          "tableTo": "_annonces_v",
+        "_listings_v_version_features_parent_id_fk": {
+          "name": "_listings_v_version_features_parent_id_fk",
+          "tableFrom": "_listings_v_version_features",
+          "tableTo": "_listings_v",
           "columnsFrom": [
             "_parent_id"
           ],
@@ -544,8 +544,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._annonces_v": {
-      "name": "_annonces_v",
+    "public._listings_v": {
+      "name": "_listings_v",
       "schema": "",
       "columns": {
         "id": {
@@ -566,78 +566,78 @@
           "primaryKey": false,
           "notNull": false
         },
-        "version_offre": {
-          "name": "version_offre",
-          "type": "enum__annonces_v_version_offre",
+        "version_offer": {
+          "name": "version_offer",
+          "type": "enum__listings_v_version_offer",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
-          "default": "'location'"
+          "default": "'rent'"
         },
-        "version_disponible": {
-          "name": "version_disponible",
+        "version_available": {
+          "name": "version_available",
           "type": "boolean",
           "primaryKey": false,
           "notNull": false,
           "default": true
         },
-        "version_ordre": {
-          "name": "version_ordre",
+        "version_order": {
+          "name": "version_order",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "version_titre": {
-          "name": "version_titre",
+        "version_title": {
+          "name": "version_title",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_titre_court": {
-          "name": "version_titre_court",
+        "version_short_title": {
+          "name": "version_short_title",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
         "version_type": {
           "name": "version_type",
-          "type": "enum__annonces_v_version_type",
+          "type": "enum__listings_v_version_type",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
-        "version_chambres": {
-          "name": "version_chambres",
+        "version_bedrooms": {
+          "name": "version_bedrooms",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "version_salles_de_bain": {
-          "name": "version_salles_de_bain",
+        "version_bathrooms": {
+          "name": "version_bathrooms",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "version_localisation": {
-          "name": "version_localisation",
+        "version_location": {
+          "name": "version_location",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_repere": {
-          "name": "version_repere",
+        "version_landmark": {
+          "name": "version_landmark",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_resume": {
-          "name": "version_resume",
+        "version_summary": {
+          "name": "version_summary",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "version_prix_affiche": {
-          "name": "version_prix_affiche",
+        "version_price": {
+          "name": "version_price",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -668,7 +668,7 @@
         },
         "version__status": {
           "name": "version__status",
-          "type": "enum__annonces_v_version_status",
+          "type": "enum__listings_v_version_status",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": false,
@@ -696,8 +696,8 @@
         }
       },
       "indexes": {
-        "_annonces_v_parent_idx": {
-          "name": "_annonces_v_parent_idx",
+        "_listings_v_parent_idx": {
+          "name": "_listings_v_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -711,8 +711,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_version_slug_idx": {
-          "name": "_annonces_v_version_version_slug_idx",
+        "_listings_v_version_version_slug_idx": {
+          "name": "_listings_v_version_version_slug_idx",
           "columns": [
             {
               "expression": "version_slug",
@@ -726,8 +726,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_version_video_idx": {
-          "name": "_annonces_v_version_version_video_idx",
+        "_listings_v_version_version_video_idx": {
+          "name": "_listings_v_version_version_video_idx",
           "columns": [
             {
               "expression": "version_video_id",
@@ -741,8 +741,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_version_updated_at_idx": {
-          "name": "_annonces_v_version_version_updated_at_idx",
+        "_listings_v_version_version_updated_at_idx": {
+          "name": "_listings_v_version_version_updated_at_idx",
           "columns": [
             {
               "expression": "version_updated_at",
@@ -756,8 +756,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_version_created_at_idx": {
-          "name": "_annonces_v_version_version_created_at_idx",
+        "_listings_v_version_version_created_at_idx": {
+          "name": "_listings_v_version_version_created_at_idx",
           "columns": [
             {
               "expression": "version_created_at",
@@ -771,8 +771,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_version_version__status_idx": {
-          "name": "_annonces_v_version_version__status_idx",
+        "_listings_v_version_version__status_idx": {
+          "name": "_listings_v_version_version__status_idx",
           "columns": [
             {
               "expression": "version__status",
@@ -786,8 +786,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_created_at_idx": {
-          "name": "_annonces_v_created_at_idx",
+        "_listings_v_created_at_idx": {
+          "name": "_listings_v_created_at_idx",
           "columns": [
             {
               "expression": "created_at",
@@ -801,8 +801,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_updated_at_idx": {
-          "name": "_annonces_v_updated_at_idx",
+        "_listings_v_updated_at_idx": {
+          "name": "_listings_v_updated_at_idx",
           "columns": [
             {
               "expression": "updated_at",
@@ -816,8 +816,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_latest_idx": {
-          "name": "_annonces_v_latest_idx",
+        "_listings_v_latest_idx": {
+          "name": "_listings_v_latest_idx",
           "columns": [
             {
               "expression": "latest",
@@ -833,10 +833,10 @@
         }
       },
       "foreignKeys": {
-        "_annonces_v_parent_id_annonces_id_fk": {
-          "name": "_annonces_v_parent_id_annonces_id_fk",
-          "tableFrom": "_annonces_v",
-          "tableTo": "annonces",
+        "_listings_v_parent_id_listings_id_fk": {
+          "name": "_listings_v_parent_id_listings_id_fk",
+          "tableFrom": "_listings_v",
+          "tableTo": "listings",
           "columnsFrom": [
             "parent_id"
           ],
@@ -846,9 +846,9 @@
           "onDelete": "set null",
           "onUpdate": "no action"
         },
-        "_annonces_v_version_video_id_videos_id_fk": {
-          "name": "_annonces_v_version_video_id_videos_id_fk",
-          "tableFrom": "_annonces_v",
+        "_listings_v_version_video_id_videos_id_fk": {
+          "name": "_listings_v_version_video_id_videos_id_fk",
+          "tableFrom": "_listings_v",
           "tableTo": "videos",
           "columnsFrom": [
             "version_video_id"
@@ -866,8 +866,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public._annonces_v_rels": {
-      "name": "_annonces_v_rels",
+    "public._listings_v_rels": {
+      "name": "_listings_v_rels",
       "schema": "",
       "columns": {
         "id": {
@@ -894,16 +894,16 @@
           "primaryKey": false,
           "notNull": true
         },
-        "medias_id": {
-          "name": "medias_id",
+        "media_id": {
+          "name": "media_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
         }
       },
       "indexes": {
-        "_annonces_v_rels_order_idx": {
-          "name": "_annonces_v_rels_order_idx",
+        "_listings_v_rels_order_idx": {
+          "name": "_listings_v_rels_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -917,8 +917,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_rels_parent_idx": {
-          "name": "_annonces_v_rels_parent_idx",
+        "_listings_v_rels_parent_idx": {
+          "name": "_listings_v_rels_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -932,8 +932,8 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_rels_path_idx": {
-          "name": "_annonces_v_rels_path_idx",
+        "_listings_v_rels_path_idx": {
+          "name": "_listings_v_rels_path_idx",
           "columns": [
             {
               "expression": "path",
@@ -947,11 +947,11 @@
           "method": "btree",
           "with": {}
         },
-        "_annonces_v_rels_medias_id_idx": {
-          "name": "_annonces_v_rels_medias_id_idx",
+        "_listings_v_rels_media_id_idx": {
+          "name": "_listings_v_rels_media_id_idx",
           "columns": [
             {
-              "expression": "medias_id",
+              "expression": "media_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -964,10 +964,10 @@
         }
       },
       "foreignKeys": {
-        "_annonces_v_rels_parent_fk": {
-          "name": "_annonces_v_rels_parent_fk",
-          "tableFrom": "_annonces_v_rels",
-          "tableTo": "_annonces_v",
+        "_listings_v_rels_parent_fk": {
+          "name": "_listings_v_rels_parent_fk",
+          "tableFrom": "_listings_v_rels",
+          "tableTo": "_listings_v",
           "columnsFrom": [
             "parent_id"
           ],
@@ -977,12 +977,12 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "_annonces_v_rels_medias_fk": {
-          "name": "_annonces_v_rels_medias_fk",
-          "tableFrom": "_annonces_v_rels",
-          "tableTo": "medias",
+        "_listings_v_rels_media_fk": {
+          "name": "_listings_v_rels_media_fk",
+          "tableFrom": "_listings_v_rels",
+          "tableTo": "media",
           "columnsFrom": [
-            "medias_id"
+            "media_id"
           ],
           "columnsTo": [
             "id"
@@ -997,8 +997,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.medias": {
-      "name": "medias",
+    "public.media": {
+      "name": "media",
       "schema": "",
       "columns": {
         "id": {
@@ -1081,38 +1081,38 @@
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_url": {
-          "name": "sizes_carte_url",
+        "sizes_card_url": {
+          "name": "sizes_card_url",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_width": {
-          "name": "sizes_carte_width",
+        "sizes_card_width": {
+          "name": "sizes_card_width",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_height": {
-          "name": "sizes_carte_height",
+        "sizes_card_height": {
+          "name": "sizes_card_height",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_mime_type": {
-          "name": "sizes_carte_mime_type",
+        "sizes_card_mime_type": {
+          "name": "sizes_card_mime_type",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_filesize": {
-          "name": "sizes_carte_filesize",
+        "sizes_card_filesize": {
+          "name": "sizes_card_filesize",
           "type": "numeric",
           "primaryKey": false,
           "notNull": false
         },
-        "sizes_carte_filename": {
-          "name": "sizes_carte_filename",
+        "sizes_card_filename": {
+          "name": "sizes_card_filename",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -1155,8 +1155,8 @@
         }
       },
       "indexes": {
-        "medias_updated_at_idx": {
-          "name": "medias_updated_at_idx",
+        "media_updated_at_idx": {
+          "name": "media_updated_at_idx",
           "columns": [
             {
               "expression": "updated_at",
@@ -1170,8 +1170,8 @@
           "method": "btree",
           "with": {}
         },
-        "medias_created_at_idx": {
-          "name": "medias_created_at_idx",
+        "media_created_at_idx": {
+          "name": "media_created_at_idx",
           "columns": [
             {
               "expression": "created_at",
@@ -1185,8 +1185,8 @@
           "method": "btree",
           "with": {}
         },
-        "medias_filename_idx": {
-          "name": "medias_filename_idx",
+        "media_filename_idx": {
+          "name": "media_filename_idx",
           "columns": [
             {
               "expression": "filename",
@@ -1200,11 +1200,11 @@
           "method": "btree",
           "with": {}
         },
-        "medias_sizes_carte_sizes_carte_filename_idx": {
-          "name": "medias_sizes_carte_sizes_carte_filename_idx",
+        "media_sizes_card_sizes_card_filename_idx": {
+          "name": "media_sizes_card_sizes_card_filename_idx",
           "columns": [
             {
-              "expression": "sizes_carte_filename",
+              "expression": "sizes_card_filename",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -1215,8 +1215,8 @@
           "method": "btree",
           "with": {}
         },
-        "medias_sizes_hero_sizes_hero_filename_idx": {
-          "name": "medias_sizes_hero_sizes_hero_filename_idx",
+        "media_sizes_hero_sizes_hero_filename_idx": {
+          "name": "media_sizes_hero_sizes_hero_filename_idx",
           "columns": [
             {
               "expression": "sizes_hero_filename",
@@ -1248,8 +1248,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "legende": {
-          "name": "legende",
+        "caption": {
+          "name": "caption",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -1475,8 +1475,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "nom": {
-          "name": "nom",
+        "name": {
+          "name": "name",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -1487,7 +1487,7 @@
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": true,
-          "default": "'editeur'"
+          "default": "'editor'"
         },
         "updated_at": {
           "name": "updated_at",
@@ -1761,14 +1761,14 @@
           "primaryKey": false,
           "notNull": true
         },
-        "annonces_id": {
-          "name": "annonces_id",
+        "listings_id": {
+          "name": "listings_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
         },
-        "medias_id": {
-          "name": "medias_id",
+        "media_id": {
+          "name": "media_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -1832,11 +1832,11 @@
           "method": "btree",
           "with": {}
         },
-        "payload_locked_documents_rels_annonces_id_idx": {
-          "name": "payload_locked_documents_rels_annonces_id_idx",
+        "payload_locked_documents_rels_listings_id_idx": {
+          "name": "payload_locked_documents_rels_listings_id_idx",
           "columns": [
             {
-              "expression": "annonces_id",
+              "expression": "listings_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -1847,11 +1847,11 @@
           "method": "btree",
           "with": {}
         },
-        "payload_locked_documents_rels_medias_id_idx": {
-          "name": "payload_locked_documents_rels_medias_id_idx",
+        "payload_locked_documents_rels_media_id_idx": {
+          "name": "payload_locked_documents_rels_media_id_idx",
           "columns": [
             {
-              "expression": "medias_id",
+              "expression": "media_id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -1907,12 +1907,12 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "payload_locked_documents_rels_annonces_fk": {
-          "name": "payload_locked_documents_rels_annonces_fk",
+        "payload_locked_documents_rels_listings_fk": {
+          "name": "payload_locked_documents_rels_listings_fk",
           "tableFrom": "payload_locked_documents_rels",
-          "tableTo": "annonces",
+          "tableTo": "listings",
           "columnsFrom": [
-            "annonces_id"
+            "listings_id"
           ],
           "columnsTo": [
             "id"
@@ -1920,12 +1920,12 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "payload_locked_documents_rels_medias_fk": {
-          "name": "payload_locked_documents_rels_medias_fk",
+        "payload_locked_documents_rels_media_fk": {
+          "name": "payload_locked_documents_rels_media_fk",
           "tableFrom": "payload_locked_documents_rels",
-          "tableTo": "medias",
+          "tableTo": "media",
           "columnsFrom": [
-            "medias_id"
+            "media_id"
           ],
           "columnsTo": [
             "id"
@@ -2266,88 +2266,88 @@
     }
   },
   "enums": {
-    "public.enum_annonces_equipements_icone": {
-      "name": "enum_annonces_equipements_icone",
+    "public.enum_listings_features_icon": {
+      "name": "enum_listings_features_icon",
       "schema": "public",
       "values": [
-        "neutre",
-        "chambre",
-        "sdb",
-        "eauChaude",
-        "cuisine",
-        "frigo",
-        "laver",
-        "climatisation",
+        "neutral",
+        "bedroom",
+        "bathroom",
+        "hotWater",
+        "kitchen",
+        "fridge",
+        "washer",
+        "airConditioning",
         "wifi",
-        "meuble",
-        "securite",
+        "furnished",
+        "security",
         "parking",
-        "electricite",
-        "ascenseur"
+        "electricity",
+        "elevator"
       ]
     },
-    "public.enum_annonces_offre": {
-      "name": "enum_annonces_offre",
+    "public.enum_listings_offer": {
+      "name": "enum_listings_offer",
       "schema": "public",
       "values": [
-        "location",
-        "vente"
+        "rent",
+        "sale"
       ]
     },
-    "public.enum_annonces_type": {
-      "name": "enum_annonces_type",
+    "public.enum_listings_type": {
+      "name": "enum_listings_type",
       "schema": "public",
       "values": [
-        "meuble",
-        "non-meuble"
+        "furnished",
+        "unfurnished"
       ]
     },
-    "public.enum_annonces_status": {
-      "name": "enum_annonces_status",
+    "public.enum_listings_status": {
+      "name": "enum_listings_status",
       "schema": "public",
       "values": [
         "draft",
         "published"
       ]
     },
-    "public.enum__annonces_v_version_equipements_icone": {
-      "name": "enum__annonces_v_version_equipements_icone",
+    "public.enum__listings_v_version_features_icon": {
+      "name": "enum__listings_v_version_features_icon",
       "schema": "public",
       "values": [
-        "neutre",
-        "chambre",
-        "sdb",
-        "eauChaude",
-        "cuisine",
-        "frigo",
-        "laver",
-        "climatisation",
+        "neutral",
+        "bedroom",
+        "bathroom",
+        "hotWater",
+        "kitchen",
+        "fridge",
+        "washer",
+        "airConditioning",
         "wifi",
-        "meuble",
-        "securite",
+        "furnished",
+        "security",
         "parking",
-        "electricite",
-        "ascenseur"
+        "electricity",
+        "elevator"
       ]
     },
-    "public.enum__annonces_v_version_offre": {
-      "name": "enum__annonces_v_version_offre",
+    "public.enum__listings_v_version_offer": {
+      "name": "enum__listings_v_version_offer",
       "schema": "public",
       "values": [
-        "location",
-        "vente"
+        "rent",
+        "sale"
       ]
     },
-    "public.enum__annonces_v_version_type": {
-      "name": "enum__annonces_v_version_type",
+    "public.enum__listings_v_version_type": {
+      "name": "enum__listings_v_version_type",
       "schema": "public",
       "values": [
-        "meuble",
-        "non-meuble"
+        "furnished",
+        "unfurnished"
       ]
     },
-    "public.enum__annonces_v_version_status": {
-      "name": "enum__annonces_v_version_status",
+    "public.enum__listings_v_version_status": {
+      "name": "enum__listings_v_version_status",
       "schema": "public",
       "values": [
         "draft",
@@ -2359,7 +2359,7 @@
       "schema": "public",
       "values": [
         "admin",
-        "editeur"
+        "editor"
       ]
     }
   },
@@ -2373,6 +2373,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "995a8124-4868-490e-88e9-98c187c69bf6",
+  "id": "c44d42d1-6d55-4156-82e4-8cd8e1fadc19",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

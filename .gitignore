@@ -44,5 +44,5 @@ next-env.d.ts
 .netlify
 
 # Payload — uploads en stockage disque local (prod = Vercel Blob)
-/medias
+/media
 /videos

@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
 import { useField } from "@payloadcms/ui";
-import { EQUIPEMENT_ICONS, EQUIPEMENT_ICONE_DEFAUT } from "@/lib/equipementIcons";
+import { FEATURE_ICONS, DEFAULT_FEATURE_ICON } from "@/lib/featureIcons";
 
 /**
- * Sélecteur d'icône visuel pour une caractéristique.
- * Remplace le champ `icone` (select) : grille d'icônes Lucide cliquables,
- * icône neutre sélectionnée par défaut.
+ * Visual icon picker for a feature.
+ * Replaces the `icon` select field: a grid of clickable Lucide icons,
+ * neutral icon selected by default.
  */
 export function IconPicker() {
-  // Sans `path` explicite, le hook résout le chemin via le contexte du champ
-  // (correct même lors du réordonnancement des lignes du tableau).
+  // Without an explicit `path`, the hook resolves it from the field context
+  // (correct even when array rows are reordered).
   const { value, setValue } = useField<string>({});
-  const current = value || EQUIPEMENT_ICONE_DEFAUT;
+  const current = value || DEFAULT_FEATURE_ICON;
 
   return (
     <div className="field-type" style={{ marginBottom: 0 }}>
@@ -20,7 +20,7 @@ export function IconPicker() {
         Icône
       </label>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-        {Object.entries(EQUIPEMENT_ICONS).map(([key, { label, Icon }]) => {
+        {Object.entries(FEATURE_ICONS).map(([key, { label, Icon }]) => {
           const active = current === key;
           return (
             <button

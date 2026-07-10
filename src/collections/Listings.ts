@@ -1,13 +1,8 @@
-import type { Access, CollectionConfig } from 'payload'
-import { estConnecte } from './acces'
-import { equipementIconeOptions, EQUIPEMENT_ICONE_DEFAUT } from '../lib/equipementIcons'
+import type { CollectionConfig } from 'payload'
+import { isAuthenticated } from './access'
+import { featureIconOptions, DEFAULT_FEATURE_ICON } from '../lib/featureIcons'
 
-// Public : seules les annonces publiées sont lisibles (y compris via l'API REST brute).
-// Connecté (admin/éditeur) : accès à tout, brouillons compris.
-const lectureAnnonces: Access = ({ req }) =>
-  req.user ? true : { _status: { equals: 'published' } }
-
-const slugifier = (v: string) =>
+const slugify = (v: string) =>
   v
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -16,55 +11,58 @@ const slugifier = (v: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
-const cheminBase = (offre: string) =>
-  offre === 'vente'
+// Maps the offer type to its (French, SEO) public URL base.
+const urlBase = (offer: string) =>
+  offer === 'sale'
     ? '/nos-offres/vente-dappartements'
     : '/nos-offres/location-dappartements'
 
-const revalider = async (
-  doc: { offre?: string; slug?: string },
-  previousDoc?: { offre?: string; slug?: string },
+const revalidate = async (
+  doc: { offer?: string; slug?: string },
+  previousDoc?: { offer?: string; slug?: string },
 ) => {
   try {
     const { revalidatePath } = await import('next/cache')
-    const base = cheminBase(doc.offre ?? 'location')
+    const base = urlBase(doc.offer ?? 'rent')
     revalidatePath(base)
     if (doc.slug) revalidatePath(`${base}/${doc.slug}`)
     if (previousDoc?.slug && previousDoc.slug !== doc.slug) {
-      revalidatePath(`${cheminBase(previousDoc.offre ?? 'location')}/${previousDoc.slug}`)
+      revalidatePath(`${urlBase(previousDoc.offer ?? 'rent')}/${previousDoc.slug}`)
     }
   } catch {
-    /* hors contexte Next (ex. script de migration) : ignorer */
+    /* outside a Next context (e.g. migration script): ignore */
   }
 }
 
-export const Annonces: CollectionConfig = {
-  slug: 'annonces',
+export const Listings: CollectionConfig = {
+  slug: 'listings',
   labels: { singular: 'Annonce', plural: 'Annonces' },
   admin: {
-    useAsTitle: 'titre',
-    defaultColumns: ['titre', 'offre', 'type', 'chambres', 'disponible', '_status'],
+    useAsTitle: 'title',
+    defaultColumns: ['title', 'offer', 'type', 'bedrooms', 'available', '_status'],
     group: 'Contenu',
     hideAPIURL: true,
   },
-  versions: { drafts: true }, // brouillon / publié
+  versions: { drafts: true }, // draft / published
   access: {
-    read: lectureAnnonces, // public → published uniquement ; connecté → tout (brouillons compris)
-    create: estConnecte,
-    update: estConnecte,
-    delete: estConnecte,
+    // Public → published only (also over the raw REST/GraphQL API);
+    // authenticated (admin/editor) → everything, drafts included.
+    read: ({ req }) => (req.user ? true : { _status: { equals: 'published' } }),
+    create: isAuthenticated,
+    update: isAuthenticated,
+    delete: isAuthenticated,
   },
   hooks: {
     afterChange: [
       ({ doc, previousDoc, req }) => {
         if (req.context?.skipRevalidation) return
-        void revalider(doc, previousDoc)
+        void revalidate(doc, previousDoc)
       },
     ],
-    afterDelete: [({ doc }) => void revalider(doc)],
+    afterDelete: [({ doc }) => void revalidate(doc)],
   },
   fields: [
-    // ---- Barre latérale (publication & tri) ----
+    // ---- Sidebar (publishing & ordering) ----
     {
       name: 'slug',
       type: 'text',
@@ -76,34 +74,36 @@ export const Annonces: CollectionConfig = {
       },
       hooks: {
         beforeValidate: [
-          ({ value, data }) => value || (data?.titre ? slugifier(data.titre) : value),
+          ({ value, data }) => value || (data?.title ? slugify(data.title) : value),
         ],
       },
     },
     {
-      name: 'offre',
+      name: 'offer',
       type: 'select',
       required: true,
-      defaultValue: 'location',
+      defaultValue: 'rent',
+      label: 'Offre',
       options: [
-        { label: 'Location', value: 'location' },
-        { label: 'Vente', value: 'vente' },
+        { label: 'Location', value: 'rent' },
+        { label: 'Vente', value: 'sale' },
       ],
       admin: { position: 'sidebar' },
     },
     {
-      name: 'disponible',
+      name: 'available',
       type: 'checkbox',
       defaultValue: true,
       label: 'Disponible',
       admin: { position: 'sidebar', description: 'Décocher pour retirer l’annonce du site.' },
     },
     {
-      name: 'ordre',
+      name: 'order',
       type: 'number',
+      label: 'Ordre',
       admin: { position: 'sidebar', description: 'Tri croissant sur la page.' },
     },
-    // ---- Contenu principal (onglets) ----
+    // ---- Main content (tabs) ----
     {
       type: 'tabs',
       tabs: [
@@ -111,9 +111,9 @@ export const Annonces: CollectionConfig = {
           label: 'Informations',
           description: 'Le titre, la localisation et les caractéristiques de l’appartement.',
           fields: [
-            { name: 'titre', type: 'text', required: true },
+            { name: 'title', type: 'text', required: true, label: 'Titre' },
             {
-              name: 'titreCourt',
+              name: 'shortTitle',
               type: 'text',
               label: 'Titre court (cartes / listes)',
               admin: { description: 'Ex. : « Luxueux meublé · 2 ch »' },
@@ -122,35 +122,30 @@ export const Annonces: CollectionConfig = {
               name: 'type',
               type: 'select',
               required: true,
+              label: 'Type',
               options: [
-                { label: 'Meublé', value: 'meuble' },
-                { label: 'Non meublé', value: 'non-meuble' },
+                { label: 'Meublé', value: 'furnished' },
+                { label: 'Non meublé', value: 'unfurnished' },
               ],
             },
             {
               type: 'row',
               fields: [
-                { name: 'chambres', type: 'number', required: true, min: 0, admin: { width: '50%' } },
-                {
-                  name: 'sallesDeBain',
-                  type: 'number',
-                  required: true,
-                  min: 0,
-                  label: 'Salles de bain',
-                  admin: { width: '50%' },
-                },
+                { name: 'bedrooms', type: 'number', required: true, min: 0, label: 'Chambres', admin: { width: '50%' } },
+                { name: 'bathrooms', type: 'number', required: true, min: 0, label: 'Salles de bain', admin: { width: '50%' } },
               ],
             },
             {
               type: 'row',
               fields: [
                 {
-                  name: 'localisation',
+                  name: 'location',
                   type: 'text',
+                  label: 'Localisation',
                   admin: { width: '50%', description: 'Ex. : Plaza Platinium, Kipé' },
                 },
                 {
-                  name: 'repere',
+                  name: 'landmark',
                   type: 'text',
                   label: 'Point de repère (optionnel)',
                   admin: { width: '50%', description: 'Ex. : proximité Radisson Blu' },
@@ -158,13 +153,13 @@ export const Annonces: CollectionConfig = {
               ],
             },
             {
-              name: 'resume',
+              name: 'summary',
               type: 'textarea',
               label: 'Résumé (affiché sur la carte)',
               maxLength: 300,
             },
             {
-              name: 'equipements',
+              name: 'features',
               type: 'array',
               label: 'Caractéristiques',
               labels: { singular: 'Caractéristique', plural: 'Caractéristiques' },
@@ -177,19 +172,14 @@ export const Annonces: CollectionConfig = {
                 {
                   type: 'row',
                   fields: [
+                    { name: 'label', type: 'text', required: true, label: 'Texte', admin: { width: '55%' } },
                     {
-                      name: 'label',
-                      type: 'text',
-                      required: true,
-                      label: 'Texte',
-                      admin: { width: '55%' },
-                    },
-                    {
-                      name: 'icone',
+                      name: 'icon',
                       type: 'select',
                       required: true,
-                      defaultValue: EQUIPEMENT_ICONE_DEFAUT,
-                      options: equipementIconeOptions,
+                      defaultValue: DEFAULT_FEATURE_ICON,
+                      label: 'Icône',
+                      options: featureIconOptions,
                       admin: {
                         width: '45%',
                         components: { Field: '/components/payload/IconPicker#IconPicker' },
@@ -199,7 +189,7 @@ export const Annonces: CollectionConfig = {
                 },
               ],
             },
-            { name: 'prixAffiche', type: 'text', label: 'Prix affiché (optionnel)' },
+            { name: 'price', type: 'text', label: 'Prix affiché (optionnel)' },
             {
               name: 'description',
               type: 'textarea',
@@ -214,13 +204,7 @@ export const Annonces: CollectionConfig = {
           label: 'Photos & vidéo',
           description: 'La galerie de photos et la vidéo de présentation.',
           fields: [
-            {
-              name: 'galerie',
-              type: 'upload',
-              relationTo: 'medias',
-              hasMany: true,
-              label: 'Galerie photos',
-            },
+            { name: 'gallery', type: 'upload', relationTo: 'media', hasMany: true, label: 'Galerie photos' },
             { name: 'video', type: 'upload', relationTo: 'videos', label: 'Vidéo (optionnel)' },
           ],
         },

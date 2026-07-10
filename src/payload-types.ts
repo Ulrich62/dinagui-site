@@ -67,8 +67,8 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    annonces: Annonce;
-    medias: Media;
+    listings: Listing;
+    media: Media;
     videos: Video;
     users: User;
     'payload-kv': PayloadKv;
@@ -78,8 +78,8 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    annonces: AnnoncesSelect<false> | AnnoncesSelect<true>;
-    medias: MediasSelect<false> | MediasSelect<true>;
+    listings: ListingsSelect<false> | ListingsSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
     videos: VideosSelect<false> | VideosSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -123,70 +123,70 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "annonces".
+ * via the `definition` "listings".
  */
-export interface Annonce {
+export interface Listing {
   id: number;
   /**
    * Généré depuis le titre si laissé vide. Fait partie de l’URL.
    */
   slug?: string | null;
-  offre: 'location' | 'vente';
+  offer: 'rent' | 'sale';
   /**
    * Décocher pour retirer l’annonce du site.
    */
-  disponible?: boolean | null;
+  available?: boolean | null;
   /**
    * Tri croissant sur la page.
    */
-  ordre?: number | null;
-  titre: string;
+  order?: number | null;
+  title: string;
   /**
    * Ex. : « Luxueux meublé · 2 ch »
    */
-  titreCourt?: string | null;
-  type: 'meuble' | 'non-meuble';
-  chambres: number;
-  sallesDeBain: number;
+  shortTitle?: string | null;
+  type: 'furnished' | 'unfurnished';
+  bedrooms: number;
+  bathrooms: number;
   /**
    * Ex. : Plaza Platinium, Kipé
    */
-  localisation?: string | null;
+  location?: string | null;
   /**
    * Ex. : proximité Radisson Blu
    */
-  repere?: string | null;
-  resume?: string | null;
+  landmark?: string | null;
+  summary?: string | null;
   /**
    * Ajoutez une caractéristique et choisissez une icône pour chacune (icône neutre par défaut).
    */
-  equipements?:
+  features?:
     | {
         label: string;
-        icone:
-          | 'neutre'
-          | 'chambre'
-          | 'sdb'
-          | 'eauChaude'
-          | 'cuisine'
-          | 'frigo'
-          | 'laver'
-          | 'climatisation'
+        icon:
+          | 'neutral'
+          | 'bedroom'
+          | 'bathroom'
+          | 'hotWater'
+          | 'kitchen'
+          | 'fridge'
+          | 'washer'
+          | 'airConditioning'
           | 'wifi'
-          | 'meuble'
-          | 'securite'
+          | 'furnished'
+          | 'security'
           | 'parking'
-          | 'electricite'
-          | 'ascenseur';
+          | 'electricity'
+          | 'elevator';
         id?: string | null;
       }[]
     | null;
-  prixAffiche?: string | null;
+  price?: string | null;
   /**
    * Texte affiché dans la section « Description » de la page de l’annonce.
    */
   description?: string | null;
-  galerie?: (number | Media)[] | null;
+  gallery?: (number | Media)[] | null;
   video?: (number | null) | Video;
   updatedAt: string;
   createdAt: string;
@@ -194,7 +194,7 @@ export interface Annonce {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "medias".
+ * via the `definition` "media".
  */
 export interface Media {
   id: number;
@@ -214,7 +214,7 @@ export interface Media {
   focalX?: number | null;
   focalY?: number | null;
   sizes?: {
-    carte?: {
+    card?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -240,7 +240,7 @@ export interface Media {
  */
 export interface Video {
   id: number;
-  legende?: string | null;
+  caption?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -259,8 +259,8 @@ export interface Video {
  */
 export interface User {
   id: number;
-  nom?: string | null;
-  role: 'admin' | 'editeur';
+  name?: string | null;
+  role: 'admin' | 'editor';
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -305,11 +305,11 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'annonces';
-        value: number | Annonce;
+        relationTo: 'listings';
+        value: number | Listing;
       } | null)
     | ({
-        relationTo: 'medias';
+        relationTo: 'media';
         value: number | Media;
       } | null)
     | ({
@@ -364,31 +364,31 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "annonces_select".
+ * via the `definition` "listings_select".
  */
-export interface AnnoncesSelect<T extends boolean = true> {
+export interface ListingsSelect<T extends boolean = true> {
   slug?: T;
-  offre?: T;
-  disponible?: T;
-  ordre?: T;
-  titre?: T;
-  titreCourt?: T;
+  offer?: T;
+  available?: T;
+  order?: T;
+  title?: T;
+  shortTitle?: T;
   type?: T;
-  chambres?: T;
-  sallesDeBain?: T;
-  localisation?: T;
-  repere?: T;
-  resume?: T;
-  equipements?:
+  bedrooms?: T;
+  bathrooms?: T;
+  location?: T;
+  landmark?: T;
+  summary?: T;
+  features?:
     | T
     | {
         label?: T;
-        icone?: T;
+        icon?: T;
         id?: T;
       };
-  prixAffiche?: T;
+  price?: T;
   description?: T;
-  galerie?: T;
+  gallery?: T;
   video?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -396,9 +396,9 @@ export interface AnnoncesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "medias_select".
+ * via the `definition` "media_select".
  */
-export interface MediasSelect<T extends boolean = true> {
+export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -414,7 +414,7 @@ export interface MediasSelect<T extends boolean = true> {
   sizes?:
     | T
     | {
-        carte?:
+        card?:
           | T
           | {
               url?: T;
@@ -441,7 +441,7 @@ export interface MediasSelect<T extends boolean = true> {
  * via the `definition` "videos_select".
  */
 export interface VideosSelect<T extends boolean = true> {
-  legende?: T;
+  caption?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -459,7 +459,7 @@ export interface VideosSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  nom?: T;
+  name?: T;
   role?: T;
   updatedAt?: T;
   createdAt?: T;

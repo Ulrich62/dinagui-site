@@ -10,9 +10,9 @@ import {
 } from "react-icons/fi";
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
-import { equipementIcon } from "@/lib/equipementIcons";
+import { featureIcon } from "@/lib/featureIcons";
 import { getOfferCover } from "@/lib/offer";
-import { getOffers, getOfferBySlug, getOfferSlugs } from "@/lib/annonces";
+import { getListings, getListingBySlug, getListingSlugs } from "@/lib/listings";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 // ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
@@ -21,7 +21,7 @@ export const revalidate = 3600;
 type Params = { slug: string };
 
 export async function generateStaticParams(): Promise<Params[]> {
-  const slugs = await getOfferSlugs("location");
+  const slugs = await getListingSlugs("rent");
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -31,7 +31,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const offer = await getOfferBySlug("location", slug);
+  const offer = await getListingBySlug("rent", slug);
   if (!offer) return {};
 
   const cover =
@@ -64,10 +64,10 @@ export default async function RentalDetailPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const offer = await getOfferBySlug("location", slug);
+  const offer = await getListingBySlug("rent", slug);
   if (!offer) notFound();
 
-  const others = (await getOffers("location"))
+  const others = (await getListings("rent"))
     .filter((o) => o.slug !== offer.slug)
     .slice(0, 3);
 
@@ -174,14 +174,14 @@ export default async function RentalDetailPage({
                 {offer.description || offer.summary}
               </p>
 
-              {offer.equipements.length > 0 && (
+              {offer.features.length > 0 && (
                 <>
                   <h3 className="text-xl md:text-2xl font-bold text-[#1f2d3d] font-[Roboto_Condensed] uppercase mb-5">
                     Caractéristiques
                   </h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 mb-10">
-                    {offer.equipements.map((e, i) => {
-                      const Icon = equipementIcon(e.icone);
+                    {offer.features.map((e, i) => {
+                      const Icon = featureIcon(e.icon);
                       return (
                         <li
                           key={i}

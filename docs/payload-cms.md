@@ -16,15 +16,15 @@ sur Vercel Blob.
 | Élément | Emplacement | Rôle |
 | --- | --- | --- |
 | Config Payload | `src/payload.config.ts` | collections, DB, Blob, i18n FR |
-| Collections | `src/collections/` | `Annonces`, `Medias`, `Videos`, `Users` |
-| Couche d'accès front | `src/lib/annonces.ts` | mappe les docs Payload → `RentalOffer` |
+| Collections | `src/collections/` | `Listings`, `Media`, `Videos`, `Users` |
+| Couche d'accès front | `src/lib/listings.ts` | mappe les docs Payload → `Offer` |
 | Boilerplate admin/API | `src/app/(payload)/` | **ne pas modifier** |
 | Site public | `src/app/(site)/` | pages Next existantes |
 | Migrations DB | `src/migrations/` | schéma versionné (appliqué au build) |
-| Script d'import | `scripts/migrer-annonces.ts` | migration one-shot des annonces statiques |
+| Script d'import | `scripts/migrate-listings.ts` | migration one-shot des annonces statiques |
 
 Stockage des médias : **Vercel Blob** dès que `BLOB_READ_WRITE_TOKEN` est
-présent (prod/preview). En local sans token → stockage disque (`/medias`,
+présent (prod/preview). En local sans token → stockage disque (`/media`,
 `/videos`, gitignorés).
 
 ---
@@ -82,7 +82,7 @@ client en rôle **Éditeur**.
 Avec les variables **de production** (Neon + Blob) dans l'environnement :
 
 ```bash
-npx tsx scripts/migrer-annonces.ts
+npx tsx scripts/migrate-listings.ts
 ```
 
 Le script est **idempotent** (il saute les slugs déjà présents). Il importe les

@@ -1,5 +1,5 @@
-/** Forme d'une annonce côté front (mappée depuis Payload par src/lib/annonces.ts). */
-export type Equipement = { label: string; icone: string };
+/** Front-facing shape of a listing (mapped from Payload by src/lib/listings.ts). */
+export type Feature = { label: string; icon: string };
 
 export type Offer = {
   slug: string;
@@ -12,7 +12,7 @@ export type Offer = {
   landmark?: string;
   summary: string;
   description?: string;
-  equipements: Equipement[];
+  features: Feature[];
   photos: string[];
   video?: string;
 };

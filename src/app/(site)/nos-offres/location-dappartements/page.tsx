@@ -12,7 +12,7 @@ import {
 } from "react-icons/fi";
 import PageHero from "@/components/PageHero";
 import RentalGridCard from "@/components/RentalGridCard";
-import { getOffers } from "@/lib/annonces";
+import { getListings } from "@/lib/listings";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 // ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
@@ -92,7 +92,7 @@ const services = [
 ];
 
 export default async function LocationPage() {
-  const rentalOffers = await getOffers("location");
+  const rentalOffers = await getListings("rent");
 
   return (
     <>

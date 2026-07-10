@@ -9,9 +9,9 @@ import { en } from '@payloadcms/translations/languages/en'
 import sharp from 'sharp'
 
 import { Users } from './collections/Users'
-import { Medias } from './collections/Medias'
+import { Media } from './collections/Media'
 import { Videos } from './collections/Videos'
-import { Annonces } from './collections/Annonces'
+import { Listings } from './collections/Listings'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -35,7 +35,7 @@ export default buildConfig({
   },
   i18n: { supportedLanguages: { fr, en }, fallbackLanguage: 'fr' },
   editor: lexicalEditor(),
-  collections: [Annonces, Medias, Videos, Users],
+  collections: [Listings, Media, Videos, Users],
   db: postgresAdapter({
     pool: {
       connectionString:
@@ -51,7 +51,7 @@ export default buildConfig({
     ...(process.env.BLOB_READ_WRITE_TOKEN
       ? [
           vercelBlobStorage({
-            collections: { medias: true, videos: true },
+            collections: { media: true, videos: true },
             token: process.env.BLOB_READ_WRITE_TOKEN,
             // Sur Vercel, un upload passant par le serveur est plafonné à 4,5 Mo ;
             // clientUploads envoie le fichier directement du navigateur vers Blob.

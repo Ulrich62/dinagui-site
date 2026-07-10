@@ -1,31 +1,31 @@
 import type { CollectionConfig } from 'payload'
-import { estConnecte, lecturePublique } from './acces'
+import { isAuthenticated, publicRead } from './access'
 
-export const Medias: CollectionConfig = {
-  slug: 'medias',
+export const Media: CollectionConfig = {
+  slug: 'media',
   labels: { singular: 'Photo', plural: 'Photos' },
   admin: {
     group: 'Médias',
     hideAPIURL: true,
-    // Masqué de la navigation pour l'éditeur (il ajoute les photos depuis l'annonce).
+    // Hidden from the nav for editors (they add photos from the listing).
     hidden: ({ user }) => (user as { role?: string } | undefined)?.role !== 'admin',
   },
   access: {
-    read: lecturePublique,
-    create: estConnecte,
-    update: estConnecte,
-    delete: estConnecte,
+    read: publicRead,
+    create: isAuthenticated,
+    update: isAuthenticated,
+    delete: isAuthenticated,
   },
   upload: {
     mimeTypes: ['image/*'],
     imageSizes: [
-      { name: 'carte', width: 800 },
+      { name: 'card', width: 800 },
       { name: 'hero', width: 1920 },
     ],
   },
   hooks: {
-    // L'upload ne doit jamais être bloqué : si aucun texte alternatif n'est
-    // saisi, on le dérive du nom de fichier (accessibilité minimale garantie).
+    // An upload must never be blocked: if no alt text is provided, derive it
+    // from the filename (guarantees minimal accessibility).
     beforeChange: [
       ({ data }) => {
         if (data && !data.alt) {

@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { estConnecte, lecturePublique } from './acces'
+import { isAuthenticated, publicRead } from './access'
 
 export const Videos: CollectionConfig = {
   slug: 'videos',
@@ -12,13 +12,13 @@ export const Videos: CollectionConfig = {
       'Compresser les vidéos avant upload (idéalement < 40 Mo) : le poids = coût de diffusion + temps de chargement pour les visiteurs.',
   },
   access: {
-    read: lecturePublique,
-    create: estConnecte,
-    update: estConnecte,
-    delete: estConnecte,
+    read: publicRead,
+    create: isAuthenticated,
+    update: isAuthenticated,
+    delete: isAuthenticated,
   },
   upload: { mimeTypes: ['video/mp4', 'video/webm'] },
   fields: [
-    { name: 'legende', type: 'text', label: 'Légende (optionnel)' },
+    { name: 'caption', type: 'text', label: 'Légende (optionnel)' },
   ],
 }

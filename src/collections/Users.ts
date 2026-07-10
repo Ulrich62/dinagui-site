@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { estAdmin, adminOuSoiMeme } from './acces'
+import { isAdmin, adminOrSelf } from './access'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -12,22 +12,22 @@ export const Users: CollectionConfig = {
     hidden: ({ user }) => (user as { role?: string } | undefined)?.role !== 'admin',
   },
   access: {
-    // Admin : voit tous les comptes. Éditeur : ne voit que le sien
-    // (évite qu'un éditeur énumère les emails/rôles des administrateurs).
+    // Admin: reads all accounts. Editor: only their own
+    // (prevents an editor from enumerating admin emails/roles).
     read: ({ req }) => {
       if (!req.user) return false
       if (req.user.role === 'admin') return true
       return { id: { equals: req.user.id } }
     },
-    create: estAdmin,
-    update: adminOuSoiMeme, // l'éditeur peut changer son mot de passe, pas son rôle
-    delete: estAdmin,
+    create: isAdmin,
+    update: adminOrSelf, // an editor can change their password, not their role
+    delete: isAdmin,
   },
   hooks: {
     beforeChange: [
       async ({ req, operation, data }) => {
-        // Le tout premier utilisateur (création initiale) est forcé admin,
-        // sinon personne ne pourrait ensuite créer d'utilisateurs (create = admin only).
+        // The very first user (initial creation) is forced to admin, otherwise
+        // nobody could create further users afterwards (create = admin only).
         if (operation === 'create') {
           const { totalDocs } = await req.payload.count({ collection: 'users' })
           if (totalDocs === 0) data.role = 'admin'
@@ -37,15 +37,16 @@ export const Users: CollectionConfig = {
     ],
   },
   fields: [
-    { name: 'nom', type: 'text' },
+    { name: 'name', type: 'text', label: 'Nom' },
     {
       name: 'role',
       type: 'select',
       required: true,
-      defaultValue: 'editeur',
+      defaultValue: 'editor',
+      label: 'Rôle',
       options: [
         { label: 'Administrateur', value: 'admin' },
-        { label: 'Éditeur', value: 'editeur' },
+        { label: 'Éditeur', value: 'editor' },
       ],
       access: { update: ({ req }) => req.user?.role === 'admin' },
       saveToJWT: true,
