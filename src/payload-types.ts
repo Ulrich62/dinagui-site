@@ -181,7 +181,6 @@ export interface Listing {
         id?: string | null;
       }[]
     | null;
-  price?: string | null;
   /**
    * Texte affiché dans la section « Description » de la page de l’annonce.
    */
@@ -386,7 +385,6 @@ export interface ListingsSelect<T extends boolean = true> {
         icon?: T;
         id?: T;
       };
-  price?: T;
   description?: T;
   gallery?: T;
   video?: T;

@@ -98,3 +98,21 @@ export async function getListingBySlug(
   });
   return docs[0] ? toOffer(docs[0]) : undefined;
 }
+
+/**
+ * A single listing by slug for the admin PREVIEW (draft mode) — returns the
+ * latest version (draft or published), regardless of status/availability.
+ */
+export async function getListingForPreview(
+  slug: string,
+): Promise<Offer | undefined> {
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "listings",
+    draft: true,
+    where: { slug: { equals: slug } },
+    depth: 1,
+    limit: 1,
+  });
+  return docs[0] ? toOffer(docs[0]) : undefined;
+}

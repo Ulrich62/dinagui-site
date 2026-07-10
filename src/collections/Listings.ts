@@ -42,6 +42,10 @@ export const Listings: CollectionConfig = {
     defaultColumns: ['title', 'offer', 'type', 'bedrooms', 'available', '_status'],
     group: 'Contenu',
     hideAPIURL: true,
+    // Bouton « Prévisualiser » : ouvre la page de l'annonce en mode brouillon
+    // (permet de voir le rendu avant publication).
+    preview: (doc) =>
+      doc?.slug ? `/next/preview?slug=${encodeURIComponent(String(doc.slug))}` : null,
   },
   versions: { drafts: true }, // draft / published
   access: {
@@ -189,7 +193,6 @@ export const Listings: CollectionConfig = {
                 },
               ],
             },
-            { name: 'price', type: 'text', label: 'Prix affiché (optionnel)' },
             {
               name: 'description',
               type: 'textarea',

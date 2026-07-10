@@ -10,9 +10,15 @@ import {
 } from "react-icons/fi";
 import RentalMedia from "@/components/RentalMedia";
 import RentalGridCard from "@/components/RentalGridCard";
+import { draftMode } from "next/headers";
 import { featureIcon } from "@/lib/featureIcons";
 import { getOfferCover } from "@/lib/offer";
-import { getListings, getListingBySlug, getListingSlugs } from "@/lib/listings";
+import {
+  getListings,
+  getListingBySlug,
+  getListingSlugs,
+  getListingForPreview,
+} from "@/lib/listings";
 import { breadcrumbList, jsonLdScript } from "@/lib/schema";
 
 // ISR : régénéré à chaque publication (hooks Payload) + filet de sécurité horaire.
@@ -64,7 +70,10 @@ export default async function RentalDetailPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const offer = await getListingBySlug("rent", slug);
+  const { isEnabled: isPreview } = await draftMode();
+  const offer = isPreview
+    ? await getListingForPreview(slug)
+    : await getListingBySlug("rent", slug);
   if (!offer) notFound();
 
   const others = (await getListings("rent"))
@@ -73,6 +82,22 @@ export default async function RentalDetailPage({
 
   return (
     <>
+      {isPreview && (
+        <div className="bg-[#1f2d3d] text-white text-sm font-[Roboto]">
+          <div className="max-w-[1340px] mx-auto px-6 py-2.5 flex items-center justify-between gap-4">
+            <span>
+              <strong className="text-[#F88732]">Mode aperçu</strong> — vous
+              voyez la dernière version (brouillon inclus), non publiée.
+            </span>
+            <a
+              href={`/next/exit-preview?to=/nos-offres/location-dappartements/${offer.slug}`}
+              className="underline hover:text-[#F88732] whitespace-nowrap"
+            >
+              Quitter l’aperçu
+            </a>
+          </div>
+        </div>
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScript(
