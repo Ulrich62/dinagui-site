@@ -21,7 +21,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dinagui-site.vercel.app"),
+  metadataBase: new URL("https://www.dinagui.com"),
   title: "DINAGUI SARL - Un choix sûr et durable",
   description:
     "DINAGUI SARL, votre partenaire de confiance pour l'exécution de projet de construction et d'aménagement en Guinée. BTP, Gestion immobilière, Services pluridisciplinaires.",
