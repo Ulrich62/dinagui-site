@@ -39,7 +39,7 @@ export function BeforeDashboard() {
         </p>
       </div>
       <Link
-        href="/admin/collections/annonces/create"
+        href="/admin/collections/listings/create"
         style={{
           display: 'inline-flex',
           alignItems: 'center',
