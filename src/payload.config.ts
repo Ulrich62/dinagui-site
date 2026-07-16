@@ -17,6 +17,7 @@ const dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || '',
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://www.dinagui.com',
   admin: {
     user: Users.slug,
     theme: 'light',
