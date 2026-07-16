@@ -6,75 +6,49 @@ export const metadata = {
   description: "La page que vous cherchez n'existe pas ou a été déplacée.",
 };
 
+const links = [
+  { href: "/a-propos", label: "À propos" },
+  { href: "/nos-offres/location-dappartements", label: "Nos locations" },
+  { href: "/services/service-btp", label: "Services BTP" },
+  { href: "/contact", label: "Contact" },
+];
+
 export default function NotFound() {
   return (
-    <section
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "48px 24px",
-        background: "linear-gradient(160deg, #0f1c2d 0%, #1f2d3d 60%, #2b3d52 100%)",
-        position: "relative",
-        overflow: "hidden",
-        fontFamily: "'Roboto', sans-serif",
-      }}
-    >
-      {/* Decorative blurred circles */}
+    <section className="min-h-[100vh] flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden bg-[#1f2d3d]">
+      {/* Decorative blobs */}
       <div
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: "-80px",
-          right: "-80px",
-          width: 400,
-          height: 400,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(248,135,50,0.18) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
+        className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(248,135,50,0.18) 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          bottom: "-100px",
-          left: "-100px",
-          width: 480,
-          height: 480,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(248,135,50,0.10) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
+        className="absolute -bottom-24 -left-24 w-[480px] h-[480px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(248,135,50,0.10) 0%, transparent 70%)" }}
       />
 
       {/* Logo */}
-      <Link href="/" style={{ marginBottom: 40, display: "inline-block" }}>
+      <Link href="/" className="mb-10 relative z-10">
         <Image
           src="/images/logo-dinagui-small.avif"
           alt="DINAGUI SARL"
           width={64}
           height={64}
-          style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+          className="object-contain brightness-0 invert"
         />
       </Link>
 
-      {/* 404 number */}
+      {/* 404 */}
       <p
+        aria-hidden="true"
+        className="relative z-10 select-none leading-none font-[Roboto_Condensed] font-black tracking-tighter"
         style={{
           fontSize: "clamp(96px, 20vw, 180px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          margin: 0,
-          fontFamily: "'Roboto Condensed', sans-serif",
           background: "linear-gradient(135deg, #F88732 0%, #ffb570 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text",
-          letterSpacing: "-4px",
-          userSelect: "none",
         }}
       >
         404
@@ -83,103 +57,37 @@ export default function NotFound() {
       {/* Divider */}
       <div
         aria-hidden="true"
-        style={{
-          width: 64,
-          height: 3,
-          background: "linear-gradient(90deg, #F88732, transparent)",
-          borderRadius: 99,
-          margin: "24px 0",
-        }}
+        className="relative z-10 my-6 h-[3px] w-16 rounded-full"
+        style={{ background: "linear-gradient(90deg, #F88732, transparent)" }}
       />
 
       {/* Title */}
-      <h1
-        style={{
-          fontSize: "clamp(22px, 4vw, 32px)",
-          fontWeight: 700,
-          color: "#fff",
-          margin: "0 0 12px",
-          textAlign: "center",
-          fontFamily: "'Roboto Condensed', sans-serif",
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-        }}
-      >
+      <h1 className="relative z-10 text-white text-center font-[Roboto_Condensed] font-bold uppercase tracking-wide text-3xl mb-3">
         Page introuvable
       </h1>
 
       {/* Subtitle */}
-      <p
-        style={{
-          color: "rgba(255,255,255,0.60)",
-          fontSize: 16,
-          maxWidth: 420,
-          textAlign: "center",
-          margin: "0 0 40px",
-          lineHeight: 1.6,
-        }}
-      >
+      <p className="relative z-10 text-white/60 text-center text-base max-w-sm mb-10 leading-relaxed">
         La page que vous recherchez n&apos;existe pas ou a été déplacée.
         Revenez à l&apos;accueil ou explorez nos rubriques.
       </p>
 
-      {/* CTA principal */}
+      {/* CTA */}
       <Link
         href="/"
         id="not-found-home-link"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          background: "linear-gradient(135deg, #F88732 0%, #e0752a 100%)",
-          color: "#fff",
-          fontWeight: 700,
-          fontSize: 15,
-          padding: "14px 32px",
-          borderRadius: 999,
-          textDecoration: "none",
-          boxShadow: "0 4px 24px rgba(248,135,50,0.35)",
-          letterSpacing: "0.02em",
-          transition: "transform 0.2s, box-shadow 0.2s",
-          marginBottom: 32,
-        }}
+        className="relative z-10 mb-8 inline-flex items-center gap-2 bg-[#F88732] hover:bg-[#e0752a] text-white font-bold text-sm px-8 py-4 rounded-full transition-all duration-200 shadow-[0_4px_24px_rgba(248,135,50,0.35)] hover:shadow-[0_8px_32px_rgba(248,135,50,0.45)] hover:-translate-y-0.5"
       >
         ← Retour à l&apos;accueil
       </Link>
 
-      {/* Secondary links */}
-      <nav
-        aria-label="Pages suggérées"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "8px 24px",
-        }}
-      >
-        {[
-          { href: "/a-propos", label: "À propos" },
-          { href: "/nos-offres/location-dappartements", label: "Nos locations" },
-          { href: "/services/service-btp", label: "Services BTP" },
-          { href: "/contact", label: "Contact" },
-        ].map(({ href, label }) => (
+      {/* Secondary nav */}
+      <nav aria-label="Pages suggérées" className="relative z-10 flex flex-wrap justify-center gap-x-6 gap-y-2">
+        {links.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            style={{
-              color: "rgba(255,255,255,0.50)",
-              fontSize: 13,
-              textDecoration: "none",
-              transition: "color 0.2s",
-              padding: "4px 0",
-              borderBottom: "1px solid rgba(248,135,50,0)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "#F88732";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.50)";
-            }}
+            className="text-white/50 hover:text-[#F88732] text-sm transition-colors duration-200"
           >
             {label}
           </Link>
