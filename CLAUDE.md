@@ -134,9 +134,13 @@ npm run lint     # Linting ESLint
 
 ## Points d'attention pour la suite
 
-- Le formulaire de contact est front-end uniquement (pas de backend/API route)
-- Les images d'equipe utilisent toutes le meme placeholder
-- Le blog n'a qu'un seul article (comme le site original)
-- Les temoignages sont des donnees fictives realistes
-- Pas de page 404 custom pour l'instant
-- Pas de sitemap.xml ni robots.txt generes
+- **Gestionnaire de paquets** : Utiliser `npm` (et `package-lock.json` déjà versionné) pour le développement et la construction locale afin de contourner les conflits de résolution de Yarn PnP avec Next.js/Turbopack.
+- **Formulaire de contact** : Soumission front-end via Web3Forms ; s'assurer que `NEXT_PUBLIC_WEB3FORMS_KEY` est bien configuré sur Vercel.
+- **Seeding de production** : Penser à importer les annonces statiques dans la base de prod avec `npx tsx scripts/migrate-listings.ts` dès que les variables de production (Neon + Vercel Blob) sont injectées sur l'environnement de production.
+- **Témoignages** : Données fictives réalistes (comme le site original).
+- **Raccourci Admin Dashboard** : Corrigé de `/admin/collections/annonces/create` vers `/admin/collections/listings/create`.
+- **Rendus Réalisés** :
+  - Images de l'équipe : Toutes remplacées par leurs portraits réels.
+  - Blog : Étendu à 5 articles thématiques.
+  - Page 404 custom : Implémentée (`not-found.tsx`).
+  - SEO : Sitemap et `robots.txt` dynamiques implémentés.
