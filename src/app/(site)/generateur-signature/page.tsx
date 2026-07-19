@@ -234,7 +234,6 @@ export default function SignatureGenerator() {
                   <strong>Astuce Outlook :</strong> Cliquez sur "Copier la signature" et faites simplement un Ctrl+V (Coller) dans l'éditeur de signature d'Outlook.
                 </p>
               </div>
-              </div>
             </div>
           </div>
 
