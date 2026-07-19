@@ -234,8 +234,45 @@ export default function SignatureGenerator() {
                   <strong>Astuce Outlook :</strong> Cliquez sur "Copier la signature" et faites simplement un Ctrl+V (Coller) dans l'éditeur de signature d'Outlook.
                 </p>
               </div>
+              </div>
             </div>
           </div>
+
+          {/* Instructions */}
+          <div className="mt-12 bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+            <h2 className="text-xl font-bold text-[#1f2d3d] mb-6 font-[Roboto_Condensed] uppercase border-b border-gray-100 pb-4">
+              Comment ajouter cette signature dans Outlook ?
+            </h2>
+            <div className="space-y-6 text-[#6b7280] font-[Roboto]">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F88732]/10 text-[#F88732] flex items-center justify-center font-bold">1</div>
+                <p className="mt-1">Remplissez le formulaire avec les informations du collaborateur.</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F88732]/10 text-[#F88732] flex items-center justify-center font-bold">2</div>
+                <p className="mt-1">Cliquez sur le bouton orange <strong className="text-[#1f2d3d]">"Copier la signature"</strong>.</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F88732]/10 text-[#F88732] flex items-center justify-center font-bold">3</div>
+                <div className="mt-1">
+                  <p className="mb-2">Ouvrez Outlook et allez dans les paramètres de signature :</p>
+                  <ul className="list-disc pl-5 space-y-1 text-sm bg-gray-50 p-4 rounded-md">
+                    <li>Sur la nouvelle version (Windows/Web) : <strong className="text-[#1f2d3d]">Paramètres ⚙️ &gt; Comptes &gt; Signatures</strong></li>
+                    <li>Sur l'ancienne version : <strong className="text-[#1f2d3d]">Fichier &gt; Options &gt; Courrier &gt; Signatures</strong></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F88732]/10 text-[#F88732] flex items-center justify-center font-bold">4</div>
+                <p className="mt-1">Créez une <strong className="text-[#1f2d3d]">Nouvelle signature</strong>, donnez-lui un nom, puis cliquez dans la zone de texte vide et faites <strong className="text-[#1f2d3d]">Coller (Ctrl+V ou Cmd+V)</strong>.</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F88732]/10 text-[#F88732] flex items-center justify-center font-bold">5</div>
+                <p className="mt-1">N'oubliez pas de définir cette signature par défaut pour les "Nouveaux messages" et "Réponses/Transferts" avant de cliquer sur <strong className="text-[#1f2d3d]">Enregistrer</strong>.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </>
