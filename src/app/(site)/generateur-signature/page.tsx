@@ -9,6 +9,7 @@ export default function SignatureGenerator() {
   const [role, setRole] = useState("Directrice Administrative/RH");
   const [phone, setPhone] = useState("+224 628 19 03 15");
   const [email, setEmail] = useState("diamilatousow898@gmail.com");
+  const [address, setAddress] = useState("Siège social : Kipé, Centre Émetteur\nConakry – République de Guinée");
 
   const [copiedRich, setCopiedRich] = useState(false);
   const [copiedHtml, setCopiedHtml] = useState(false);
@@ -66,8 +67,7 @@ export default function SignatureGenerator() {
               <tr>
                 <td valign="top" style="padding-right: 10px; font-size: 16px;">📍</td>
                 <td valign="middle" style="font-size: 13px; color: #6b7280; font-family: Arial, Helvetica, sans-serif; line-height: 1.4;">
-                  Siège social : Kipé, Centre Émetteur<br>
-                  Conakry – République de Guinée
+                  ${address.replace(/\n/g, '<br>')}
                 </td>
               </tr>
             </table>
@@ -194,6 +194,18 @@ export default function SignatureGenerator() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F88732] focus:border-[#F88732] outline-none transition-all font-[Roboto] text-[#1f2d3d]"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1 font-[Roboto]">
+                      Adresse (Siège social)
+                    </label>
+                    <textarea
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      rows={2}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F88732] focus:border-[#F88732] outline-none transition-all font-[Roboto] text-[#1f2d3d] resize-none"
                     />
                   </div>
                 </div>
