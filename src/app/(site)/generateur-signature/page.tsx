@@ -20,8 +20,8 @@ export default function SignatureGenerator() {
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #333333; max-width: 600px; background-color: #ffffff;">
   <tr>
     <td valign="middle" style="padding-right: 25px; border-right: 2px solid #F88732; width: 140px; text-align: center;">
-      <a href="https://plazaplatinium.com" target="_blank" style="text-decoration: none;">
-        <img src="https://dinagui-site.vercel.app/images/logo-dinagui.avif" alt="Plaza Platinium / Dinagui" width="130" style="display: block; border: none; max-width: 130px;" />
+      <a href="https://dinagui.com" target="_blank" style="text-decoration: none;">
+        <img src="https://dinagui-site.vercel.app/images/logo-dinagui.avif" alt="Dinagui" width="130" style="display: block; border: none; max-width: 130px;" />
       </a>
     </td>
     <td valign="middle" style="padding-left: 25px;">
@@ -79,7 +79,7 @@ export default function SignatureGenerator() {
               <tr>
                 <td valign="middle" style="padding-right: 10px; font-size: 16px;">🌐</td>
                 <td valign="middle" style="font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
-                  <a href="https://plazaplatinium.com" style="color: #F88732; text-decoration: none; font-weight: bold;">https://plazaplatinium.com</a>
+                  <a href="https://dinagui.com" style="color: #F88732; text-decoration: none; font-weight: bold;">https://dinagui.com</a>
                 </td>
               </tr>
             </table>

@@ -1,4 +1,4 @@
-# Tutoriel : Création d'une signature professionnelle Outlook pour Plaza Platinium
+# Tutoriel : Création d'une signature professionnelle Outlook pour Dinagui
 
 Bonjour,
 
@@ -21,7 +21,7 @@ Dans Outlook (application Windows) :
 
 Cliquez sur le bouton **Nouvelle signature**.
 
-Donnez-lui un nom clair. Par exemple : **Signature Plaza**.
+Donnez-lui un nom clair. Par exemple : **Signature Dinagui**.
 
 ---
 
@@ -36,7 +36,7 @@ Copiez-collez les informations suivantes dans la zone d'édition (voici l'exempl
 📧 contact@dinagui.com  
 📍 Siège social : Kipé, Centre Émetteur  
 B.P. 001 Conakry – République de Guinée  
-🌐 https://plazaplatinium.com  
+🌐 https://dinagui.com  
 
 ---
 
@@ -44,7 +44,7 @@ B.P. 001 Conakry – République de Guinée
 
 1. Placez votre curseur en dessous du texte.
 2. Cliquez sur l'icône **Insérer une image**.
-3. Sélectionnez le logo de **Plaza Platinium** sur votre ordinateur.
+3. Sélectionnez le logo de **Dinagui** sur votre ordinateur.
 4. Le logo apparaîtra directement dans votre signature.
 
 ---
@@ -52,8 +52,8 @@ B.P. 001 Conakry – République de Guinée
 ## Étape 5 : Définir la signature par défaut
 
 Dans la section définissant les signatures par défaut, choisissez :
-* **Nouveaux messages** → *Signature Plaza*
-* **Réponses et transferts** → *Signature Plaza*
+* **Nouveaux messages** → *Signature Dinagui*
+* **Réponses et transferts** → *Signature Dinagui*
 
 Puis cliquez sur **Enregistrer** pour valider.
 
@@ -77,10 +77,10 @@ Chaque personne devra uniquement modifier ses informations personnelles :
 > *Fonction*  
 >   
 > 📞 +224 XXX XX XX XX  
-> 📧 prenom.nom@plazaplatinium.com  
+> 📧 prenom.nom@dinagui.com  
 > 📍 Siège social : Kipé, Centre Émetteur  
 > B.P. 001 Conakry – République de Guinée  
-> 🌐 https://plazaplatinium.com  
+> 🌐 https://dinagui.com  
 >   
 > *[Insérer le logo de l'entreprise ici]*  
 
@@ -88,7 +88,7 @@ Chaque personne devra uniquement modifier ses informations personnelles :
 
 ## ✨ Option : Signature HTML moderne sur mesure
 
-Si vous le souhaitez, nous pouvons réaliser une **signature HTML professionnelle** (similaire à celles des grandes multinationales) pour Plaza Platinium. Celle-ci inclura :
+Si vous le souhaitez, nous pouvons réaliser une **signature HTML professionnelle** (similaire à celles des grandes multinationales) pour Dinagui. Celle-ci inclura :
 
 * ✅ Le logo parfaitement aligné à gauche ;
 * ✅ Le nom et la fonction visuellement mis en valeur ;
