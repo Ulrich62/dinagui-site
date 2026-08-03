@@ -67,7 +67,7 @@ export default function SignatureGenerator() {
                 <td valign="top" style="padding-right: 10px; font-size: 16px;">📍</td>
                 <td valign="middle" style="font-size: 13px; color: #6b7280; font-family: Arial, Helvetica, sans-serif; line-height: 1.4;">
                   Siège social : Kipé, Centre Émetteur<br>
-                  B.P. 001 Conakry – République de Guinée
+                  Conakry – République de Guinée
                 </td>
               </tr>
             </table>

@@ -35,7 +35,7 @@ Copiez-collez les informations suivantes dans la zone d'édition (voici l'exempl
 📞 +224 613 50 04 04  
 📧 contact@dinagui.com  
 📍 Siège social : Kipé, Centre Émetteur  
-B.P. 001 Conakry – République de Guinée  
+Conakry – République de Guinée  
 🌐 https://dinagui.com  
 
 ---
@@ -79,7 +79,7 @@ Chaque personne devra uniquement modifier ses informations personnelles :
 > 📞 +224 XXX XX XX XX  
 > 📧 prenom.nom@dinagui.com  
 > 📍 Siège social : Kipé, Centre Émetteur  
-> B.P. 001 Conakry – République de Guinée  
+> Conakry – République de Guinée  
 > 🌐 https://dinagui.com  
 >   
 > *[Insérer le logo de l'entreprise ici]*  
