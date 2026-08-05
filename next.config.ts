@@ -30,21 +30,6 @@ const nextConfig: NextConfig = {
         hostname: "*.public.blob.vercel-storage.com",
       },
     ],
-  },
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: '/api/media/file/:path*',
-          destination: '/media/:path*',
-        },
-        {
-          source: '/api/videos/file/:path*',
-          destination: '/videos/:path*',
-        },
-      ],
-    };
-  },
 };
 
 export default withPayload(nextConfig);
