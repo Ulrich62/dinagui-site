@@ -10,6 +10,13 @@ type OfferType = "rent" | "sale";
 /** Resolves a media (photo/video) URL whether it is populated (depth>=1) or not. */
 function mediaUrl(m: number | Media | Video | null | undefined): string | undefined {
   if (!m || typeof m === "number") return undefined;
+  
+  // Use the "hero" size (1920px) if available to avoid sending raw images (e.g. 5-10MB)
+  // to Next.js Image Optimization, which causes 504 timeouts and extremely slow loading.
+  if ("sizes" in m && m.sizes?.hero?.url) {
+    return m.sizes.hero.url;
+  }
+  
   return m.url ?? undefined;
 }
 
