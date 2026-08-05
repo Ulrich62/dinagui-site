@@ -6,41 +6,29 @@ export const maxDuration = 300;
 
 export async function POST(request: Request) {
   try {
-    const formData = await request.formData();
-    const secret = formData.get('secret');
+    const { secret, collection, id, url, sizes } = await request.json();
+    
     if (secret !== 'dinagui-migrate-2026') {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
-    const collection = formData.get('collection') as 'media' | 'videos';
-    const id = formData.get('id') as string;
-    const file = formData.get('file') as File;
-    const mimetype = formData.get('mimetype') as string;
-
-    if (!collection || !id || !file) {
+    if (!collection || !id) {
       return NextResponse.json({ message: 'Missing fields' }, { status: 400 });
     }
 
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
     const payload = await getPayload({ config });
     
-    // Update Payload document
+    const dataToUpdate: any = {};
+    if (url) dataToUpdate.url = url;
+    if (sizes) dataToUpdate.sizes = sizes;
+
     const updated = await payload.update({
       collection,
       id,
-      data: {},
-      file: {
-        data: buffer,
-        name: \`migrated-\${Date.now()}-\${file.name}\`,
-        size: buffer.length,
-        mimetype: mimetype || file.type || 'application/octet-stream',
-      },
-      overwriteExistingFiles: true,
+      data: dataToUpdate
     });
 
-    return NextResponse.json({ success: true, id: updated.id, url: updated.url });
+    return NextResponse.json({ success: true, updated });
   } catch (error: any) {
     console.error('Migration error:', error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
