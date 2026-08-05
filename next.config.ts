@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
         hostname: "dinagui-sarlu.bigdanhe.com",
       },
       {
+        protocol: "https",
+        hostname: "www.dinagui.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dinagui.com",
+      },
+      {
         // Médias servis depuis Vercel Blob (Payload)
         protocol: "https",
         hostname: "*.public.blob.vercel-storage.com",

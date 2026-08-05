@@ -13,8 +13,9 @@ function mediaUrl(m: number | Media | Video | null | undefined): string | undefi
   
   // Use the "hero" size (1920px) if available to avoid sending raw images (e.g. 5-10MB)
   // to Next.js Image Optimization, which causes 504 timeouts and extremely slow loading.
-  if ("sizes" in m && m.sizes?.hero?.url) {
-    return m.sizes.hero.url;
+  if ("sizes" in m) {
+    if (m.sizes?.hero?.url) return m.sizes.hero.url;
+    if (m.sizes?.card?.url) return m.sizes.card.url;
   }
   
   return m.url ?? undefined;
