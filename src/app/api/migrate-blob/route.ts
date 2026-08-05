@@ -24,7 +24,7 @@ export async function GET(request: Request) {
     });
 
     for (const item of mediaRes.docs) {
-      if (item.url && item.url.includes('/api/media/file/')) {
+      if (item.url && item.url.includes('/api/media/file/') && item.filename) {
         try {
           const fileUrl = `https://www.dinagui.com/media/${item.filename}`;
           const response = await fetch(fileUrl);
@@ -63,7 +63,7 @@ export async function GET(request: Request) {
     });
 
     for (const item of videoRes.docs) {
-      if (item.url && item.url.includes('/api/videos/file/')) {
+      if (item.url && item.url.includes('/api/videos/file/') && item.filename) {
         try {
           const fileUrl = `https://www.dinagui.com/videos/${item.filename}`;
           const response = await fetch(fileUrl);
