@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       data: {},
       file: {
         data: buffer,
-        name: file.name,
+        name: \`migrated-\${Date.now()}-\${file.name}\`,
         size: buffer.length,
         mimetype: mimetype || file.type || 'application/octet-stream',
       },
